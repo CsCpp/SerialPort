@@ -55,6 +55,7 @@ namespace SerialPortC
             {
                 serialPort.Close();
                 progressBar1.Value = 0;
+              
                 cBoxCOMPORT.Enabled = true;
                 cBoxBAUDRATE.Enabled = true;
                 cBoxDATABITS.Enabled = true;
@@ -66,11 +67,16 @@ namespace SerialPortC
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            if (!serialPort.IsOpen)
+            if (serialPort.IsOpen)
             {
                 dataOut=tBoxDataOut.Text;
                 serialPort.WriteLine(dataOut);
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

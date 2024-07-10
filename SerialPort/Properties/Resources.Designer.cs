@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SerialPort.Properties
+namespace SerialPortC.Properties
 {
 
 

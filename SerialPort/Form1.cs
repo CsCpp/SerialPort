@@ -23,6 +23,11 @@ namespace SerialPortC
         {
             string[] ports = SerialPort.GetPortNames();
             cBoxCOMPORT.Items.AddRange(ports);
+            chBoxDtrEnable.Checked=false;
+            serialPort.DtrEnable = false;
+            chBoxRtsEnable.Checked=false;
+            serialPort.RtsEnable = false;
+            chBoxUsingButton.Enabled = false;
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -42,6 +47,11 @@ namespace SerialPortC
                 cBoxDATABITS.Enabled = false;
                 cBoxPARITYBITS.Enabled = false;
                 cBoxSTOPBITS.Enabled = false;
+
+                btnCLOSE.Enabled = true;
+                btnSend.Enabled = true;
+                btnOpen.Enabled = false;
+                chBoxUsingButton.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -61,6 +71,10 @@ namespace SerialPortC
                 cBoxDATABITS.Enabled = true;
                 cBoxPARITYBITS.Enabled = true;
                 cBoxSTOPBITS.Enabled = true;
+                btnCLOSE.Enabled = false;
+                btnSend.Enabled = false;
+                btnOpen.Enabled = true;
+                chBoxUsingButton.Enabled = false;
             }
             
         }
@@ -69,14 +83,63 @@ namespace SerialPortC
         {
             if (serialPort.IsOpen)
             {
-                dataOut=tBoxDataOut.Text;
-                serialPort.WriteLine(dataOut);
+               
+                try
+                {
+                    dataOut = DateTime.Today + " :  "+ tBoxDataOut.Text;
+                    serialPort.WriteLine(dataOut);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void chBoxDtrEnable_CheckedChanged(object sender, EventArgs e)
         {
+            if (chBoxDtrEnable.Checked)
+            {
+                serialPort.DtrEnable= true;
+            }
+            else
+            {
+                serialPort.DtrEnable = false;
+            }
+        }
 
+        private void chBoxRtsEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chBoxRtsEnable.Checked)
+            {  serialPort.RtsEnable= true;}
+            else
+            {
+                serialPort.RtsEnable = false;
+            }
+        }
+
+        private void btnClearData_Click(object sender, EventArgs e)
+        {
+            if(tBoxDataOut.Text!="")
+            { tBoxDataOut.Text = ""; }
+        }
+
+        private void tBoxDataOut_TextChanged(object sender, EventArgs e)
+        {
+            int dataOUTLength=tBoxDataOut.TextLength;
+            lblDataOutLength.Text = string.Format("{0:00}", dataOUTLength);
+        }
+
+        private void chBoxUsingButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chBoxUsingButton.Checked)
+            {
+                btnSend.Enabled = false;
+            }
+            else
+            {
+                btnSend.Enabled = true;
+            }
         }
     }
 }

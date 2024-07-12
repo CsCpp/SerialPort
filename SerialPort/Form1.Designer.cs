@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chBoxRtsEnable = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.lblStatusCom = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.btnCLOSE = new System.Windows.Forms.Button();
+            this.btnOpen = new System.Windows.Forms.Button();
+            this.chBoxDtrEnable = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,37 +48,29 @@
             this.cBoxDATABITS = new System.Windows.Forms.ComboBox();
             this.cBoxBAUDRATE = new System.Windows.Forms.ComboBox();
             this.cBoxCOMPORT = new System.Windows.Forms.ComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.btnCLOSE = new System.Windows.Forms.Button();
             this.btnSend = new System.Windows.Forms.Button();
-            this.btnOpen = new System.Windows.Forms.Button();
             this.tBoxDataOut = new System.Windows.Forms.TextBox();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
-            this.chBoxDtrEnable = new System.Windows.Forms.CheckBox();
-            this.chBoxRtsEnable = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnClearData = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.lblDataOutLength = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.chBoxUsingButton = new System.Windows.Forms.CheckBox();
-            this.chBoxUsingEnter = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.chBoxWrite = new System.Windows.Forms.CheckBox();
             this.chBoxWriteLine = new System.Windows.Forms.CheckBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblDataOutLength = new System.Windows.Forms.Label();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.lblStatusCom = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.chBoxUsingEnter = new System.Windows.Forms.CheckBox();
+            this.chBoxUsingButton = new System.Windows.Forms.CheckBox();
+            this.btnClearData = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -94,6 +94,93 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки SerialPorts";
+            // 
+            // chBoxRtsEnable
+            // 
+            this.chBoxRtsEnable.AutoSize = true;
+            this.chBoxRtsEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.chBoxRtsEnable.Location = new System.Drawing.Point(154, 189);
+            this.chBoxRtsEnable.Name = "chBoxRtsEnable";
+            this.chBoxRtsEnable.Size = new System.Drawing.Size(113, 20);
+            this.chBoxRtsEnable.TabIndex = 11;
+            this.chBoxRtsEnable.Text = "RTS ENABLE";
+            this.chBoxRtsEnable.UseVisualStyleBackColor = true;
+            this.chBoxRtsEnable.CheckedChanged += new System.EventHandler(this.chBoxRtsEnable_CheckedChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.groupBox8);
+            this.groupBox2.Controls.Add(this.progressBar1);
+            this.groupBox2.Controls.Add(this.btnCLOSE);
+            this.groupBox2.Controls.Add(this.btnOpen);
+            this.groupBox2.Location = new System.Drawing.Point(6, 225);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(279, 157);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.lblStatusCom);
+            this.groupBox8.Location = new System.Drawing.Point(154, 17);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(113, 100);
+            this.groupBox8.TabIndex = 3;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Статус RS232";
+            // 
+            // lblStatusCom
+            // 
+            this.lblStatusCom.AutoSize = true;
+            this.lblStatusCom.BackColor = System.Drawing.Color.Red;
+            this.lblStatusCom.Font = new System.Drawing.Font("MS Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblStatusCom.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.lblStatusCom.Location = new System.Drawing.Point(32, 46);
+            this.lblStatusCom.Margin = new System.Windows.Forms.Padding(3);
+            this.lblStatusCom.Name = "lblStatusCom";
+            this.lblStatusCom.Size = new System.Drawing.Size(49, 23);
+            this.lblStatusCom.TabIndex = 0;
+            this.lblStatusCom.Text = "OFF";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(13, 123);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(254, 23);
+            this.progressBar1.TabIndex = 2;
+            // 
+            // btnCLOSE
+            // 
+            this.btnCLOSE.Enabled = false;
+            this.btnCLOSE.Location = new System.Drawing.Point(13, 67);
+            this.btnCLOSE.Name = "btnCLOSE";
+            this.btnCLOSE.Size = new System.Drawing.Size(116, 50);
+            this.btnCLOSE.TabIndex = 1;
+            this.btnCLOSE.Text = "Закрыть";
+            this.btnCLOSE.UseVisualStyleBackColor = true;
+            this.btnCLOSE.Click += new System.EventHandler(this.btnCLOSE_Click);
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.Location = new System.Drawing.Point(11, 11);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(118, 50);
+            this.btnOpen.TabIndex = 0;
+            this.btnOpen.Text = "Открыть";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
+            // chBoxDtrEnable
+            // 
+            this.chBoxDtrEnable.AutoSize = true;
+            this.chBoxDtrEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.chBoxDtrEnable.Location = new System.Drawing.Point(24, 189);
+            this.chBoxDtrEnable.Name = "chBoxDtrEnable";
+            this.chBoxDtrEnable.Size = new System.Drawing.Size(114, 20);
+            this.chBoxDtrEnable.TabIndex = 10;
+            this.chBoxDtrEnable.Text = "DTR ENABLE";
+            this.chBoxDtrEnable.UseVisualStyleBackColor = true;
+            this.chBoxDtrEnable.CheckedChanged += new System.EventHandler(this.chBoxDtrEnable_CheckedChanged);
             // 
             // label5
             // 
@@ -209,36 +296,6 @@
             this.cBoxCOMPORT.Size = new System.Drawing.Size(140, 24);
             this.cBoxCOMPORT.TabIndex = 0;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.groupBox8);
-            this.groupBox2.Controls.Add(this.progressBar1);
-            this.groupBox2.Controls.Add(this.btnCLOSE);
-            this.groupBox2.Controls.Add(this.btnOpen);
-            this.groupBox2.Location = new System.Drawing.Point(6, 225);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(279, 157);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(13, 123);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(254, 23);
-            this.progressBar1.TabIndex = 2;
-            // 
-            // btnCLOSE
-            // 
-            this.btnCLOSE.Enabled = false;
-            this.btnCLOSE.Location = new System.Drawing.Point(13, 67);
-            this.btnCLOSE.Name = "btnCLOSE";
-            this.btnCLOSE.Size = new System.Drawing.Size(116, 50);
-            this.btnCLOSE.TabIndex = 1;
-            this.btnCLOSE.Text = "Закрыть";
-            this.btnCLOSE.UseVisualStyleBackColor = true;
-            this.btnCLOSE.Click += new System.EventHandler(this.btnCLOSE_Click);
-            // 
             // btnSend
             // 
             this.btnSend.Enabled = false;
@@ -249,16 +306,6 @@
             this.btnSend.Text = "Отправить";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
-            // 
-            // btnOpen
-            // 
-            this.btnOpen.Location = new System.Drawing.Point(11, 11);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(118, 50);
-            this.btnOpen.TabIndex = 0;
-            this.btnOpen.Text = "Открыть";
-            this.btnOpen.UseVisualStyleBackColor = true;
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // tBoxDataOut
             // 
@@ -271,30 +318,7 @@
             this.tBoxDataOut.Size = new System.Drawing.Size(334, 179);
             this.tBoxDataOut.TabIndex = 4;
             this.tBoxDataOut.TextChanged += new System.EventHandler(this.tBoxDataOut_TextChanged);
-            // 
-            // chBoxDtrEnable
-            // 
-            this.chBoxDtrEnable.AutoSize = true;
-            this.chBoxDtrEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chBoxDtrEnable.Location = new System.Drawing.Point(24, 189);
-            this.chBoxDtrEnable.Name = "chBoxDtrEnable";
-            this.chBoxDtrEnable.Size = new System.Drawing.Size(114, 20);
-            this.chBoxDtrEnable.TabIndex = 10;
-            this.chBoxDtrEnable.Text = "DTR ENABLE";
-            this.chBoxDtrEnable.UseVisualStyleBackColor = true;
-            this.chBoxDtrEnable.CheckedChanged += new System.EventHandler(this.chBoxDtrEnable_CheckedChanged);
-            // 
-            // chBoxRtsEnable
-            // 
-            this.chBoxRtsEnable.AutoSize = true;
-            this.chBoxRtsEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chBoxRtsEnable.Location = new System.Drawing.Point(154, 189);
-            this.chBoxRtsEnable.Name = "chBoxRtsEnable";
-            this.chBoxRtsEnable.Size = new System.Drawing.Size(113, 20);
-            this.chBoxRtsEnable.TabIndex = 11;
-            this.chBoxRtsEnable.Text = "RTS ENABLE";
-            this.chBoxRtsEnable.UseVisualStyleBackColor = true;
-            this.chBoxRtsEnable.CheckedChanged += new System.EventHandler(this.chBoxRtsEnable_CheckedChanged);
+            this.tBoxDataOut.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBoxDataOut_KeyDown);
             // 
             // groupBox3
             // 
@@ -308,15 +332,33 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Transmitter Control";
             // 
-            // btnClearData
+            // groupBox7
             // 
-            this.btnClearData.Location = new System.Drawing.Point(6, 76);
-            this.btnClearData.Name = "btnClearData";
-            this.btnClearData.Size = new System.Drawing.Size(86, 33);
-            this.btnClearData.TabIndex = 5;
-            this.btnClearData.Text = "Очистить";
-            this.btnClearData.UseVisualStyleBackColor = true;
-            this.btnClearData.Click += new System.EventHandler(this.btnClearData_Click);
+            this.groupBox7.Controls.Add(this.lblDataOutLength);
+            this.groupBox7.Controls.Add(this.label6);
+            this.groupBox7.Location = new System.Drawing.Point(7, 337);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(331, 35);
+            this.groupBox7.TabIndex = 7;
+            this.groupBox7.TabStop = false;
+            // 
+            // lblDataOutLength
+            // 
+            this.lblDataOutLength.AutoSize = true;
+            this.lblDataOutLength.Location = new System.Drawing.Point(232, 13);
+            this.lblDataOutLength.Name = "lblDataOutLength";
+            this.lblDataOutLength.Size = new System.Drawing.Size(21, 16);
+            this.lblDataOutLength.TabIndex = 1;
+            this.lblDataOutLength.Text = "00";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(60, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(166, 16);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Колличество символов: ";
             // 
             // groupBox4
             // 
@@ -329,39 +371,6 @@
             this.groupBox4.Size = new System.Drawing.Size(331, 120);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.chBoxUsingEnter);
-            this.groupBox5.Controls.Add(this.chBoxUsingButton);
-            this.groupBox5.Location = new System.Drawing.Point(98, 9);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(110, 100);
-            this.groupBox5.TabIndex = 6;
-            this.groupBox5.TabStop = false;
-            // 
-            // chBoxUsingButton
-            // 
-            this.chBoxUsingButton.AutoSize = true;
-            this.chBoxUsingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chBoxUsingButton.Location = new System.Drawing.Point(6, 26);
-            this.chBoxUsingButton.Name = "chBoxUsingButton";
-            this.chBoxUsingButton.Size = new System.Drawing.Size(104, 20);
-            this.chBoxUsingButton.TabIndex = 12;
-            this.chBoxUsingButton.Text = "Using Button";
-            this.chBoxUsingButton.UseVisualStyleBackColor = true;
-            this.chBoxUsingButton.CheckedChanged += new System.EventHandler(this.chBoxUsingButton_CheckedChanged);
-            // 
-            // chBoxUsingEnter
-            // 
-            this.chBoxUsingEnter.AutoSize = true;
-            this.chBoxUsingEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chBoxUsingEnter.Location = new System.Drawing.Point(6, 62);
-            this.chBoxUsingEnter.Name = "chBoxUsingEnter";
-            this.chBoxUsingEnter.Size = new System.Drawing.Size(98, 20);
-            this.chBoxUsingEnter.TabIndex = 13;
-            this.chBoxUsingEnter.Text = "Using Enter";
-            this.chBoxUsingEnter.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
@@ -383,6 +392,7 @@
             this.chBoxWrite.TabIndex = 13;
             this.chBoxWrite.Text = "Write";
             this.chBoxWrite.UseVisualStyleBackColor = true;
+            this.chBoxWrite.CheckedChanged += new System.EventHandler(this.chBoxWrite_CheckedChanged);
             // 
             // chBoxWriteLine
             // 
@@ -394,57 +404,50 @@
             this.chBoxWriteLine.TabIndex = 12;
             this.chBoxWriteLine.Text = "Write Line";
             this.chBoxWriteLine.UseVisualStyleBackColor = true;
+            this.chBoxWriteLine.CheckedChanged += new System.EventHandler(this.chBoxWriteLine_CheckedChanged);
             // 
-            // groupBox7
+            // groupBox5
             // 
-            this.groupBox7.Controls.Add(this.lblDataOutLength);
-            this.groupBox7.Controls.Add(this.label6);
-            this.groupBox7.Location = new System.Drawing.Point(7, 337);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(331, 35);
-            this.groupBox7.TabIndex = 7;
-            this.groupBox7.TabStop = false;
+            this.groupBox5.Controls.Add(this.chBoxUsingEnter);
+            this.groupBox5.Controls.Add(this.chBoxUsingButton);
+            this.groupBox5.Location = new System.Drawing.Point(98, 9);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(110, 100);
+            this.groupBox5.TabIndex = 6;
+            this.groupBox5.TabStop = false;
             // 
-            // label6
+            // chBoxUsingEnter
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(60, 13);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(166, 16);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Колличество символов: ";
+            this.chBoxUsingEnter.AutoSize = true;
+            this.chBoxUsingEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.chBoxUsingEnter.Location = new System.Drawing.Point(6, 62);
+            this.chBoxUsingEnter.Name = "chBoxUsingEnter";
+            this.chBoxUsingEnter.Size = new System.Drawing.Size(98, 20);
+            this.chBoxUsingEnter.TabIndex = 13;
+            this.chBoxUsingEnter.Text = "Using Enter";
+            this.chBoxUsingEnter.UseVisualStyleBackColor = true;
             // 
-            // lblDataOutLength
+            // chBoxUsingButton
             // 
-            this.lblDataOutLength.AutoSize = true;
-            this.lblDataOutLength.Location = new System.Drawing.Point(232, 13);
-            this.lblDataOutLength.Name = "lblDataOutLength";
-            this.lblDataOutLength.Size = new System.Drawing.Size(21, 16);
-            this.lblDataOutLength.TabIndex = 1;
-            this.lblDataOutLength.Text = "00";
+            this.chBoxUsingButton.AutoSize = true;
+            this.chBoxUsingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.chBoxUsingButton.Location = new System.Drawing.Point(6, 26);
+            this.chBoxUsingButton.Name = "chBoxUsingButton";
+            this.chBoxUsingButton.Size = new System.Drawing.Size(104, 20);
+            this.chBoxUsingButton.TabIndex = 12;
+            this.chBoxUsingButton.Text = "Using Button";
+            this.chBoxUsingButton.UseVisualStyleBackColor = true;
+            this.chBoxUsingButton.CheckedChanged += new System.EventHandler(this.chBoxUsingButton_CheckedChanged);
             // 
-            // groupBox8
+            // btnClearData
             // 
-            this.groupBox8.Controls.Add(this.lblStatusCom);
-            this.groupBox8.Location = new System.Drawing.Point(154, 17);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(113, 100);
-            this.groupBox8.TabIndex = 3;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Статус RS232";
-            // 
-            // lblStatusCom
-            // 
-            this.lblStatusCom.AutoSize = true;
-            this.lblStatusCom.BackColor = System.Drawing.Color.Red;
-            this.lblStatusCom.Font = new System.Drawing.Font("MS Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblStatusCom.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.lblStatusCom.Location = new System.Drawing.Point(32, 46);
-            this.lblStatusCom.Margin = new System.Windows.Forms.Padding(3);
-            this.lblStatusCom.Name = "lblStatusCom";
-            this.lblStatusCom.Size = new System.Drawing.Size(49, 23);
-            this.lblStatusCom.TabIndex = 0;
-            this.lblStatusCom.Text = "OFF";
+            this.btnClearData.Location = new System.Drawing.Point(6, 76);
+            this.btnClearData.Name = "btnClearData";
+            this.btnClearData.Size = new System.Drawing.Size(86, 33);
+            this.btnClearData.TabIndex = 5;
+            this.btnClearData.Text = "Очистить";
+            this.btnClearData.UseVisualStyleBackColor = true;
+            this.btnClearData.Click += new System.EventHandler(this.btnClearData_Click);
             // 
             // Form1
             // 
@@ -460,17 +463,17 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }

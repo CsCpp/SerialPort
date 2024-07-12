@@ -28,6 +28,9 @@ namespace SerialPortC
             chBoxRtsEnable.Checked=false;
             serialPort.RtsEnable = false;
             chBoxUsingButton.Enabled = false;
+
+            chBoxWriteLine.Checked = false;
+            chBoxWrite.Checked = true;
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -41,22 +44,29 @@ namespace SerialPortC
                 serialPort.Parity = (Parity)Enum.Parse(typeof(Parity), cBoxPARITYBITS.Text);
 
                 serialPort.Open();
-                progressBar1.Value = 100;
-                cBoxCOMPORT.Enabled = false;
-                cBoxBAUDRATE.Enabled = false;
-                cBoxDATABITS.Enabled = false;
-                cBoxPARITYBITS.Enabled = false;
-                cBoxSTOPBITS.Enabled = false;
-
-                btnCLOSE.Enabled = true;
-                btnSend.Enabled = true;
-                btnOpen.Enabled = false;
-                chBoxUsingButton.Enabled = true;
+             
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
             }
+
+            progressBar1.Value = 100;
+            cBoxCOMPORT.Enabled = false;
+            cBoxBAUDRATE.Enabled = false;
+            cBoxDATABITS.Enabled = false;
+            cBoxPARITYBITS.Enabled = false;
+            cBoxSTOPBITS.Enabled = false;
+
+            btnCLOSE.Enabled = true;
+            btnSend.Enabled = true;
+            btnOpen.Enabled = false;
+            chBoxUsingButton.Enabled = true;
+
+            lblStatusCom.Text = "ON";
+            lblStatusCom.BackColor = Color.Green;
         }
 
         private void btnCLOSE_Click(object sender, EventArgs e)
@@ -75,19 +85,30 @@ namespace SerialPortC
                 btnSend.Enabled = false;
                 btnOpen.Enabled = true;
                 chBoxUsingButton.Enabled = false;
+
+
+                lblStatusCom.Text = "OFF";
+                lblStatusCom.BackColor = Color.Red;
             }
             
         }
 
         private void btnSend_Click(object sender, EventArgs e)
         {
+            sendDataEnter();
+        }
+
+        private void sendDataEnter()
+        {
             if (serialPort.IsOpen)
             {
-               
+
                 try
                 {
-                    dataOut = DateTime.Today + " :  "+ tBoxDataOut.Text;
-                    serialPort.WriteLine(dataOut);
+                    dataOut = DateTime.Today + " :  " + tBoxDataOut.Text;
+                    if (chBoxWriteLine.Checked) { serialPort.WriteLine(dataOut); }
+                    else { serialPort.Write(dataOut); }
+                   
                 }
                 catch (Exception ex)
                 {
@@ -128,6 +149,11 @@ namespace SerialPortC
         {
             int dataOUTLength=tBoxDataOut.TextLength;
             lblDataOutLength.Text = string.Format("{0:00}", dataOUTLength);
+
+            if(chBoxUsingEnter.Checked)
+            {
+                tBoxDataOut.Text = tBoxDataOut.Text.Replace(Environment.NewLine, "");
+            }
         }
 
         private void chBoxUsingButton_CheckedChanged(object sender, EventArgs e)
@@ -140,6 +166,32 @@ namespace SerialPortC
             {
                 btnSend.Enabled = true;
             }
+        }
+
+        private void tBoxDataOut_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (chBoxUsingEnter.Checked && e.KeyCode == Keys.Enter)
+            {
+                sendDataEnter();
+            }
+        }
+
+        private void chBoxWriteLine_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chBoxWriteLine.Checked)
+            {
+                chBoxWrite.Checked = false;
+            }
+            else { chBoxWrite.Checked = true; }
+        }
+
+        private void chBoxWrite_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chBoxWrite.Checked)
+            {
+                chBoxWriteLine.Checked = false;
+            }
+            else { chBoxWriteLine.Checked = true; }
         }
     }
 }

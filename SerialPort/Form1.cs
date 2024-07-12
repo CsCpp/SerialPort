@@ -13,7 +13,8 @@ namespace SerialPortC
 {
     public partial class Form1 : Form
     {
-        string dataOut;
+        string dataOUT;
+        string dataIN;
         public Form1()
         {
             InitializeComponent();
@@ -105,9 +106,9 @@ namespace SerialPortC
 
                 try
                 {
-                    dataOut = DateTime.Today + " :  " + tBoxDataOut.Text;
-                    if (chBoxWriteLine.Checked) { serialPort.WriteLine(dataOut); }
-                    else { serialPort.Write(dataOut); }
+                    dataOUT = DateTime.Today + " :  " + tBoxDataOut.Text;
+                    if (chBoxWriteLine.Checked) { serialPort.WriteLine(dataOUT); }
+                    else { serialPort.Write(dataOUT); }
                    
                 }
                 catch (Exception ex)
@@ -141,8 +142,8 @@ namespace SerialPortC
 
         private void btnClearData_Click(object sender, EventArgs e)
         {
-            if(tBoxDataOut.Text!="")
-            { tBoxDataOut.Text = ""; }
+            tBoxDataOut.Text = "";
+            tBoxDataIN.Text = "";
         }
 
         private void tBoxDataOut_TextChanged(object sender, EventArgs e)
@@ -192,6 +193,22 @@ namespace SerialPortC
                 chBoxWriteLine.Checked = false;
             }
             else { chBoxWriteLine.Checked = true; }
+        }
+
+        private void lblDataOutLength_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            dataIN = serialPort.ReadExisting();
+            this.Invoke(new EventHandler(ShowData));
+        }
+
+        private void ShowData(object sender, EventArgs e)
+        {
+            tBoxDataIN.Text += dataIN.ToString();
         }
     }
 }

@@ -65,6 +65,8 @@ namespace SerialPortC
             btnSend.Enabled = true;
             btnOpen.Enabled = false;
             chBoxUsingButton.Enabled = true;
+            chBoxUsingEnter.Checked = true;
+            chBoxWriteLine.Checked = true;
 
             lblStatusCom.Text = "ON";
             lblStatusCom.BackColor = Color.Green;
@@ -106,7 +108,7 @@ namespace SerialPortC
 
                 try
                 {
-                    dataOUT = DateTime.Today + " :  " + tBoxDataOut.Text;
+                    dataOUT = DateTime.Now + " :  " + tBoxDataOut.Text;
                     if (chBoxWriteLine.Checked) { serialPort.WriteLine(dataOUT); }
                     else { serialPort.Write(dataOUT); }
                    
@@ -123,6 +125,7 @@ namespace SerialPortC
             if (chBoxDtrEnable.Checked)
             {
                 serialPort.DtrEnable= true;
+                MessageBox.Show("DRT Enable", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -133,7 +136,9 @@ namespace SerialPortC
         private void chBoxRtsEnable_CheckedChanged(object sender, EventArgs e)
         {
             if(chBoxRtsEnable.Checked)
-            {  serialPort.RtsEnable= true;}
+            {  serialPort.RtsEnable= true;
+                MessageBox.Show("RST Enable", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
             {
                 serialPort.RtsEnable = false;
@@ -195,10 +200,6 @@ namespace SerialPortC
             else { chBoxWriteLine.Checked = true; }
         }
 
-        private void lblDataOutLength_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
@@ -208,6 +209,8 @@ namespace SerialPortC
 
         private void ShowData(object sender, EventArgs e)
         {
+            int dataINLength = dataIN.Length;
+            lbDataINLength.Text = string.Format("{0:00}", dataINLength);
             tBoxDataIN.Text += dataIN.ToString();
         }
     }

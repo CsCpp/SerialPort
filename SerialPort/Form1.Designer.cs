@@ -313,7 +313,7 @@
             // tBoxDataOut
             // 
             this.tBoxDataOut.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.tBoxDataOut.Font = new System.Drawing.Font("MS Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tBoxDataOut.Font = new System.Drawing.Font("MS Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tBoxDataOut.ForeColor = System.Drawing.Color.Lime;
             this.tBoxDataOut.Location = new System.Drawing.Point(7, 15);
             this.tBoxDataOut.Multiline = true;
@@ -369,7 +369,6 @@
             this.lblDataOutLength.Size = new System.Drawing.Size(21, 16);
             this.lblDataOutLength.TabIndex = 1;
             this.lblDataOutLength.Text = "00";
-            this.lblDataOutLength.Click += new System.EventHandler(this.lblDataOutLength_Click);
             // 
             // label6
             // 
@@ -481,7 +480,7 @@
             // tBoxDataIN
             // 
             this.tBoxDataIN.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.tBoxDataIN.Font = new System.Drawing.Font("MS Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tBoxDataIN.Font = new System.Drawing.Font("MS Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tBoxDataIN.ForeColor = System.Drawing.Color.Lime;
             this.tBoxDataIN.Location = new System.Drawing.Point(6, 14);
             this.tBoxDataIN.Multiline = true;

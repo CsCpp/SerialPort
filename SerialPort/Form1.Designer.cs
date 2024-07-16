@@ -66,6 +66,12 @@
             this.btnClearData = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.tBoxDataIN = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.инфаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cOMОткрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cOMЗакрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -74,6 +80,7 @@
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -91,7 +98,7 @@
             this.groupBox1.Controls.Add(this.cBoxDATABITS);
             this.groupBox1.Controls.Add(this.cBoxBAUDRATE);
             this.groupBox1.Controls.Add(this.cBoxCOMPORT);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(13, 46);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(291, 388);
             this.groupBox1.TabIndex = 0;
@@ -336,7 +343,7 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.tBoxDataOut);
-            this.groupBox3.Location = new System.Drawing.Point(310, 237);
+            this.groupBox3.Location = new System.Drawing.Point(310, 282);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(344, 162);
             this.groupBox3.TabIndex = 5;
@@ -471,9 +478,9 @@
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.tBoxDataIN);
-            this.groupBox9.Location = new System.Drawing.Point(310, 12);
+            this.groupBox9.Location = new System.Drawing.Point(310, 46);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(340, 219);
+            this.groupBox9.Size = new System.Drawing.Size(340, 185);
             this.groupBox9.TabIndex = 6;
             this.groupBox9.TabStop = false;
             // 
@@ -482,23 +489,73 @@
             this.tBoxDataIN.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.tBoxDataIN.Font = new System.Drawing.Font("MS Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tBoxDataIN.ForeColor = System.Drawing.Color.Lime;
-            this.tBoxDataIN.Location = new System.Drawing.Point(6, 14);
+            this.tBoxDataIN.Location = new System.Drawing.Point(0, 12);
             this.tBoxDataIN.Multiline = true;
             this.tBoxDataIN.Name = "tBoxDataIN";
             this.tBoxDataIN.ReadOnly = true;
             this.tBoxDataIN.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tBoxDataIN.Size = new System.Drawing.Size(334, 199);
+            this.tBoxDataIN.Size = new System.Drawing.Size(334, 218);
             this.tBoxDataIN.TabIndex = 7;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem,
+            this.настройкиToolStripMenuItem,
+            this.инфаToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(659, 28);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // файлToolStripMenuItem
+            // 
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.файлToolStripMenuItem.Text = "Файл";
+            // 
+            // настройкиToolStripMenuItem
+            // 
+            this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cOMОткрытьToolStripMenuItem,
+            this.cOMЗакрытьToolStripMenuItem});
+            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.настройкиToolStripMenuItem.Text = "Настройки";
+            // 
+            // инфаToolStripMenuItem
+            // 
+            this.инфаToolStripMenuItem.Name = "инфаToolStripMenuItem";
+            this.инфаToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
+            this.инфаToolStripMenuItem.Text = "Инфа";
+            // 
+            // cOMОткрытьToolStripMenuItem
+            // 
+            this.cOMОткрытьToolStripMenuItem.Name = "cOMОткрытьToolStripMenuItem";
+            this.cOMОткрытьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cOMОткрытьToolStripMenuItem.Text = "COM открыть";
+            this.cOMОткрытьToolStripMenuItem.Click += new System.EventHandler(this.cOMОткрытьToolStripMenuItem_Click);
+            // 
+            // cOMЗакрытьToolStripMenuItem
+            // 
+            this.cOMЗакрытьToolStripMenuItem.Name = "cOMЗакрытьToolStripMenuItem";
+            this.cOMЗакрытьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cOMЗакрытьToolStripMenuItem.Text = "COM Закрыть";
+            this.cOMЗакрытьToolStripMenuItem.Click += new System.EventHandler(this.cOMЗакрытьToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 402);
+            this.ClientSize = new System.Drawing.Size(659, 446);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "COM Port терминал";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -516,7 +573,10 @@
             this.groupBox5.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -559,6 +619,12 @@
         private System.Windows.Forms.TextBox tBoxDataIN;
         private System.Windows.Forms.Label lbDataINLength;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cOMОткрытьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cOMЗакрытьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem инфаToolStripMenuItem;
     }
 }
 

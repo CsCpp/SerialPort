@@ -36,49 +36,21 @@ namespace SerialPortC
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            try
-            {
-                serialPort.PortName = cBoxCOMPORT.Text;
-                serialPort.BaudRate = Convert.ToInt32(cBoxBAUDRATE.Text);
-                serialPort.DataBits = Convert.ToInt32(cBoxDATABITS.Text);
-                serialPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), cBoxSTOPBITS.Text);
-                serialPort.Parity = (Parity)Enum.Parse(typeof(Parity), cBoxPARITYBITS.Text);
-
-                serialPort.Open();
-             
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                return;
-            }
-
-            progressBar1.Value = 100;
-            cBoxCOMPORT.Enabled = false;
-            cBoxBAUDRATE.Enabled = false;
-            cBoxDATABITS.Enabled = false;
-            cBoxPARITYBITS.Enabled = false;
-            cBoxSTOPBITS.Enabled = false;
-
-            btnCLOSE.Enabled = true;
-            btnSend.Enabled = true;
-            btnOpen.Enabled = false;
-            chBoxUsingButton.Enabled = true;
-            chBoxUsingEnter.Checked = true;
-            chBoxWriteLine.Checked = true;
-
-            lblStatusCom.Text = "ON";
-            lblStatusCom.BackColor = Color.Green;
+            ComPortOpen();
         }
 
         private void btnCLOSE_Click(object sender, EventArgs e)
+        {
+            ComPortClose();
+        }
+
+        private void ComPortClose()
         {
             if (serialPort.IsOpen)
             {
                 serialPort.Close();
                 progressBar1.Value = 0;
-              
+
                 cBoxCOMPORT.Enabled = true;
                 cBoxBAUDRATE.Enabled = true;
                 cBoxDATABITS.Enabled = true;
@@ -93,7 +65,7 @@ namespace SerialPortC
                 lblStatusCom.Text = "OFF";
                 lblStatusCom.BackColor = Color.Red;
             }
-            
+
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -212,6 +184,53 @@ namespace SerialPortC
             int dataINLength = dataIN.Length;
             lbDataINLength.Text = string.Format("{0:00}", dataINLength);
             tBoxDataIN.Text += dataIN.ToString();
+        }
+
+        private void cOMОткрытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ComPortOpen();
+        }
+        private void ComPortOpen()
+        {
+            try
+            {
+                serialPort.PortName = cBoxCOMPORT.Text;
+                serialPort.BaudRate = Convert.ToInt32(cBoxBAUDRATE.Text);
+                serialPort.DataBits = Convert.ToInt32(cBoxDATABITS.Text);
+                serialPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), cBoxSTOPBITS.Text);
+                serialPort.Parity = (Parity)Enum.Parse(typeof(Parity), cBoxPARITYBITS.Text);
+
+                serialPort.Open();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+            }
+
+            progressBar1.Value = 100;
+            cBoxCOMPORT.Enabled = false;
+            cBoxBAUDRATE.Enabled = false;
+            cBoxDATABITS.Enabled = false;
+            cBoxPARITYBITS.Enabled = false;
+            cBoxSTOPBITS.Enabled = false;
+
+            btnCLOSE.Enabled = true;
+            btnSend.Enabled = true;
+            btnOpen.Enabled = false;
+            chBoxUsingButton.Enabled = true;
+            chBoxUsingEnter.Checked = true;
+            chBoxWriteLine.Checked = true;
+
+            lblStatusCom.Text = "ON";
+            lblStatusCom.BackColor = Color.Green;
+        }
+
+        private void cOMЗакрытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ComPortClose();
         }
     }
 }

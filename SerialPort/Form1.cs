@@ -37,6 +37,7 @@ namespace SerialPortC
         private void btnOpen_Click(object sender, EventArgs e)
         {
             ComPortOpen();
+            
         }
 
         private void btnCLOSE_Click(object sender, EventArgs e)
@@ -226,6 +227,10 @@ namespace SerialPortC
 
             lblStatusCom.Text = "ON";
             lblStatusCom.BackColor = Color.Green;
+           
+            Form2 newForm = new Form2();
+            newForm.ShowDialog();
+            
         }
 
         private void cOMЗакрытьToolStripMenuItem_Click(object sender, EventArgs e)

@@ -51,22 +51,22 @@
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.инфаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMОткрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMЗакрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.очиститьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.инфаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tBoxDataOut = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnClearData = new System.Windows.Forms.Button();
-            this.btnSend = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.chBoxUsingButton = new System.Windows.Forms.CheckBox();
-            this.chBoxUsingEnter = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.chBoxWriteLine = new System.Windows.Forms.CheckBox();
             this.chBoxWrite = new System.Windows.Forms.CheckBox();
+            this.chBoxWriteLine = new System.Windows.Forms.CheckBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.chBoxUsingEnter = new System.Windows.Forms.CheckBox();
+            this.chBoxUsingButton = new System.Windows.Forms.CheckBox();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.btnClearData = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.lblDataOutLength = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -79,8 +79,8 @@
             this.groupBox8.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.SuspendLayout();
@@ -321,7 +321,7 @@
             this.инфаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(659, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(676, 28);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -333,6 +333,12 @@
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.выходToolStripMenuItem.Text = "Выход";
+            // 
             // настройкиToolStripMenuItem
             // 
             this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -343,37 +349,31 @@
             this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.настройкиToolStripMenuItem.Text = "Настройки";
             // 
-            // инфаToolStripMenuItem
-            // 
-            this.инфаToolStripMenuItem.Name = "инфаToolStripMenuItem";
-            this.инфаToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
-            this.инфаToolStripMenuItem.Text = "Инфа";
-            // 
             // cOMОткрытьToolStripMenuItem
             // 
             this.cOMОткрытьToolStripMenuItem.Name = "cOMОткрытьToolStripMenuItem";
-            this.cOMОткрытьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cOMОткрытьToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.cOMОткрытьToolStripMenuItem.Text = "COM открыть";
             this.cOMОткрытьToolStripMenuItem.Click += new System.EventHandler(this.cOMОткрытьToolStripMenuItem_Click);
             // 
             // cOMЗакрытьToolStripMenuItem
             // 
             this.cOMЗакрытьToolStripMenuItem.Name = "cOMЗакрытьToolStripMenuItem";
-            this.cOMЗакрытьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cOMЗакрытьToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.cOMЗакрытьToolStripMenuItem.Text = "COM Закрыть";
             this.cOMЗакрытьToolStripMenuItem.Click += new System.EventHandler(this.cOMЗакрытьToolStripMenuItem_Click);
             // 
             // очиститьToolStripMenuItem
             // 
             this.очиститьToolStripMenuItem.Name = "очиститьToolStripMenuItem";
-            this.очиститьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.очиститьToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.очиститьToolStripMenuItem.Text = "Очистить";
             // 
-            // выходToolStripMenuItem
+            // инфаToolStripMenuItem
             // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.выходToolStripMenuItem.Text = "Выход";
+            this.инфаToolStripMenuItem.Name = "инфаToolStripMenuItem";
+            this.инфаToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
+            this.инфаToolStripMenuItem.Text = "Инфа";
             // 
             // tBoxDataOut
             // 
@@ -401,60 +401,6 @@
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             // 
-            // btnClearData
-            // 
-            this.btnClearData.Location = new System.Drawing.Point(6, 51);
-            this.btnClearData.Name = "btnClearData";
-            this.btnClearData.Size = new System.Drawing.Size(86, 24);
-            this.btnClearData.TabIndex = 5;
-            this.btnClearData.Text = "Очистить";
-            this.btnClearData.UseVisualStyleBackColor = true;
-            this.btnClearData.Click += new System.EventHandler(this.btnClearData_Click);
-            // 
-            // btnSend
-            // 
-            this.btnSend.Enabled = false;
-            this.btnSend.Location = new System.Drawing.Point(6, 21);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(86, 25);
-            this.btnSend.TabIndex = 3;
-            this.btnSend.Text = "Отправить";
-            this.btnSend.UseVisualStyleBackColor = true;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.chBoxUsingEnter);
-            this.groupBox5.Controls.Add(this.chBoxUsingButton);
-            this.groupBox5.Location = new System.Drawing.Point(98, 9);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(110, 75);
-            this.groupBox5.TabIndex = 6;
-            this.groupBox5.TabStop = false;
-            // 
-            // chBoxUsingButton
-            // 
-            this.chBoxUsingButton.AutoSize = true;
-            this.chBoxUsingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chBoxUsingButton.Location = new System.Drawing.Point(6, 17);
-            this.chBoxUsingButton.Name = "chBoxUsingButton";
-            this.chBoxUsingButton.Size = new System.Drawing.Size(104, 20);
-            this.chBoxUsingButton.TabIndex = 12;
-            this.chBoxUsingButton.Text = "Using Button";
-            this.chBoxUsingButton.UseVisualStyleBackColor = true;
-            this.chBoxUsingButton.CheckedChanged += new System.EventHandler(this.chBoxUsingButton_CheckedChanged);
-            // 
-            // chBoxUsingEnter
-            // 
-            this.chBoxUsingEnter.AutoSize = true;
-            this.chBoxUsingEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chBoxUsingEnter.Location = new System.Drawing.Point(6, 46);
-            this.chBoxUsingEnter.Name = "chBoxUsingEnter";
-            this.chBoxUsingEnter.Size = new System.Drawing.Size(98, 20);
-            this.chBoxUsingEnter.TabIndex = 13;
-            this.chBoxUsingEnter.Text = "Using Enter";
-            this.chBoxUsingEnter.UseVisualStyleBackColor = true;
-            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.chBoxWrite);
@@ -464,6 +410,18 @@
             this.groupBox6.Size = new System.Drawing.Size(111, 75);
             this.groupBox6.TabIndex = 14;
             this.groupBox6.TabStop = false;
+            // 
+            // chBoxWrite
+            // 
+            this.chBoxWrite.AutoSize = true;
+            this.chBoxWrite.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.chBoxWrite.Location = new System.Drawing.Point(0, 46);
+            this.chBoxWrite.Name = "chBoxWrite";
+            this.chBoxWrite.Size = new System.Drawing.Size(60, 20);
+            this.chBoxWrite.TabIndex = 13;
+            this.chBoxWrite.Text = "Write";
+            this.chBoxWrite.UseVisualStyleBackColor = true;
+            this.chBoxWrite.CheckedChanged += new System.EventHandler(this.chBoxWrite_CheckedChanged);
             // 
             // chBoxWriteLine
             // 
@@ -477,17 +435,59 @@
             this.chBoxWriteLine.UseVisualStyleBackColor = true;
             this.chBoxWriteLine.CheckedChanged += new System.EventHandler(this.chBoxWriteLine_CheckedChanged);
             // 
-            // chBoxWrite
+            // groupBox5
             // 
-            this.chBoxWrite.AutoSize = true;
-            this.chBoxWrite.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chBoxWrite.Location = new System.Drawing.Point(0, 46);
-            this.chBoxWrite.Name = "chBoxWrite";
-            this.chBoxWrite.Size = new System.Drawing.Size(60, 20);
-            this.chBoxWrite.TabIndex = 13;
-            this.chBoxWrite.Text = "Write";
-            this.chBoxWrite.UseVisualStyleBackColor = true;
-            this.chBoxWrite.CheckedChanged += new System.EventHandler(this.chBoxWrite_CheckedChanged);
+            this.groupBox5.Controls.Add(this.chBoxUsingEnter);
+            this.groupBox5.Controls.Add(this.chBoxUsingButton);
+            this.groupBox5.Location = new System.Drawing.Point(98, 9);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(110, 75);
+            this.groupBox5.TabIndex = 6;
+            this.groupBox5.TabStop = false;
+            // 
+            // chBoxUsingEnter
+            // 
+            this.chBoxUsingEnter.AutoSize = true;
+            this.chBoxUsingEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.chBoxUsingEnter.Location = new System.Drawing.Point(6, 46);
+            this.chBoxUsingEnter.Name = "chBoxUsingEnter";
+            this.chBoxUsingEnter.Size = new System.Drawing.Size(98, 20);
+            this.chBoxUsingEnter.TabIndex = 13;
+            this.chBoxUsingEnter.Text = "Using Enter";
+            this.chBoxUsingEnter.UseVisualStyleBackColor = true;
+            // 
+            // chBoxUsingButton
+            // 
+            this.chBoxUsingButton.AutoSize = true;
+            this.chBoxUsingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.chBoxUsingButton.Location = new System.Drawing.Point(6, 17);
+            this.chBoxUsingButton.Name = "chBoxUsingButton";
+            this.chBoxUsingButton.Size = new System.Drawing.Size(104, 20);
+            this.chBoxUsingButton.TabIndex = 12;
+            this.chBoxUsingButton.Text = "Using Button";
+            this.chBoxUsingButton.UseVisualStyleBackColor = true;
+            this.chBoxUsingButton.CheckedChanged += new System.EventHandler(this.chBoxUsingButton_CheckedChanged);
+            // 
+            // btnSend
+            // 
+            this.btnSend.Enabled = false;
+            this.btnSend.Location = new System.Drawing.Point(6, 21);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(86, 25);
+            this.btnSend.TabIndex = 3;
+            this.btnSend.Text = "Отправить";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // btnClearData
+            // 
+            this.btnClearData.Location = new System.Drawing.Point(6, 51);
+            this.btnClearData.Name = "btnClearData";
+            this.btnClearData.Size = new System.Drawing.Size(86, 24);
+            this.btnClearData.TabIndex = 5;
+            this.btnClearData.Text = "Очистить";
+            this.btnClearData.UseVisualStyleBackColor = true;
+            this.btnClearData.Click += new System.EventHandler(this.btnClearData_Click);
             // 
             // label6
             // 
@@ -533,7 +533,7 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.tBoxDataOut);
-            this.groupBox3.Location = new System.Drawing.Point(310, 282);
+            this.groupBox3.Location = new System.Drawing.Point(310, 271);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(344, 162);
             this.groupBox3.TabIndex = 5;
@@ -542,23 +542,25 @@
             // 
             // tBoxDataIN
             // 
+            this.tBoxDataIN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tBoxDataIN.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.tBoxDataIN.Font = new System.Drawing.Font("MS Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tBoxDataIN.ForeColor = System.Drawing.Color.Lime;
-            this.tBoxDataIN.Location = new System.Drawing.Point(0, 12);
+            this.tBoxDataIN.Location = new System.Drawing.Point(6, 15);
             this.tBoxDataIN.Multiline = true;
             this.tBoxDataIN.Name = "tBoxDataIN";
             this.tBoxDataIN.ReadOnly = true;
             this.tBoxDataIN.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tBoxDataIN.Size = new System.Drawing.Size(334, 218);
+            this.tBoxDataIN.Size = new System.Drawing.Size(338, 219);
             this.tBoxDataIN.TabIndex = 7;
             // 
             // groupBox9
             // 
+            this.groupBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox9.Controls.Add(this.tBoxDataIN);
             this.groupBox9.Location = new System.Drawing.Point(310, 46);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(340, 185);
+            this.groupBox9.Size = new System.Drawing.Size(340, 246);
             this.groupBox9.TabIndex = 6;
             this.groupBox9.TabStop = false;
             // 
@@ -566,7 +568,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 446);
+            this.ClientSize = new System.Drawing.Size(676, 443);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
@@ -574,6 +576,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "COM Port терминал";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -584,10 +587,10 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox9.ResumeLayout(false);

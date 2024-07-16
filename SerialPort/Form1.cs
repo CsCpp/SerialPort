@@ -15,6 +15,7 @@ namespace SerialPortC
     {
         string dataOUT;
         string dataIN;
+       public Form2 newForm;
         public Form1()
         {
             InitializeComponent();
@@ -185,6 +186,8 @@ namespace SerialPortC
             int dataINLength = dataIN.Length;
             lbDataINLength.Text = string.Format("{0:00}", dataINLength);
             tBoxDataIN.Text += dataIN.ToString();
+            newForm.dataIN += dataIN.ToString();
+            newForm.FormUpdate();
         }
 
         private void cOMОткрытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -228,8 +231,9 @@ namespace SerialPortC
             lblStatusCom.Text = "ON";
             lblStatusCom.BackColor = Color.Green;
            
-            Form2 newForm = new Form2();
-            newForm.ShowDialog();
+       
+             newForm = new Form2(this);
+             newForm.Show();
             
         }
 

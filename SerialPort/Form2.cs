@@ -13,7 +13,6 @@ namespace SerialPortC
     public partial class Form2 : Form
     {
         public Form1 form1;
-        public string dataIN;
         public Form2()
         {
             InitializeComponent();
@@ -27,24 +26,48 @@ namespace SerialPortC
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            form1.Visible = false;
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
           //form1.Close();
             form1.Visible = true;
+            form1.ComPortClose();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+     
+        
+        public void FormUpdate(string str)
+        {
+            tBoxDataIN.Text += str;
+        }
+
+        private void comPortToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (form1.Visible == true) { form1.Visible = false; }
             else { form1.Visible = true; }
-            
         }
-        public void FormUpdate()
+
+        private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tBoxDataIN.Text += dataIN.ToString();
+            this.Close();
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnClearData_Click(object sender, EventArgs e)
+        {
+            tBoxDataIN.Text = "";
+            tBoxDataOut.Text = "";
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            form1.sendDataEnter(tBoxDataOut.Text);
         }
     }
 }

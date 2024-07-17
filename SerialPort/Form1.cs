@@ -41,50 +41,41 @@ namespace SerialPortC
             
         }
 
-        private void btnCLOSE_Click(object sender, EventArgs e)
-        {
-            ComPortClose();
-        }
 
-        private void ComPortClose()
+
+        public void ComPortClose()
         {
             if (serialPort.IsOpen)
             {
                 serialPort.Close();
-                progressBar1.Value = 0;
+             
 
                 cBoxCOMPORT.Enabled = true;
                 cBoxBAUDRATE.Enabled = true;
                 cBoxDATABITS.Enabled = true;
                 cBoxPARITYBITS.Enabled = true;
                 cBoxSTOPBITS.Enabled = true;
-                btnCLOSE.Enabled = false;
-                btnSend.Enabled = false;
+           
                 btnOpen.Enabled = true;
                 chBoxUsingButton.Enabled = false;
 
 
-                lblStatusCom.Text = "OFF";
-                lblStatusCom.BackColor = Color.Red;
             }
 
         }
 
-        private void btnSend_Click(object sender, EventArgs e)
-        {
-            sendDataEnter();
-        }
+ 
 
-        private void sendDataEnter()
+        public void sendDataEnter(string str)
         {
             if (serialPort.IsOpen)
             {
 
                 try
                 {
-                    dataOUT = DateTime.Now + " :  " + tBoxDataOut.Text;
-                    if (chBoxWriteLine.Checked) { serialPort.WriteLine(dataOUT); }
-                    else { serialPort.Write(dataOUT); }
+         //           dataOUT = DateTime.Now + " :  " + tBoxDataOut.Text; 
+                    if (chBoxWriteLine.Checked) { serialPort.WriteLine(DateTime.Now + " : " + str); }
+                    else { serialPort.Write(DateTime.Now + " : " + str); }
                    
                 }
                 catch (Exception ex)
@@ -119,40 +110,23 @@ namespace SerialPortC
             }
         }
 
-        private void btnClearData_Click(object sender, EventArgs e)
-        {
-            tBoxDataOut.Text = "";
-            tBoxDataIN.Text = "";
-        }
-
         private void tBoxDataOut_TextChanged(object sender, EventArgs e)
         {
-            int dataOUTLength=tBoxDataOut.TextLength;
-            lblDataOutLength.Text = string.Format("{0:00}", dataOUTLength);
+      //      int dataOUTLength=tBoxDataOut.TextLength;
+     //       lblDataOutLength.Text = string.Format("{0:00}", dataOUTLength);
 
             if(chBoxUsingEnter.Checked)
             {
-                tBoxDataOut.Text = tBoxDataOut.Text.Replace(Environment.NewLine, "");
+         //       tBoxDataOut.Text = tBoxDataOut.Text.Replace(Environment.NewLine, "");
             }
         }
 
-        private void chBoxUsingButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if(chBoxUsingButton.Checked)
-            {
-                btnSend.Enabled = false;
-            }
-            else
-            {
-                btnSend.Enabled = true;
-            }
-        }
 
         private void tBoxDataOut_KeyDown(object sender, KeyEventArgs e)
         {
             if (chBoxUsingEnter.Checked && e.KeyCode == Keys.Enter)
             {
-                sendDataEnter();
+ //               sendDataEnter();
             }
         }
 
@@ -184,10 +158,10 @@ namespace SerialPortC
         private void ShowData(object sender, EventArgs e)
         {
             int dataINLength = dataIN.Length;
-            lbDataINLength.Text = string.Format("{0:00}", dataINLength);
-            tBoxDataIN.Text += dataIN.ToString();
-            newForm.dataIN += dataIN.ToString();
-            newForm.FormUpdate();
+       //     lbDataINLength.Text = string.Format("{0:00}", dataINLength);
+       //     tBoxDataIN.Text += dataIN.ToString();
+           
+            newForm.FormUpdate(dataIN.ToString());
         }
 
         private void cOMОткрытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -214,22 +188,20 @@ namespace SerialPortC
                 return;
             }
 
-            progressBar1.Value = 100;
+         
             cBoxCOMPORT.Enabled = false;
             cBoxBAUDRATE.Enabled = false;
             cBoxDATABITS.Enabled = false;
             cBoxPARITYBITS.Enabled = false;
             cBoxSTOPBITS.Enabled = false;
 
-            btnCLOSE.Enabled = true;
-            btnSend.Enabled = true;
+         
             btnOpen.Enabled = false;
             chBoxUsingButton.Enabled = true;
             chBoxUsingEnter.Checked = true;
             chBoxWriteLine.Checked = true;
 
-            lblStatusCom.Text = "ON";
-            lblStatusCom.BackColor = Color.Green;
+       
            
        
              newForm = new Form2(this);
@@ -240,6 +212,11 @@ namespace SerialPortC
         private void cOMЗакрытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ComPortClose();
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

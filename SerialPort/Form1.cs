@@ -19,6 +19,7 @@ namespace SerialPortC
         public Form1()
         {
             InitializeComponent();
+          
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -29,10 +30,10 @@ namespace SerialPortC
             serialPort.DtrEnable = false;
             chBoxRtsEnable.Checked=false;
             serialPort.RtsEnable = false;
-            chBoxUsingButton.Enabled = false;
+         
 
             chBoxWriteLine.Checked = false;
-            chBoxWrite.Checked = true;
+           
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -57,7 +58,7 @@ namespace SerialPortC
                 cBoxSTOPBITS.Enabled = true;
            
                 btnOpen.Enabled = true;
-                chBoxUsingButton.Enabled = false;
+              
 
 
             }
@@ -110,43 +111,13 @@ namespace SerialPortC
             }
         }
 
-        private void tBoxDataOut_TextChanged(object sender, EventArgs e)
-        {
-      //      int dataOUTLength=tBoxDataOut.TextLength;
-     //       lblDataOutLength.Text = string.Format("{0:00}", dataOUTLength);
-
-            if(chBoxUsingEnter.Checked)
-            {
-         //       tBoxDataOut.Text = tBoxDataOut.Text.Replace(Environment.NewLine, "");
-            }
-        }
 
 
-        private void tBoxDataOut_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (chBoxUsingEnter.Checked && e.KeyCode == Keys.Enter)
-            {
- //               sendDataEnter();
-            }
-        }
 
-        private void chBoxWriteLine_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chBoxWriteLine.Checked)
-            {
-                chBoxWrite.Checked = false;
-            }
-            else { chBoxWrite.Checked = true; }
-        }
 
-        private void chBoxWrite_CheckedChanged(object sender, EventArgs e)
-        {
-            if(chBoxWrite.Checked)
-            {
-                chBoxWriteLine.Checked = false;
-            }
-            else { chBoxWriteLine.Checked = true; }
-        }
+    
+
+ 
 
 
         private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -197,8 +168,7 @@ namespace SerialPortC
 
          
             btnOpen.Enabled = false;
-            chBoxUsingButton.Enabled = true;
-            chBoxUsingEnter.Checked = true;
+           
             chBoxWriteLine.Checked = true;
 
        

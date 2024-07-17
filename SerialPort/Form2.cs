@@ -69,5 +69,14 @@ namespace SerialPortC
         {
             form1.sendDataEnter(tBoxDataOut.Text);
         }
+
+        private void tBoxDataOut_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                form1.sendDataEnter(tBoxDataOut.Text);
+                tBoxDataOut.Text = "";
+            }
+        }
     }
 }

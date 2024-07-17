@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.chBoxUsingEnter = new System.Windows.Forms.CheckBox();
-            this.chBoxUsingButton = new System.Windows.Forms.CheckBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.chBoxWrite = new System.Windows.Forms.CheckBox();
             this.chBoxWriteLine = new System.Windows.Forms.CheckBox();
             this.btnOpen = new System.Windows.Forms.Button();
             this.chBoxRtsEnable = new System.Windows.Forms.CheckBox();
@@ -59,15 +54,12 @@
             this.очиститьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.инфаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Controls.Add(this.groupBox6);
+            this.groupBox1.Controls.Add(this.chBoxWriteLine);
             this.groupBox1.Controls.Add(this.btnOpen);
             this.groupBox1.Controls.Add(this.chBoxRtsEnable);
             this.groupBox1.Controls.Add(this.chBoxDtrEnable);
@@ -83,82 +75,27 @@
             this.groupBox1.Controls.Add(this.cBoxCOMPORT);
             this.groupBox1.Location = new System.Drawing.Point(13, 46);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(282, 374);
+            this.groupBox1.Size = new System.Drawing.Size(227, 292);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки SerialPorts";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.chBoxUsingEnter);
-            this.groupBox5.Controls.Add(this.chBoxUsingButton);
-            this.groupBox5.Location = new System.Drawing.Point(154, 215);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(110, 75);
-            this.groupBox5.TabIndex = 6;
-            this.groupBox5.TabStop = false;
-            // 
-            // chBoxUsingEnter
-            // 
-            this.chBoxUsingEnter.AutoSize = true;
-            this.chBoxUsingEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chBoxUsingEnter.Location = new System.Drawing.Point(6, 46);
-            this.chBoxUsingEnter.Name = "chBoxUsingEnter";
-            this.chBoxUsingEnter.Size = new System.Drawing.Size(98, 20);
-            this.chBoxUsingEnter.TabIndex = 13;
-            this.chBoxUsingEnter.Text = "Using Enter";
-            this.chBoxUsingEnter.UseVisualStyleBackColor = true;
-            // 
-            // chBoxUsingButton
-            // 
-            this.chBoxUsingButton.AutoSize = true;
-            this.chBoxUsingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chBoxUsingButton.Location = new System.Drawing.Point(6, 17);
-            this.chBoxUsingButton.Name = "chBoxUsingButton";
-            this.chBoxUsingButton.Size = new System.Drawing.Size(104, 20);
-            this.chBoxUsingButton.TabIndex = 12;
-            this.chBoxUsingButton.Text = "Using Button";
-            this.chBoxUsingButton.UseVisualStyleBackColor = true;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.chBoxWrite);
-            this.groupBox6.Controls.Add(this.chBoxWriteLine);
-            this.groupBox6.Location = new System.Drawing.Point(153, 289);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(110, 75);
-            this.groupBox6.TabIndex = 14;
-            this.groupBox6.TabStop = false;
-            // 
-            // chBoxWrite
-            // 
-            this.chBoxWrite.AutoSize = true;
-            this.chBoxWrite.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chBoxWrite.Location = new System.Drawing.Point(6, 50);
-            this.chBoxWrite.Name = "chBoxWrite";
-            this.chBoxWrite.Size = new System.Drawing.Size(60, 20);
-            this.chBoxWrite.TabIndex = 13;
-            this.chBoxWrite.Text = "Write";
-            this.chBoxWrite.UseVisualStyleBackColor = true;
-            this.chBoxWrite.CheckedChanged += new System.EventHandler(this.chBoxWrite_CheckedChanged);
             // 
             // chBoxWriteLine
             // 
             this.chBoxWriteLine.AutoSize = true;
             this.chBoxWriteLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chBoxWriteLine.Location = new System.Drawing.Point(6, 21);
+            this.chBoxWriteLine.Location = new System.Drawing.Point(133, 189);
             this.chBoxWriteLine.Name = "chBoxWriteLine";
             this.chBoxWriteLine.Size = new System.Drawing.Size(88, 20);
             this.chBoxWriteLine.TabIndex = 12;
             this.chBoxWriteLine.Text = "Write Line";
             this.chBoxWriteLine.UseVisualStyleBackColor = true;
-            this.chBoxWriteLine.CheckedChanged += new System.EventHandler(this.chBoxWriteLine_CheckedChanged);
             // 
             // btnOpen
             // 
             this.btnOpen.Location = new System.Drawing.Point(11, 232);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(118, 132);
+            this.btnOpen.Size = new System.Drawing.Size(210, 50);
             this.btnOpen.TabIndex = 0;
             this.btnOpen.Text = "Открыть";
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -168,11 +105,11 @@
             // 
             this.chBoxRtsEnable.AutoSize = true;
             this.chBoxRtsEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chBoxRtsEnable.Location = new System.Drawing.Point(154, 189);
+            this.chBoxRtsEnable.Location = new System.Drawing.Point(68, 189);
             this.chBoxRtsEnable.Name = "chBoxRtsEnable";
-            this.chBoxRtsEnable.Size = new System.Drawing.Size(113, 20);
+            this.chBoxRtsEnable.Size = new System.Drawing.Size(60, 20);
             this.chBoxRtsEnable.TabIndex = 11;
-            this.chBoxRtsEnable.Text = "RTS ENABLE";
+            this.chBoxRtsEnable.Text = "RTS ";
             this.chBoxRtsEnable.UseVisualStyleBackColor = true;
             this.chBoxRtsEnable.CheckedChanged += new System.EventHandler(this.chBoxRtsEnable_CheckedChanged);
             // 
@@ -180,18 +117,18 @@
             // 
             this.chBoxDtrEnable.AutoSize = true;
             this.chBoxDtrEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chBoxDtrEnable.Location = new System.Drawing.Point(24, 189);
+            this.chBoxDtrEnable.Location = new System.Drawing.Point(8, 189);
             this.chBoxDtrEnable.Name = "chBoxDtrEnable";
-            this.chBoxDtrEnable.Size = new System.Drawing.Size(114, 20);
+            this.chBoxDtrEnable.Size = new System.Drawing.Size(58, 20);
             this.chBoxDtrEnable.TabIndex = 10;
-            this.chBoxDtrEnable.Text = "DTR ENABLE";
+            this.chBoxDtrEnable.Text = "DTR";
             this.chBoxDtrEnable.UseVisualStyleBackColor = true;
             this.chBoxDtrEnable.CheckedChanged += new System.EventHandler(this.chBoxDtrEnable_CheckedChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 149);
+            this.label5.Location = new System.Drawing.Point(13, 149);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 16);
             this.label5.TabIndex = 9;
@@ -200,7 +137,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 119);
+            this.label4.Location = new System.Drawing.Point(13, 119);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 16);
             this.label4.TabIndex = 8;
@@ -209,7 +146,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 89);
+            this.label3.Location = new System.Drawing.Point(13, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 16);
             this.label3.TabIndex = 7;
@@ -218,7 +155,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 59);
+            this.label2.Location = new System.Drawing.Point(13, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 16);
             this.label2.TabIndex = 6;
@@ -227,7 +164,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 28);
+            this.label1.Location = new System.Drawing.Point(13, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 16);
             this.label1.TabIndex = 5;
@@ -242,7 +179,7 @@
             "Even"});
             this.cBoxPARITYBITS.Location = new System.Drawing.Point(123, 141);
             this.cBoxPARITYBITS.Name = "cBoxPARITYBITS";
-            this.cBoxPARITYBITS.Size = new System.Drawing.Size(140, 24);
+            this.cBoxPARITYBITS.Size = new System.Drawing.Size(79, 24);
             this.cBoxPARITYBITS.TabIndex = 4;
             this.cBoxPARITYBITS.Text = "None";
             // 
@@ -254,7 +191,7 @@
             "Two"});
             this.cBoxSTOPBITS.Location = new System.Drawing.Point(123, 111);
             this.cBoxSTOPBITS.Name = "cBoxSTOPBITS";
-            this.cBoxSTOPBITS.Size = new System.Drawing.Size(140, 24);
+            this.cBoxSTOPBITS.Size = new System.Drawing.Size(79, 24);
             this.cBoxSTOPBITS.TabIndex = 3;
             this.cBoxSTOPBITS.Text = "One";
             // 
@@ -267,7 +204,7 @@
             "8"});
             this.cBoxDATABITS.Location = new System.Drawing.Point(123, 81);
             this.cBoxDATABITS.Name = "cBoxDATABITS";
-            this.cBoxDATABITS.Size = new System.Drawing.Size(140, 24);
+            this.cBoxDATABITS.Size = new System.Drawing.Size(79, 24);
             this.cBoxDATABITS.TabIndex = 2;
             this.cBoxDATABITS.Text = "8";
             // 
@@ -290,7 +227,7 @@
             "128000"});
             this.cBoxBAUDRATE.Location = new System.Drawing.Point(123, 51);
             this.cBoxBAUDRATE.Name = "cBoxBAUDRATE";
-            this.cBoxBAUDRATE.Size = new System.Drawing.Size(140, 24);
+            this.cBoxBAUDRATE.Size = new System.Drawing.Size(79, 24);
             this.cBoxBAUDRATE.TabIndex = 1;
             this.cBoxBAUDRATE.Text = "9600";
             // 
@@ -299,7 +236,7 @@
             this.cBoxCOMPORT.FormattingEnabled = true;
             this.cBoxCOMPORT.Location = new System.Drawing.Point(123, 21);
             this.cBoxCOMPORT.Name = "cBoxCOMPORT";
-            this.cBoxCOMPORT.Size = new System.Drawing.Size(140, 24);
+            this.cBoxCOMPORT.Size = new System.Drawing.Size(79, 24);
             this.cBoxCOMPORT.TabIndex = 0;
             // 
             // serialPort
@@ -315,7 +252,7 @@
             this.инфаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(309, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(246, 28);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -330,7 +267,7 @@
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -374,7 +311,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 429);
+            this.ClientSize = new System.Drawing.Size(246, 348);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -382,15 +319,11 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "COM Port терминал";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -423,12 +356,7 @@
         private System.Windows.Forms.ToolStripMenuItem инфаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem очиститьToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.CheckBox chBoxWrite;
         private System.Windows.Forms.CheckBox chBoxWriteLine;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.CheckBox chBoxUsingEnter;
-        private System.Windows.Forms.CheckBox chBoxUsingButton;
     }
 }
 

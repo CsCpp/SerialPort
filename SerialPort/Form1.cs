@@ -65,8 +65,8 @@ namespace SerialPortC
 
         }
 
- 
 
+        //  ----------------------   Отправка данных -----------------------------
         public void sendDataEnter(string str)
         {
             if (serialPort.IsOpen)
@@ -86,43 +86,12 @@ namespace SerialPortC
             }
         }
 
-        private void chBoxDtrEnable_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chBoxDtrEnable.Checked)
-            {
-                serialPort.DtrEnable= true;
-                MessageBox.Show("DRT Enable", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                serialPort.DtrEnable = false;
-            }
-        }
 
-        private void chBoxRtsEnable_CheckedChanged(object sender, EventArgs e)
-        {
-            if(chBoxRtsEnable.Checked)
-            {  serialPort.RtsEnable= true;
-                MessageBox.Show("RST Enable", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                serialPort.RtsEnable = false;
-            }
-        }
-
-
-
-
-
-    
-
- 
-
+        //  ----------------------   Получение данных -----------------------------
 
         private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            dataIN = serialPort.ReadExisting();
+            dataIN =serialPort.ReadExisting();
             this.Invoke(new EventHandler(ShowData));
         }
 
@@ -188,5 +157,35 @@ namespace SerialPortC
         {
             Close();
         }
+
+
+
+        private void chBoxDtrEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chBoxDtrEnable.Checked)
+            {
+                serialPort.DtrEnable = true;
+                MessageBox.Show("DRT Enable", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                serialPort.DtrEnable = false;
+            }
+        }
+
+        private void chBoxRtsEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chBoxRtsEnable.Checked)
+            {
+                serialPort.RtsEnable = true;
+                MessageBox.Show("RST Enable", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                serialPort.RtsEnable = false;
+            }
+        }
+
+
     }
 }

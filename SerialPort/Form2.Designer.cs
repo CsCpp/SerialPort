@@ -45,6 +45,10 @@
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comPortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tStComBox_appendOrOverwriteText = new System.Windows.Forms.ToolStripComboBox();
+            this.tStComboBox_writeLineOweriteText = new System.Windows.Forms.ToolStripComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -90,7 +94,7 @@
             // 
             this.tBoxDataIN.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.tBoxDataIN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tBoxDataIN.Font = new System.Drawing.Font("MS Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tBoxDataIN.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tBoxDataIN.ForeColor = System.Drawing.Color.Lime;
             this.tBoxDataIN.Location = new System.Drawing.Point(0, 0);
             this.tBoxDataIN.Multiline = true;
@@ -186,8 +190,8 @@
             // 
             this.tBoxDataOut.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.tBoxDataOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tBoxDataOut.Font = new System.Drawing.Font("MS Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tBoxDataOut.ForeColor = System.Drawing.Color.Lime;
+            this.tBoxDataOut.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tBoxDataOut.ForeColor = System.Drawing.Color.Aquamarine;
             this.tBoxDataOut.Location = new System.Drawing.Point(3, 18);
             this.tBoxDataOut.Multiline = true;
             this.tBoxDataOut.Name = "tBoxDataOut";
@@ -211,15 +215,17 @@
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сохранитьToolStripMenuItem,
+            this.toolStripSeparator1,
             this.закрытьToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // закрытьToolStripMenuItem
             // 
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.закрытьToolStripMenuItem.Text = "Закрыть";
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
@@ -228,15 +234,49 @@
             this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.comPortToolStripMenuItem});
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(98, 26);
             this.настройкиToolStripMenuItem.Text = "Настройки";
             // 
             // comPortToolStripMenuItem
             // 
             this.comPortToolStripMenuItem.Name = "comPortToolStripMenuItem";
-            this.comPortToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.comPortToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.comPortToolStripMenuItem.Text = "ComPort";
             this.comPortToolStripMenuItem.Click += new System.EventHandler(this.comPortToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            // 
+            // сохранитьToolStripMenuItem
+            // 
+            this.сохранитьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tStComBox_appendOrOverwriteText,
+            this.tStComboBox_writeLineOweriteText});
+            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            // 
+            // tStComBox_appendOrOverwriteText
+            // 
+            this.tStComBox_appendOrOverwriteText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tStComBox_appendOrOverwriteText.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.tStComBox_appendOrOverwriteText.Items.AddRange(new object[] {
+            "Append Text",
+            "Overwrite Text"});
+            this.tStComBox_appendOrOverwriteText.Name = "tStComBox_appendOrOverwriteText";
+            this.tStComBox_appendOrOverwriteText.Size = new System.Drawing.Size(121, 28);
+            // 
+            // tStComboBox_writeLineOweriteText
+            // 
+            this.tStComboBox_writeLineOweriteText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tStComboBox_writeLineOweriteText.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.tStComboBox_writeLineOweriteText.Items.AddRange(new object[] {
+            "WriteLine",
+            "Write"});
+            this.tStComboBox_writeLineOweriteText.Name = "tStComboBox_writeLineOweriteText";
+            this.tStComboBox_writeLineOweriteText.Size = new System.Drawing.Size(121, 28);
             // 
             // Form2
             // 
@@ -287,5 +327,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblDataOutLength;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox tStComBox_appendOrOverwriteText;
+        private System.Windows.Forms.ToolStripComboBox tStComboBox_writeLineOweriteText;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

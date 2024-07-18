@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace SerialPortC
 {
     public partial class Form2 : Form
     {
+        StreamWriter streamWriter;
+        string pathFile = @"C:\1.txt";
         public Form1 form1;
         public Form2()
         {
@@ -41,6 +44,17 @@ namespace SerialPortC
         public void FormUpdate(string str)
         {
             tBoxDataIN.Text += str;
+            try
+            {
+                streamWriter = new StreamWriter(pathFile, true);
+                streamWriter.WriteLine(str);
+                streamWriter.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void comPortToolStripMenuItem_Click(object sender, EventArgs e)

@@ -42,13 +42,13 @@
             this.tBoxDataOut = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comPortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tStComBox_appendOrOverwriteText = new System.Windows.Forms.ToolStripComboBox();
             this.tStComboBox_writeLineOweriteText = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comPortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -65,15 +65,18 @@
             this.groupBox1.Controls.Add(this.menuStrip1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(582, 353);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(436, 324);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 46);
+            this.splitContainer1.Location = new System.Drawing.Point(2, 39);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -86,8 +89,9 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox3);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer1.Size = new System.Drawing.Size(576, 304);
-            this.splitContainer1.SplitterDistance = 174;
+            this.splitContainer1.Size = new System.Drawing.Size(432, 283);
+            this.splitContainer1.SplitterDistance = 161;
+            this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 10;
             // 
             // tBoxDataIN
@@ -97,11 +101,12 @@
             this.tBoxDataIN.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tBoxDataIN.ForeColor = System.Drawing.Color.Lime;
             this.tBoxDataIN.Location = new System.Drawing.Point(0, 0);
+            this.tBoxDataIN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tBoxDataIN.Multiline = true;
             this.tBoxDataIN.Name = "tBoxDataIN";
             this.tBoxDataIN.ReadOnly = true;
             this.tBoxDataIN.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tBoxDataIN.Size = new System.Drawing.Size(576, 174);
+            this.tBoxDataIN.Size = new System.Drawing.Size(432, 161);
             this.tBoxDataIN.TabIndex = 9;
             // 
             // groupBox3
@@ -113,53 +118,60 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.btnSend);
             this.groupBox3.Controls.Add(this.btnClearData);
-            this.groupBox3.Location = new System.Drawing.Point(10, 77);
+            this.groupBox3.Location = new System.Drawing.Point(6, 69);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(563, 46);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Size = new System.Drawing.Size(422, 37);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             // 
             // lbDataINLength
             // 
             this.lbDataINLength.AutoSize = true;
-            this.lbDataINLength.Location = new System.Drawing.Point(304, 20);
+            this.lbDataINLength.Location = new System.Drawing.Point(228, 16);
+            this.lbDataINLength.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDataINLength.Name = "lbDataINLength";
-            this.lbDataINLength.Size = new System.Drawing.Size(21, 16);
+            this.lbDataINLength.Size = new System.Drawing.Size(19, 13);
             this.lbDataINLength.TabIndex = 12;
             this.lbDataINLength.Text = "00";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(275, 20);
+            this.label7.Location = new System.Drawing.Point(206, 16);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(23, 16);
+            this.label7.Size = new System.Drawing.Size(21, 13);
             this.label7.TabIndex = 11;
             this.label7.Text = "IN:";
             // 
             // lblDataOutLength
             // 
             this.lblDataOutLength.AutoSize = true;
-            this.lblDataOutLength.Location = new System.Drawing.Point(223, 20);
+            this.lblDataOutLength.Location = new System.Drawing.Point(177, 16);
+            this.lblDataOutLength.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDataOutLength.Name = "lblDataOutLength";
-            this.lblDataOutLength.Size = new System.Drawing.Size(21, 16);
+            this.lblDataOutLength.Size = new System.Drawing.Size(19, 13);
             this.lblDataOutLength.TabIndex = 10;
             this.lblDataOutLength.Text = "00";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 20);
+            this.label6.Location = new System.Drawing.Point(14, 16);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(207, 16);
+            this.label6.Size = new System.Drawing.Size(166, 13);
             this.label6.TabIndex = 9;
             this.label6.Text = "Колличество символов    OUT: ";
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(337, 0);
+            this.btnSend.Location = new System.Drawing.Point(253, 0);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(112, 56);
+            this.btnSend.Size = new System.Drawing.Size(84, 46);
             this.btnSend.TabIndex = 6;
             this.btnSend.Text = "Отправить";
             this.btnSend.UseVisualStyleBackColor = true;
@@ -167,9 +179,10 @@
             // 
             // btnClearData
             // 
-            this.btnClearData.Location = new System.Drawing.Point(455, 0);
+            this.btnClearData.Location = new System.Drawing.Point(341, 0);
+            this.btnClearData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClearData.Name = "btnClearData";
-            this.btnClearData.Size = new System.Drawing.Size(108, 56);
+            this.btnClearData.Size = new System.Drawing.Size(81, 46);
             this.btnClearData.TabIndex = 7;
             this.btnClearData.Text = "Очистить";
             this.btnClearData.UseVisualStyleBackColor = true;
@@ -180,8 +193,10 @@
             this.groupBox2.Controls.Add(this.tBoxDataOut);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(576, 74);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(432, 60);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Отправить";
@@ -192,11 +207,12 @@
             this.tBoxDataOut.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tBoxDataOut.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tBoxDataOut.ForeColor = System.Drawing.Color.Aquamarine;
-            this.tBoxDataOut.Location = new System.Drawing.Point(3, 18);
+            this.tBoxDataOut.Location = new System.Drawing.Point(2, 15);
+            this.tBoxDataOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tBoxDataOut.Multiline = true;
             this.tBoxDataOut.Name = "tBoxDataOut";
             this.tBoxDataOut.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tBoxDataOut.Size = new System.Drawing.Size(570, 53);
+            this.tBoxDataOut.Size = new System.Drawing.Size(428, 43);
             this.tBoxDataOut.TabIndex = 5;
             this.tBoxDataOut.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tBoxDataOut_KeyUp);
             // 
@@ -206,9 +222,10 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
             this.настройкиToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 18);
+            this.menuStrip1.Location = new System.Drawing.Point(2, 15);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(576, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(432, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -219,35 +236,8 @@
             this.toolStripSeparator1,
             this.закрытьToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
-            // 
-            // закрытьToolStripMenuItem
-            // 
-            this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.закрытьToolStripMenuItem.Text = "Закрыть";
-            this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
-            // 
-            // настройкиToolStripMenuItem
-            // 
-            this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.comPortToolStripMenuItem});
-            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(98, 26);
-            this.настройкиToolStripMenuItem.Text = "Настройки";
-            // 
-            // comPortToolStripMenuItem
-            // 
-            this.comPortToolStripMenuItem.Name = "comPortToolStripMenuItem";
-            this.comPortToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.comPortToolStripMenuItem.Text = "ComPort";
-            this.comPortToolStripMenuItem.Click += new System.EventHandler(this.comPortToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // сохранитьToolStripMenuItem
             // 
@@ -255,7 +245,7 @@
             this.tStComBox_appendOrOverwriteText,
             this.tStComboBox_writeLineOweriteText});
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
             // tStComBox_appendOrOverwriteText
@@ -266,7 +256,7 @@
             "Append Text",
             "Overwrite Text"});
             this.tStComBox_appendOrOverwriteText.Name = "tStComBox_appendOrOverwriteText";
-            this.tStComBox_appendOrOverwriteText.Size = new System.Drawing.Size(121, 28);
+            this.tStComBox_appendOrOverwriteText.Size = new System.Drawing.Size(121, 23);
             // 
             // tStComboBox_writeLineOweriteText
             // 
@@ -276,17 +266,45 @@
             "WriteLine",
             "Write"});
             this.tStComboBox_writeLineOweriteText.Name = "tStComboBox_writeLineOweriteText";
-            this.tStComboBox_writeLineOweriteText.Size = new System.Drawing.Size(121, 28);
+            this.tStComboBox_writeLineOweriteText.Size = new System.Drawing.Size(121, 23);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(130, 6);
+            // 
+            // закрытьToolStripMenuItem
+            // 
+            this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.закрытьToolStripMenuItem.Text = "Закрыть";
+            this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
+            // 
+            // настройкиToolStripMenuItem
+            // 
+            this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.comPortToolStripMenuItem});
+            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.настройкиToolStripMenuItem.Text = "Настройки";
+            // 
+            // comPortToolStripMenuItem
+            // 
+            this.comPortToolStripMenuItem.Name = "comPortToolStripMenuItem";
+            this.comPortToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.comPortToolStripMenuItem.Text = "ComPort";
+            this.comPortToolStripMenuItem.Click += new System.EventHandler(this.comPortToolStripMenuItem_Click);
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(582, 353);
+            this.ClientSize = new System.Drawing.Size(436, 324);
             this.Controls.Add(this.groupBox1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(100, 50);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(79, 48);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Терминал";

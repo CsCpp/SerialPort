@@ -49,6 +49,8 @@
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comPortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveMySQLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -65,9 +67,9 @@
             this.groupBox1.Controls.Add(this.menuStrip1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(436, 324);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
@@ -76,7 +78,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(2, 39);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -101,7 +103,7 @@
             this.tBoxDataIN.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tBoxDataIN.ForeColor = System.Drawing.Color.Lime;
             this.tBoxDataIN.Location = new System.Drawing.Point(0, 0);
-            this.tBoxDataIN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tBoxDataIN.Margin = new System.Windows.Forms.Padding(2);
             this.tBoxDataIN.Multiline = true;
             this.tBoxDataIN.Name = "tBoxDataIN";
             this.tBoxDataIN.ReadOnly = true;
@@ -118,10 +120,10 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.btnSend);
             this.groupBox3.Controls.Add(this.btnClearData);
-            this.groupBox3.Location = new System.Drawing.Point(6, 69);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Location = new System.Drawing.Point(6, 70);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(422, 37);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
@@ -169,7 +171,7 @@
             // btnSend
             // 
             this.btnSend.Location = new System.Drawing.Point(253, 0);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(2);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(84, 46);
             this.btnSend.TabIndex = 6;
@@ -180,7 +182,7 @@
             // btnClearData
             // 
             this.btnClearData.Location = new System.Drawing.Point(341, 0);
-            this.btnClearData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClearData.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearData.Name = "btnClearData";
             this.btnClearData.Size = new System.Drawing.Size(81, 46);
             this.btnClearData.TabIndex = 7;
@@ -193,9 +195,9 @@
             this.groupBox2.Controls.Add(this.tBoxDataOut);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(432, 60);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
@@ -208,7 +210,7 @@
             this.tBoxDataOut.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tBoxDataOut.ForeColor = System.Drawing.Color.Aquamarine;
             this.tBoxDataOut.Location = new System.Drawing.Point(2, 15);
-            this.tBoxDataOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tBoxDataOut.Margin = new System.Windows.Forms.Padding(2);
             this.tBoxDataOut.Multiline = true;
             this.tBoxDataOut.Name = "tBoxDataOut";
             this.tBoxDataOut.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -233,6 +235,7 @@
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сохранитьToolStripMenuItem,
+            this.saveMySQLToolStripMenuItem,
             this.toolStripSeparator1,
             this.закрытьToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
@@ -241,11 +244,14 @@
             // 
             // сохранитьToolStripMenuItem
             // 
+            this.сохранитьToolStripMenuItem.Checked = true;
+            this.сохранитьToolStripMenuItem.CheckOnClick = true;
+            this.сохранитьToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.сохранитьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tStComBox_appendOrOverwriteText,
             this.tStComboBox_writeLineOweriteText});
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
             // tStComBox_appendOrOverwriteText
@@ -271,12 +277,12 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(130, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // закрытьToolStripMenuItem
             // 
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.закрытьToolStripMenuItem.Text = "Закрыть";
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
@@ -295,6 +301,23 @@
             this.comPortToolStripMenuItem.Text = "ComPort";
             this.comPortToolStripMenuItem.Click += new System.EventHandler(this.comPortToolStripMenuItem_Click);
             // 
+            // saveMySQLToolStripMenuItem
+            // 
+            this.saveMySQLToolStripMenuItem.Checked = true;
+            this.saveMySQLToolStripMenuItem.CheckOnClick = true;
+            this.saveMySQLToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.saveMySQLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showDataToolStripMenuItem});
+            this.saveMySQLToolStripMenuItem.Name = "saveMySQLToolStripMenuItem";
+            this.saveMySQLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveMySQLToolStripMenuItem.Text = "Save MySQL";
+            // 
+            // showDataToolStripMenuItem
+            // 
+            this.showDataToolStripMenuItem.Name = "showDataToolStripMenuItem";
+            this.showDataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showDataToolStripMenuItem.Text = "Show Data";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,7 +326,7 @@
             this.ClientSize = new System.Drawing.Size(436, 324);
             this.Controls.Add(this.groupBox1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(79, 48);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -349,5 +372,7 @@
         private System.Windows.Forms.ToolStripComboBox tStComBox_appendOrOverwriteText;
         private System.Windows.Forms.ToolStripComboBox tStComboBox_writeLineOweriteText;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem saveMySQLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showDataToolStripMenuItem;
     }
 }

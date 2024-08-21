@@ -30,6 +30,7 @@ namespace SerialPortC
         private void Form2_Load(object sender, EventArgs e)
         {
             form1.Visible = false;
+            saveMySQLToolStripMenuItem.Checked = false;
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
@@ -72,6 +73,17 @@ namespace SerialPortC
         {
 
         }
+
+        private void SaveDataToMySqlDataBase()
+        {
+            if (saveMySQLToolStripMenuItem.Checked)
+            {
+            }
+            else
+            {
+            }
+        }
+
 
         private void btnClearData_Click(object sender, EventArgs e)
         {

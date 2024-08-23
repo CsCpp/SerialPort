@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
+using MySql.Data.MySqlClient;
+using System.Data.Common;
 
 namespace SerialPortC
 {
@@ -15,7 +17,12 @@ namespace SerialPortC
     {
         string dataOUT;
         string dataIN;
-       public Form2 newForm;
+
+        MySqlConnection myConnection;
+        MySqlCommand myCommand;
+
+
+        public Form2 newForm;
         public Form1()
         {
             InitializeComponent();
@@ -69,6 +76,8 @@ namespace SerialPortC
         //  ----------------------   Отправка данных -----------------------------
         public void sendDataEnter(string str)
         {
+
+
             if (serialPort.IsOpen)
             {
 
@@ -84,6 +93,7 @@ namespace SerialPortC
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            SaveDataToMySqlDataBase(str);
         }
 
 
@@ -186,6 +196,27 @@ namespace SerialPortC
             }
         }
 
+        private void SaveDataToMySqlDataBase(string str)
+        {
+          //  if (Form2.saveMySQLToolStripMenuItem.Checked)
+            {
+                try
+                {
+                    myConnection = new MySqlConnection("server=localhost; username=root; password=; port=3306; database=database01");
+                    myConnection.Open();
 
+                    myCommand = new MySqlCommand(string.Format("INSERT INTO `table1` VALUES('{0}')", str), myConnection);
+                    myCommand.ExecuteNonQuery();
+
+                    myConnection.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
     }
 }

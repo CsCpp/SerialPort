@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using MySql.Data.MySqlClient;
+
 
 namespace SerialPortC
 {
@@ -16,6 +16,7 @@ namespace SerialPortC
     {
         StreamWriter streamWriter;
         string pathFile = @"C:\1.txt";
+
         public Form1 form1;
         public Form2()
         {
@@ -75,15 +76,7 @@ namespace SerialPortC
 
         }
 
-        private void SaveDataToMySqlDataBase()
-        {
-            if (saveMySQLToolStripMenuItem.Checked)
-            {
-            }
-            else
-            {
-            }
-        }
+       
 
 
         private void btnClearData_Click(object sender, EventArgs e)

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using MySql.Data.MySqlClient;
 using System.Data.Common;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SerialPortC
 {
@@ -17,6 +18,13 @@ namespace SerialPortC
     {
         string dataOUT;
         string dataIN;
+
+        string serverLH = "localhost";
+        string usernameLH = "root";
+        string passwordLH = "";
+        int    portLH = 3306;
+        string databaseLH = "database01";
+        string tableLH = "table1";
 
         MySqlConnection myConnection;
         MySqlCommand myCommand;
@@ -202,10 +210,10 @@ namespace SerialPortC
             {
                 try
                 {
-                    myConnection = new MySqlConnection("server=localhost; username=root; password=; port=3306; database=database01");
+                    myConnection = new MySqlConnection($"server={serverLH}; username={usernameLH}; password={passwordLH}; port={Convert.ToString(portLH)}; database={databaseLH}");
                     myConnection.Open();
 
-                    myCommand = new MySqlCommand(string.Format("INSERT INTO `table1` VALUES('{0}')", DateTime.Now + " : " + str), myConnection);
+                    myCommand = new MySqlCommand(string.Format($"INSERT INTO {tableLH}"+" VALUES('{0}')", DateTime.Now + " : " + str), myConnection);
                     myCommand.ExecuteNonQuery();
 
                     myConnection.Close();

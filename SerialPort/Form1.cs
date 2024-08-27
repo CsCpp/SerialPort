@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
-using MySql.Data.MySqlClient;
 using System.Data.Common;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -19,15 +18,7 @@ namespace SerialPortC
         string dataOUT;
         string dataIN;
 
-        string serverLH = "localhost";
-        string usernameLH = "root";
-        string passwordLH = "";
-        int    portLH = 3306;
-        string databaseLH = "database01";
-        string tableLH = "table1";
-
-        MySqlConnection myConnection;
-        MySqlCommand myCommand;
+        BDmySQL bdmySQL= new BDmySQL();
 
 
         public Form2 newForm;
@@ -101,7 +92,7 @@ namespace SerialPortC
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            SaveDataToMySqlDataBase(str);
+           bdmySQL.SaveDataToMySqlDataBase(str);
         }
 
 
@@ -204,27 +195,6 @@ namespace SerialPortC
             }
         }
 
-        private void SaveDataToMySqlDataBase(string str)
-        {
-          //  if (Form2.saveMySQLToolStripMenuItem.Checked)
-            {
-                try
-                {
-                    myConnection = new MySqlConnection($"server={serverLH}; username={usernameLH}; password={passwordLH}; port={Convert.ToString(portLH)}; database={databaseLH}");
-                    myConnection.Open();
 
-                    myCommand = new MySqlCommand(string.Format($"INSERT INTO {tableLH}"+" VALUES('{0}')", DateTime.Now + " : " + str), myConnection);
-                    myCommand.ExecuteNonQuery();
-
-                    myConnection.Close();
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-        }
     }
 }

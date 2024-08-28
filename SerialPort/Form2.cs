@@ -98,5 +98,11 @@ namespace SerialPortC
                 tBoxDataOut.Text = "";
             }
         }
+
+        private void showDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 objForm3 = new Form3();
+            objForm3.ShowDialog();
+        }
     }
 }

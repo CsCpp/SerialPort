@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,13 +21,16 @@ namespace SerialPortC
         private MySqlConnection myConnection;
         private MySqlCommand myCommand;
 
+        private MySqlDataAdapter myDataAdapter;
+        private DataSet myDataSet;
+
         public BDmySQL(
-            string serverLH = "localhost", 
-            string usernameLH = "root",
-            string passwordLH = "",
-            int portLH = 3306, 
-            string databaseLH = "database01",
-            string tableLH = "table1") 
+                        string serverLH = "localhost", 
+                        string usernameLH = "root",
+                        string passwordLH = "",
+                        int portLH = 3306, 
+                        string databaseLH = "database01",
+                        string tableLH = "table1") 
         {
             this.serverLH = serverLH;
             this.usernameLH = usernameLH;
@@ -56,6 +60,34 @@ namespace SerialPortC
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             
+
+        }
+
+        public DataSet ReadDataToMySqlDataBase()
+        {
+
+            try
+            {
+                myConnection = new MySqlConnection($"server={serverLH}; username={usernameLH}; password={passwordLH}; port={Convert.ToString(portLH)}; database={databaseLH}");
+                myConnection.Open();
+
+                myCommand = new MySqlCommand($"SELECT * FROM {tableLH}", myConnection);
+                myDataAdapter = new MySqlDataAdapter(myCommand);
+                myDataSet = new DataSet();
+
+                myDataAdapter.Fill(myDataSet, "Serial Data");
+                
+
+                myConnection.Close();
+            
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+            return myDataSet;
 
         }
 

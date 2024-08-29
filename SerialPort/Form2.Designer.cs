@@ -120,7 +120,7 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.btnSend);
             this.groupBox3.Controls.Add(this.btnClearData);
-            this.groupBox3.Location = new System.Drawing.Point(6, 72);
+            this.groupBox3.Location = new System.Drawing.Point(6, 73);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -315,7 +315,7 @@
             // comPortToolStripMenuItem
             // 
             this.comPortToolStripMenuItem.Name = "comPortToolStripMenuItem";
-            this.comPortToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.comPortToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.comPortToolStripMenuItem.Text = "ComPort";
             this.comPortToolStripMenuItem.Click += new System.EventHandler(this.comPortToolStripMenuItem_Click);
             // 
@@ -373,7 +373,7 @@
         private System.Windows.Forms.ToolStripComboBox tStComBox_appendOrOverwriteText;
         private System.Windows.Forms.ToolStripComboBox tStComboBox_writeLineOweriteText;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem saveMySQLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showDataToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem saveMySQLToolStripMenuItem;
     }
 }

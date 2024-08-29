@@ -47,9 +47,6 @@ namespace SerialPortC
             ComPortOpen();
             
         }
-
-
-
         public void ComPortClose()
         {
             if (serialPort.IsOpen)
@@ -70,29 +67,25 @@ namespace SerialPortC
             }
 
         }
-
-
         //  ----------------------   Отправка данных -----------------------------
         public void sendDataEnter(string str)
         {
-
-
             if (serialPort.IsOpen)
             {
-
-                try
+              try
                 {
-         //           dataOUT = DateTime.Now + " :  " + tBoxDataOut.Text; 
                     if (chBoxWriteLine.Checked) { serialPort.WriteLine(DateTime.Now + " : " + str); }
                     else { serialPort.Write(DateTime.Now + " : " + str); }
-                   
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-           bdmySQL.SaveDataToMySqlDataBase(str);
+            if (newForm.saveMySQLToolStripMenuItem.Checked == true)
+            { 
+            bdmySQL.SaveDataToMySqlDataBase(str);
+            }
         }
 
 

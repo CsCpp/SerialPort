@@ -18,6 +18,9 @@ namespace SerialPortC
         string pathFile = @"C:\1.txt";
 
         public Form1 form1;
+        public Form3 objForm3 = new Form3();
+       
+
         public Form2()
         {
             InitializeComponent();
@@ -58,6 +61,7 @@ namespace SerialPortC
 
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            ShowReloadForm3();
         }
 
         private void comPortToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,6 +92,8 @@ namespace SerialPortC
         private void btnSend_Click(object sender, EventArgs e)
         {
             form1.sendDataEnter(tBoxDataOut.Text);
+            ShowReloadForm3();
+
         }
 
         private void tBoxDataOut_KeyUp(object sender, KeyEventArgs e)
@@ -95,14 +101,27 @@ namespace SerialPortC
             if (e.KeyCode == Keys.Enter)
             {
                 form1.sendDataEnter(tBoxDataOut.Text);
+                ShowReloadForm3();
+
                 tBoxDataOut.Text = "";
             }
         }
 
         private void showDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 objForm3 = new Form3();
-            objForm3.ShowDialog();
+
+            objForm3.showForm3 = true;
+
+
+            objForm3.Show();
+
+        }
+        private void ShowReloadForm3()
+        {
+            if (objForm3.showForm3)
+            {
+                objForm3.RefreshAndShowDataOnDataGidView();
+            }
         }
     }
 }

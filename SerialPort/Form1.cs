@@ -72,7 +72,12 @@ namespace SerialPortC
         {
             if (serialPort.IsOpen)
             {
-              try
+                if (newForm.saveMySQLToolStripMenuItem.Checked == true)
+                {
+                    bdmySQL.SaveDataToMySqlDataBase(str);
+                }
+
+                try
                 {
                     if (chBoxWriteLine.Checked) { serialPort.WriteLine(DateTime.Now + " : " + str); }
                     else { serialPort.Write(DateTime.Now + " : " + str); }
@@ -82,10 +87,7 @@ namespace SerialPortC
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            if (newForm.saveMySQLToolStripMenuItem.Checked == true)
-            { 
-            bdmySQL.SaveDataToMySqlDataBase(str);
-            }
+           
         }
 
 

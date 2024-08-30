@@ -73,9 +73,11 @@
             this.groupBox1.Controls.Add(this.cBoxDATABITS);
             this.groupBox1.Controls.Add(this.cBoxBAUDRATE);
             this.groupBox1.Controls.Add(this.cBoxCOMPORT);
-            this.groupBox1.Location = new System.Drawing.Point(13, 46);
+            this.groupBox1.Location = new System.Drawing.Point(10, 37);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(227, 292);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(170, 237);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки SerialPorts";
@@ -84,18 +86,20 @@
             // 
             this.chBoxWriteLine.AutoSize = true;
             this.chBoxWriteLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chBoxWriteLine.Location = new System.Drawing.Point(133, 189);
+            this.chBoxWriteLine.Location = new System.Drawing.Point(100, 154);
+            this.chBoxWriteLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chBoxWriteLine.Name = "chBoxWriteLine";
-            this.chBoxWriteLine.Size = new System.Drawing.Size(88, 20);
+            this.chBoxWriteLine.Size = new System.Drawing.Size(72, 17);
             this.chBoxWriteLine.TabIndex = 12;
             this.chBoxWriteLine.Text = "Write Line";
             this.chBoxWriteLine.UseVisualStyleBackColor = true;
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(11, 232);
+            this.btnOpen.Location = new System.Drawing.Point(8, 188);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(210, 50);
+            this.btnOpen.Size = new System.Drawing.Size(158, 41);
             this.btnOpen.TabIndex = 0;
             this.btnOpen.Text = "Открыть";
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -105,9 +109,10 @@
             // 
             this.chBoxRtsEnable.AutoSize = true;
             this.chBoxRtsEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chBoxRtsEnable.Location = new System.Drawing.Point(68, 189);
+            this.chBoxRtsEnable.Location = new System.Drawing.Point(51, 154);
+            this.chBoxRtsEnable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chBoxRtsEnable.Name = "chBoxRtsEnable";
-            this.chBoxRtsEnable.Size = new System.Drawing.Size(60, 20);
+            this.chBoxRtsEnable.Size = new System.Drawing.Size(48, 17);
             this.chBoxRtsEnable.TabIndex = 11;
             this.chBoxRtsEnable.Text = "RTS ";
             this.chBoxRtsEnable.UseVisualStyleBackColor = true;
@@ -117,9 +122,10 @@
             // 
             this.chBoxDtrEnable.AutoSize = true;
             this.chBoxDtrEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.chBoxDtrEnable.Location = new System.Drawing.Point(8, 189);
+            this.chBoxDtrEnable.Location = new System.Drawing.Point(6, 154);
+            this.chBoxDtrEnable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chBoxDtrEnable.Name = "chBoxDtrEnable";
-            this.chBoxDtrEnable.Size = new System.Drawing.Size(58, 20);
+            this.chBoxDtrEnable.Size = new System.Drawing.Size(46, 17);
             this.chBoxDtrEnable.TabIndex = 10;
             this.chBoxDtrEnable.Text = "DTR";
             this.chBoxDtrEnable.UseVisualStyleBackColor = true;
@@ -128,45 +134,50 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 149);
+            this.label5.Location = new System.Drawing.Point(10, 121);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 16);
+            this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "PARITY BITS";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 119);
+            this.label4.Location = new System.Drawing.Point(10, 97);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 16);
+            this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "STOP BITS";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 89);
+            this.label3.Location = new System.Drawing.Point(10, 72);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 16);
+            this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "DATA BITS";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 59);
+            this.label2.Location = new System.Drawing.Point(10, 48);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 16);
+            this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "BAUD RATE";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 28);
+            this.label1.Location = new System.Drawing.Point(10, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 16);
+            this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "PORT NAME";
             // 
@@ -177,9 +188,10 @@
             "None",
             "Odd",
             "Even"});
-            this.cBoxPARITYBITS.Location = new System.Drawing.Point(123, 141);
+            this.cBoxPARITYBITS.Location = new System.Drawing.Point(92, 115);
+            this.cBoxPARITYBITS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cBoxPARITYBITS.Name = "cBoxPARITYBITS";
-            this.cBoxPARITYBITS.Size = new System.Drawing.Size(79, 24);
+            this.cBoxPARITYBITS.Size = new System.Drawing.Size(60, 21);
             this.cBoxPARITYBITS.TabIndex = 4;
             this.cBoxPARITYBITS.Text = "None";
             // 
@@ -189,9 +201,10 @@
             this.cBoxSTOPBITS.Items.AddRange(new object[] {
             "One",
             "Two"});
-            this.cBoxSTOPBITS.Location = new System.Drawing.Point(123, 111);
+            this.cBoxSTOPBITS.Location = new System.Drawing.Point(92, 90);
+            this.cBoxSTOPBITS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cBoxSTOPBITS.Name = "cBoxSTOPBITS";
-            this.cBoxSTOPBITS.Size = new System.Drawing.Size(79, 24);
+            this.cBoxSTOPBITS.Size = new System.Drawing.Size(60, 21);
             this.cBoxSTOPBITS.TabIndex = 3;
             this.cBoxSTOPBITS.Text = "One";
             // 
@@ -202,9 +215,10 @@
             "6",
             "7",
             "8"});
-            this.cBoxDATABITS.Location = new System.Drawing.Point(123, 81);
+            this.cBoxDATABITS.Location = new System.Drawing.Point(92, 66);
+            this.cBoxDATABITS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cBoxDATABITS.Name = "cBoxDATABITS";
-            this.cBoxDATABITS.Size = new System.Drawing.Size(79, 24);
+            this.cBoxDATABITS.Size = new System.Drawing.Size(60, 21);
             this.cBoxDATABITS.TabIndex = 2;
             this.cBoxDATABITS.Text = "8";
             // 
@@ -225,18 +239,20 @@
             "57600",
             "115200",
             "128000"});
-            this.cBoxBAUDRATE.Location = new System.Drawing.Point(123, 51);
+            this.cBoxBAUDRATE.Location = new System.Drawing.Point(92, 41);
+            this.cBoxBAUDRATE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cBoxBAUDRATE.Name = "cBoxBAUDRATE";
-            this.cBoxBAUDRATE.Size = new System.Drawing.Size(79, 24);
+            this.cBoxBAUDRATE.Size = new System.Drawing.Size(60, 21);
             this.cBoxBAUDRATE.TabIndex = 1;
             this.cBoxBAUDRATE.Text = "9600";
             // 
             // cBoxCOMPORT
             // 
             this.cBoxCOMPORT.FormattingEnabled = true;
-            this.cBoxCOMPORT.Location = new System.Drawing.Point(123, 21);
+            this.cBoxCOMPORT.Location = new System.Drawing.Point(92, 17);
+            this.cBoxCOMPORT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cBoxCOMPORT.Name = "cBoxCOMPORT";
-            this.cBoxCOMPORT.Size = new System.Drawing.Size(79, 24);
+            this.cBoxCOMPORT.Size = new System.Drawing.Size(60, 21);
             this.cBoxCOMPORT.TabIndex = 0;
             // 
             // serialPort
@@ -252,7 +268,8 @@
             this.инфаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(246, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(184, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -261,13 +278,13 @@
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -278,48 +295,49 @@
             this.cOMЗакрытьToolStripMenuItem,
             this.очиститьToolStripMenuItem});
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.настройкиToolStripMenuItem.Text = "Настройки";
             // 
             // cOMОткрытьToolStripMenuItem
             // 
             this.cOMОткрытьToolStripMenuItem.Name = "cOMОткрытьToolStripMenuItem";
-            this.cOMОткрытьToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.cOMОткрытьToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.cOMОткрытьToolStripMenuItem.Text = "COM открыть";
             this.cOMОткрытьToolStripMenuItem.Click += new System.EventHandler(this.cOMОткрытьToolStripMenuItem_Click);
             // 
             // cOMЗакрытьToolStripMenuItem
             // 
             this.cOMЗакрытьToolStripMenuItem.Name = "cOMЗакрытьToolStripMenuItem";
-            this.cOMЗакрытьToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.cOMЗакрытьToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.cOMЗакрытьToolStripMenuItem.Text = "COM Закрыть";
             this.cOMЗакрытьToolStripMenuItem.Click += new System.EventHandler(this.cOMЗакрытьToolStripMenuItem_Click);
             // 
             // очиститьToolStripMenuItem
             // 
             this.очиститьToolStripMenuItem.Name = "очиститьToolStripMenuItem";
-            this.очиститьToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.очиститьToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.очиститьToolStripMenuItem.Text = "Очистить";
             // 
             // инфаToolStripMenuItem
             // 
             this.инфаToolStripMenuItem.Name = "инфаToolStripMenuItem";
-            this.инфаToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
+            this.инфаToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.инфаToolStripMenuItem.Text = "Инфа";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(246, 348);
+            this.ClientSize = new System.Drawing.Size(184, 326);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "COM Port терминал";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

@@ -70,7 +70,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(436, 324);
+            this.groupBox1.Size = new System.Drawing.Size(436, 326);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
@@ -91,8 +91,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox3);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer1.Size = new System.Drawing.Size(432, 283);
-            this.splitContainer1.SplitterDistance = 161;
+            this.splitContainer1.Size = new System.Drawing.Size(432, 285);
+            this.splitContainer1.SplitterDistance = 162;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 10;
             // 
@@ -108,7 +108,7 @@
             this.tBoxDataIN.Name = "tBoxDataIN";
             this.tBoxDataIN.ReadOnly = true;
             this.tBoxDataIN.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tBoxDataIN.Size = new System.Drawing.Size(432, 161);
+            this.tBoxDataIN.Size = new System.Drawing.Size(432, 162);
             this.tBoxDataIN.TabIndex = 9;
             // 
             // groupBox3
@@ -120,7 +120,7 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.btnSend);
             this.groupBox3.Controls.Add(this.btnClearData);
-            this.groupBox3.Location = new System.Drawing.Point(6, 73);
+            this.groupBox3.Location = new System.Drawing.Point(6, 75);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -251,7 +251,7 @@
             this.tStComBox_appendOrOverwriteText,
             this.tStComboBox_writeLineOweriteText});
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
             // tStComBox_appendOrOverwriteText
@@ -282,25 +282,25 @@
             this.saveMySQLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showDataToolStripMenuItem});
             this.saveMySQLToolStripMenuItem.Name = "saveMySQLToolStripMenuItem";
-            this.saveMySQLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveMySQLToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.saveMySQLToolStripMenuItem.Text = "Save MySQL";
             // 
             // showDataToolStripMenuItem
             // 
             this.showDataToolStripMenuItem.Name = "showDataToolStripMenuItem";
-            this.showDataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showDataToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.showDataToolStripMenuItem.Text = "Show Data";
             this.showDataToolStripMenuItem.Click += new System.EventHandler(this.showDataToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(136, 6);
             // 
             // закрытьToolStripMenuItem
             // 
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.закрытьToolStripMenuItem.Text = "Закрыть";
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
@@ -324,7 +324,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(436, 324);
+            this.ClientSize = new System.Drawing.Size(436, 326);
             this.Controls.Add(this.groupBox1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);

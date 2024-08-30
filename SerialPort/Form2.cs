@@ -111,11 +111,13 @@ namespace SerialPortC
         {
 
             objForm3.showForm3 = true;
-
+            
+          
 
             objForm3.Show();
 
         }
+       
         private void ShowReloadForm3()
         {
             if (objForm3.showForm3)

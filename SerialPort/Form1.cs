@@ -30,6 +30,9 @@ namespace SerialPortC
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
+            this.Location = new Point(this.Location.X - 318, this.Location.Y);
+
             string[] ports = SerialPort.GetPortNames();
             cBoxCOMPORT.Items.AddRange(ports);
             chBoxDtrEnable.Checked=false;
@@ -67,6 +70,7 @@ namespace SerialPortC
             }
 
         }
+
         //  ----------------------   Отправка данных -----------------------------
         public void sendDataEnter(string str)
         {
@@ -98,6 +102,8 @@ namespace SerialPortC
             dataIN =serialPort.ReadExisting();
             this.Invoke(new EventHandler(ShowData));
         }
+
+        //  ---------------------------------------------------
 
         private void ShowData(object sender, EventArgs e)
         {

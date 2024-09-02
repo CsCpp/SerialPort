@@ -9,14 +9,14 @@ using MySql.Data.MySqlClient;
 
 namespace SerialPortC
 {
-    internal class BDmySQL
+  public   class BDmySQL
     {
-        private string serverLH;
-        private string usernameLH;
-        private string passwordLH;
-        private int portLH;
-        private string databaseLH;
-        private string tableLH;
+        private string serverLH { get ; set; }
+        private string usernameLH { get; set; }
+        private string passwordLH { get; set; }
+        private int portLH { get; set; }
+        private string databaseLH { get; set; }
+        private string tableLH { get; set; }
 
         private MySqlConnection myConnection;
         private MySqlCommand myCommand;
@@ -91,5 +91,21 @@ namespace SerialPortC
 
         }
 
+        public void SetToMySql(string _serverLH = "localhost",
+                        string _usernameLH = "root",
+                        string _passwordLH = "",
+                        int _portLH = 3306,
+                        string _databaseLH = "database01",
+                        string _tableLH = "table1")
+        {
+            serverLH = _serverLH;
+            usernameLH = _usernameLH;
+            passwordLH = _passwordLH;
+            portLH = _portLH;
+            databaseLH = _databaseLH;
+            tableLH = _tableLH;
+        }
+
+        
     }
 }

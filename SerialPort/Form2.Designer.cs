@@ -51,6 +51,7 @@
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comPortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mySQLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -120,7 +121,7 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.btnSend);
             this.groupBox3.Controls.Add(this.btnClearData);
-            this.groupBox3.Location = new System.Drawing.Point(6, 75);
+            this.groupBox3.Location = new System.Drawing.Point(6, 76);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -251,7 +252,7 @@
             this.tStComBox_appendOrOverwriteText,
             this.tStComboBox_writeLineOweriteText});
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
             // tStComBox_appendOrOverwriteText
@@ -282,32 +283,33 @@
             this.saveMySQLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showDataToolStripMenuItem});
             this.saveMySQLToolStripMenuItem.Name = "saveMySQLToolStripMenuItem";
-            this.saveMySQLToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.saveMySQLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveMySQLToolStripMenuItem.Text = "Save MySQL";
             // 
             // showDataToolStripMenuItem
             // 
             this.showDataToolStripMenuItem.Name = "showDataToolStripMenuItem";
-            this.showDataToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.showDataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.showDataToolStripMenuItem.Text = "Show Data";
             this.showDataToolStripMenuItem.Click += new System.EventHandler(this.showDataToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(136, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // закрытьToolStripMenuItem
             // 
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.закрытьToolStripMenuItem.Text = "Закрыть";
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
             // настройкиToolStripMenuItem
             // 
             this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.comPortToolStripMenuItem});
+            this.comPortToolStripMenuItem,
+            this.mySQLToolStripMenuItem});
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
             this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.настройкиToolStripMenuItem.Text = "Настройки";
@@ -315,9 +317,16 @@
             // comPortToolStripMenuItem
             // 
             this.comPortToolStripMenuItem.Name = "comPortToolStripMenuItem";
-            this.comPortToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.comPortToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.comPortToolStripMenuItem.Text = "ComPort";
             this.comPortToolStripMenuItem.Click += new System.EventHandler(this.comPortToolStripMenuItem_Click);
+            // 
+            // mySQLToolStripMenuItem
+            // 
+            this.mySQLToolStripMenuItem.Name = "mySQLToolStripMenuItem";
+            this.mySQLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mySQLToolStripMenuItem.Text = "MySQL";
+            this.mySQLToolStripMenuItem.Click += new System.EventHandler(this.mySQLToolStripMenuItem_Click);
             // 
             // Form2
             // 
@@ -375,5 +384,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem showDataToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem saveMySQLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mySQLToolStripMenuItem;
     }
 }

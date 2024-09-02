@@ -125,5 +125,10 @@ namespace SerialPortC
                 objForm3.RefreshAndShowDataOnDataGidView();
             }
         }
+
+        private void mySQLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

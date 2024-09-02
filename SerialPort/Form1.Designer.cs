@@ -53,6 +53,7 @@
             this.cOMЗакрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.очиститьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.инфаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mySQLSETToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -74,9 +75,9 @@
             this.groupBox1.Controls.Add(this.cBoxBAUDRATE);
             this.groupBox1.Controls.Add(this.cBoxCOMPORT);
             this.groupBox1.Location = new System.Drawing.Point(10, 37);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(170, 237);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -87,7 +88,7 @@
             this.chBoxWriteLine.AutoSize = true;
             this.chBoxWriteLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.chBoxWriteLine.Location = new System.Drawing.Point(100, 154);
-            this.chBoxWriteLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chBoxWriteLine.Margin = new System.Windows.Forms.Padding(2);
             this.chBoxWriteLine.Name = "chBoxWriteLine";
             this.chBoxWriteLine.Size = new System.Drawing.Size(72, 17);
             this.chBoxWriteLine.TabIndex = 12;
@@ -97,7 +98,7 @@
             // btnOpen
             // 
             this.btnOpen.Location = new System.Drawing.Point(8, 188);
-            this.btnOpen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(158, 41);
             this.btnOpen.TabIndex = 0;
@@ -110,7 +111,7 @@
             this.chBoxRtsEnable.AutoSize = true;
             this.chBoxRtsEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.chBoxRtsEnable.Location = new System.Drawing.Point(51, 154);
-            this.chBoxRtsEnable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chBoxRtsEnable.Margin = new System.Windows.Forms.Padding(2);
             this.chBoxRtsEnable.Name = "chBoxRtsEnable";
             this.chBoxRtsEnable.Size = new System.Drawing.Size(48, 17);
             this.chBoxRtsEnable.TabIndex = 11;
@@ -123,7 +124,7 @@
             this.chBoxDtrEnable.AutoSize = true;
             this.chBoxDtrEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.chBoxDtrEnable.Location = new System.Drawing.Point(6, 154);
-            this.chBoxDtrEnable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chBoxDtrEnable.Margin = new System.Windows.Forms.Padding(2);
             this.chBoxDtrEnable.Name = "chBoxDtrEnable";
             this.chBoxDtrEnable.Size = new System.Drawing.Size(46, 17);
             this.chBoxDtrEnable.TabIndex = 10;
@@ -189,7 +190,7 @@
             "Odd",
             "Even"});
             this.cBoxPARITYBITS.Location = new System.Drawing.Point(92, 115);
-            this.cBoxPARITYBITS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cBoxPARITYBITS.Margin = new System.Windows.Forms.Padding(2);
             this.cBoxPARITYBITS.Name = "cBoxPARITYBITS";
             this.cBoxPARITYBITS.Size = new System.Drawing.Size(60, 21);
             this.cBoxPARITYBITS.TabIndex = 4;
@@ -202,7 +203,7 @@
             "One",
             "Two"});
             this.cBoxSTOPBITS.Location = new System.Drawing.Point(92, 90);
-            this.cBoxSTOPBITS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cBoxSTOPBITS.Margin = new System.Windows.Forms.Padding(2);
             this.cBoxSTOPBITS.Name = "cBoxSTOPBITS";
             this.cBoxSTOPBITS.Size = new System.Drawing.Size(60, 21);
             this.cBoxSTOPBITS.TabIndex = 3;
@@ -216,7 +217,7 @@
             "7",
             "8"});
             this.cBoxDATABITS.Location = new System.Drawing.Point(92, 66);
-            this.cBoxDATABITS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cBoxDATABITS.Margin = new System.Windows.Forms.Padding(2);
             this.cBoxDATABITS.Name = "cBoxDATABITS";
             this.cBoxDATABITS.Size = new System.Drawing.Size(60, 21);
             this.cBoxDATABITS.TabIndex = 2;
@@ -240,7 +241,7 @@
             "115200",
             "128000"});
             this.cBoxBAUDRATE.Location = new System.Drawing.Point(92, 41);
-            this.cBoxBAUDRATE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cBoxBAUDRATE.Margin = new System.Windows.Forms.Padding(2);
             this.cBoxBAUDRATE.Name = "cBoxBAUDRATE";
             this.cBoxBAUDRATE.Size = new System.Drawing.Size(60, 21);
             this.cBoxBAUDRATE.TabIndex = 1;
@@ -250,7 +251,7 @@
             // 
             this.cBoxCOMPORT.FormattingEnabled = true;
             this.cBoxCOMPORT.Location = new System.Drawing.Point(92, 17);
-            this.cBoxCOMPORT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cBoxCOMPORT.Margin = new System.Windows.Forms.Padding(2);
             this.cBoxCOMPORT.Name = "cBoxCOMPORT";
             this.cBoxCOMPORT.Size = new System.Drawing.Size(60, 21);
             this.cBoxCOMPORT.TabIndex = 0;
@@ -291,6 +292,7 @@
             // настройкиToolStripMenuItem
             // 
             this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mySQLSETToolStripMenuItem,
             this.cOMОткрытьToolStripMenuItem,
             this.cOMЗакрытьToolStripMenuItem,
             this.очиститьToolStripMenuItem});
@@ -301,21 +303,21 @@
             // cOMОткрытьToolStripMenuItem
             // 
             this.cOMОткрытьToolStripMenuItem.Name = "cOMОткрытьToolStripMenuItem";
-            this.cOMОткрытьToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.cOMОткрытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cOMОткрытьToolStripMenuItem.Text = "COM открыть";
             this.cOMОткрытьToolStripMenuItem.Click += new System.EventHandler(this.cOMОткрытьToolStripMenuItem_Click);
             // 
             // cOMЗакрытьToolStripMenuItem
             // 
             this.cOMЗакрытьToolStripMenuItem.Name = "cOMЗакрытьToolStripMenuItem";
-            this.cOMЗакрытьToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.cOMЗакрытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cOMЗакрытьToolStripMenuItem.Text = "COM Закрыть";
             this.cOMЗакрытьToolStripMenuItem.Click += new System.EventHandler(this.cOMЗакрытьToolStripMenuItem_Click);
             // 
             // очиститьToolStripMenuItem
             // 
             this.очиститьToolStripMenuItem.Name = "очиститьToolStripMenuItem";
-            this.очиститьToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.очиститьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.очиститьToolStripMenuItem.Text = "Очистить";
             // 
             // инфаToolStripMenuItem
@@ -323,6 +325,13 @@
             this.инфаToolStripMenuItem.Name = "инфаToolStripMenuItem";
             this.инфаToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.инфаToolStripMenuItem.Text = "Инфа";
+            // 
+            // mySQLSETToolStripMenuItem
+            // 
+            this.mySQLSETToolStripMenuItem.Name = "mySQLSETToolStripMenuItem";
+            this.mySQLSETToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mySQLSETToolStripMenuItem.Text = "MySQL SET";
+            this.mySQLSETToolStripMenuItem.Click += new System.EventHandler(this.mySQLSETToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -332,7 +341,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
@@ -375,6 +384,7 @@
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem очиститьToolStripMenuItem;
         private System.Windows.Forms.CheckBox chBoxWriteLine;
+        private System.Windows.Forms.ToolStripMenuItem mySQLSETToolStripMenuItem;
     }
 }
 

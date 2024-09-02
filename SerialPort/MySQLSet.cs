@@ -14,30 +14,45 @@ namespace SerialPortC
 {
     public partial class MySQLSet : Form
     {
-        public MySQLSet()
+       
+        private BDmySQL bdmySQLtemp;
+        public MySQLSet(BDmySQL bdmySQL)
         {
             InitializeComponent();
+                  
+            bdmySQLtemp = bdmySQL;
+
         }
 
        
 
         private void MySQLSet_Load(object sender, EventArgs e)
         {
-            
 
+            textBox1.Text = bdmySQLtemp.ServerLH;
+            textBox2.Text = bdmySQLtemp.UsernameLH;
+            textBox3.Text = bdmySQLtemp.PasswordLH;
+            textBox4.Text = Convert.ToString(bdmySQLtemp.PortLH);
+            textBox5.Text = bdmySQLtemp.DatabaseLH;
+            textBox6.Text = bdmySQLtemp.TableLH;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            bdmySQLtemp.ServerLH = textBox1.Text;
+            bdmySQLtemp.UsernameLH = textBox2.Text;
+            bdmySQLtemp.PasswordLH = textBox3.Text;
+            bdmySQLtemp.PortLH = Convert.ToInt16(textBox4.Text);
+            bdmySQLtemp.DatabaseLH = textBox5.Text;
+            bdmySQLtemp.TableLH = textBox6.Text;
 
+           Form1.SetDataMySQLForm4(bdmySQLtemp);
+
+          
+            this.Visible = false;
         }
 
-        public void SetDeffaultMySql(BDmySQL bdmySQL)
-        {
-            textBox1.Text = bdmySQL.
-
-
-
-        }
     }
+      
+    
 }

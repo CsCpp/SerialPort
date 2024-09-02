@@ -6,19 +6,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
 
 namespace SerialPortC
 {
-  public   class BDmySQL
+  public class BDmySQL
     {
-        private string serverLH { get ; set; }
-        private string usernameLH { get; set; }
-        private string passwordLH { get; set; }
-        private int portLH { get; set; }
-        private string databaseLH { get; set; }
-        private string tableLH { get; set; }
+        private string serverLH;
+        public string ServerLH { get { return serverLH; } set { serverLH = value; } } 
+                                   
+        private string usernameLH;
+        public string UsernameLH { get { return usernameLH; } set { usernameLH = value; } }
 
-        private MySqlConnection myConnection;
+        private string passwordLH;
+        public string PasswordLH { get { return usernameLH; } set { usernameLH = value; } }
+
+        private int portLH;
+        public int PortLH { get { return portLH; } set { portLH = value; } }
+
+        private string databaseLH;
+        public string DatabaseLH { get { return databaseLH; } set { databaseLH = value; } }
+    
+        private string tableLH;
+        public string TableLH { get { return tableLH; } set { tableLH = value; } }
+
+    private MySqlConnection myConnection;
         private MySqlCommand myCommand;
 
         private MySqlDataAdapter myDataAdapter;

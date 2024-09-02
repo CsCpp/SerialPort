@@ -18,12 +18,15 @@ namespace SerialPortC
         string dataOUT;
         string dataIN;
 
-        public BDmySQL bdmySQL = new BDmySQL();
+        public static BDmySQL bdmySQL = new BDmySQL();
 
 
         public Form2 newForm;
-        public MySQLSet mySqlSetting = new MySQLSet();
-     //   mySqlSetting.SetDeffaultMySql(bdmySQL);
+
+        public MySQLSet mySqlSetting = new MySQLSet(bdmySQL);
+       
+
+        //  .SetDeffaultMySql(bdmySQL);
         public Form1()
         {
             InitializeComponent();
@@ -201,6 +204,11 @@ namespace SerialPortC
         private void mySQLSETToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mySqlSetting.Show();
+        }
+        static public void SetDataMySQLForm4(BDmySQL _bdmySQL)
+        {
+            bdmySQL = _bdmySQL;
+
         }
     }
 }

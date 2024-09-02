@@ -52,7 +52,6 @@
             this.label1.Size = new System.Drawing.Size(70, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Server:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
@@ -61,7 +60,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(147, 29);
             this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "localhost";
             // 
             // textBox2
             // 
@@ -70,7 +68,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(147, 29);
             this.textBox2.TabIndex = 7;
-            this.textBox2.Text = "root";
             // 
             // label2
             // 
@@ -87,8 +84,10 @@
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3.Location = new System.Drawing.Point(144, 108);
             this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(147, 29);
             this.textBox3.TabIndex = 9;
+            this.textBox3.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -107,7 +106,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(147, 29);
             this.textBox4.TabIndex = 11;
-            this.textBox4.Text = "3306";
             // 
             // label4
             // 
@@ -126,7 +124,6 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(147, 29);
             this.textBox5.TabIndex = 13;
-            this.textBox5.Text = "database01";
             // 
             // label5
             // 
@@ -145,7 +142,6 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(147, 29);
             this.textBox6.TabIndex = 15;
-            this.textBox6.Text = "table1";
             // 
             // label6
             // 
@@ -166,6 +162,7 @@
             this.button1.TabIndex = 16;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MySQLSet
             // 
@@ -185,6 +182,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MySQLSet";
             this.Text = "MySQLSet";
             this.Load += new System.EventHandler(this.MySQLSet_Load);

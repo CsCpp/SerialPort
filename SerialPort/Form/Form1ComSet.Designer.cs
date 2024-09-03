@@ -1,6 +1,6 @@
 ﻿namespace SerialPortC
 {
-    partial class Form1
+    partial class Form1ComSet
     {
         /// <summary>
         /// Обязательная переменная конструктора.

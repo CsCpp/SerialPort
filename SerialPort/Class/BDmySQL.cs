@@ -1,36 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI.Relational;
 
-namespace SerialPortC
+namespace SerialPortC.Class
 {
-  public class BDmySQL
+    public  class BDmySQL
     {
-        private string serverLH;
-        public string ServerLH { get { return serverLH; } set { serverLH = value; } } 
-                                   
-        private string usernameLH;
-        public string UsernameLH { get { return usernameLH; } set { usernameLH = value; } }
+        static string serverLH;
+        public static string ServerLH { get { return serverLH; } set { serverLH = value; } }
 
-        private string passwordLH;
-        public string PasswordLH { get { return usernameLH; } set { usernameLH = value; } }
+        static  string usernameLH;
+        static public string UsernameLH { get { return usernameLH; } set { usernameLH = value; } }
 
-        private int portLH;
-        public int PortLH { get { return portLH; } set { portLH = value; } }
+        static  string passwordLH;
+        static public string PasswordLH { get { return usernameLH; } set { usernameLH = value; } }
 
-        private string databaseLH;
-        public string DatabaseLH { get { return databaseLH; } set { databaseLH = value; } }
-    
-        private string tableLH;
-        public string TableLH { get { return tableLH; } set { tableLH = value; } }
+        static  int portLH;
+        static public int PortLH { get { return portLH; } set { portLH = value; } }
 
-    private MySqlConnection myConnection;
+        static  string databaseLH;
+        static public string DatabaseLH { get { return databaseLH; } set { databaseLH = value; } }
+
+        static  string tableLH;
+        static public string TableLH { get { return tableLH; } set { tableLH = value; } }
+
+        private MySqlConnection myConnection;
         private MySqlCommand myCommand;
 
         private MySqlDataAdapter myDataAdapter;

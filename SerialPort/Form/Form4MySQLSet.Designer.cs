@@ -1,6 +1,6 @@
 ﻿namespace SerialPortC
 {
-    partial class MySQLSet
+    partial class Form4MySQLSet
     {
         /// <summary>
         /// Required designer variable.

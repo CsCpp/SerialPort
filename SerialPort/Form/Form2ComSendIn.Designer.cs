@@ -1,6 +1,6 @@
 ﻿namespace SerialPortC
 {
-    partial class Form2
+    partial class Form2ComSendIn
     {
         /// <summary>
         /// Required designer variable.

@@ -8,26 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
+using SerialPortC.Class;
 using System.Data.Common;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SerialPortC
 {
-    public partial class Form1 : Form
+    public partial class Form1ComSet : Form
     {
         string dataOUT;
         string dataIN;
 
         public static BDmySQL bdmySQL = new BDmySQL();
 
+        public Form2ComSendIn newForm;
 
-        public Form2 newForm;
-
-        public MySQLSet mySqlSetting = new MySQLSet(bdmySQL);
-       
+        public Form4MySQLSet mySqlSetting = new Form4MySQLSet(bdmySQL);
 
         //  .SetDeffaultMySql(bdmySQL);
-        public Form1()
+        public Form1ComSet()
         {
             InitializeComponent();
           
@@ -158,7 +157,7 @@ namespace SerialPortC
        
            
        
-             newForm = new Form2(this);
+             newForm = new Form2ComSendIn(this);
              newForm.Show();
             
         }

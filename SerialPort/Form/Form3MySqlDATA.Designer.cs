@@ -1,6 +1,6 @@
 ﻿namespace SerialPortC
 {
-    partial class Form3
+    partial class Form3MySqlDATA
     {
         /// <summary>
         /// Required designer variable.

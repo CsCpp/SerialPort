@@ -12,20 +12,20 @@ using System.IO;
 
 namespace SerialPortC
 {
-    public partial class Form2 : Form
+    public partial class Form2ComSendIn : Form
     {
         StreamWriter streamWriter;
         string pathFile = @"C:\1.txt";
 
-        public Form1 form1;
-        public Form3 objForm3 = new Form3();
+        public Form1ComSet form1;
+        public Form3MySqlDATA objForm3 = new Form3MySqlDATA();
        
 
-        public Form2()
+        public Form2ComSendIn()
         {
             InitializeComponent();
         }
-        public Form2(Form1 f)
+        public Form2ComSendIn(Form1ComSet f)
         {
             InitializeComponent();
             form1 = f;

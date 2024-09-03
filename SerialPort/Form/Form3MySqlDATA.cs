@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SerialPortC
 {
-    public partial class Form3 : Form
+    public partial class Form3MySqlDATA : Form
     {
         DataSet myDataSet;
         BDmySQL bdmySQL = new BDmySQL();
@@ -32,7 +32,7 @@ namespace SerialPortC
 
         }
 
-        public Form3()
+        public Form3MySqlDATA()
         {
             InitializeComponent();
         }

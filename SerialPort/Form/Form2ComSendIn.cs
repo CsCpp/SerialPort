@@ -25,6 +25,7 @@ namespace SerialPortC
         {
             InitializeComponent();
         }
+        
         public Form2ComSendIn(Form1ComSet f)
         {
             InitializeComponent();
@@ -80,8 +81,8 @@ namespace SerialPortC
 
         }
 
-       
 
+        //----------------------ТЕКСТ БОКС------------------------
 
         private void btnClearData_Click(object sender, EventArgs e)
         {
@@ -107,6 +108,8 @@ namespace SerialPortC
             }
         }
 
+        //----------------------Показать БАЗУ ДАННЫХ------------------------
+
         private void showDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -117,7 +120,8 @@ namespace SerialPortC
             objForm3.Show();
 
         }
-       
+        //----------------------Обновить БАЗУ ДАННЫХ------------------------
+
         private void ShowReloadForm3()
         {
             if (objForm3.showForm3)
@@ -126,9 +130,7 @@ namespace SerialPortC
             }
         }
 
-        private void mySQLToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
-        }
+
     }
 }

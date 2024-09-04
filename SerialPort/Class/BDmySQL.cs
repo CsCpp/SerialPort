@@ -39,12 +39,12 @@ namespace SerialPortC.Class
                         string databaseLH = "database01",
                         string tableLH = "table1") 
         {
-            this.serverLH = serverLH;
+          /*  this.serverLH = serverLH;
             this.usernameLH = usernameLH;
             this.passwordLH = passwordLH;
             this.portLH = portLH;
             this.databaseLH = databaseLH;
-            this.tableLH = tableLH;
+            this.tableLH = tableLH;*/
         }
 
 

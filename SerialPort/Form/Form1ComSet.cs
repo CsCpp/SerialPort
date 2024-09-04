@@ -16,14 +16,14 @@ namespace SerialPortC
 {
     public partial class Form1ComSet : Form
     {
-        string dataOUT;
+       
         string dataIN;
 
         public static BDmySQL bdmySQL = new BDmySQL();
 
         public Form2ComSendIn newForm;
 
-        public Form4MySQLSet mySqlSetting = new Form4MySQLSet(bdmySQL);
+        public Form4MySQLSet mySqlSetting = new Form4MySQLSet();
 
         //  .SetDeffaultMySql(bdmySQL);
         public Form1ComSet()

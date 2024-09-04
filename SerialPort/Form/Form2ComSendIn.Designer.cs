@@ -326,7 +326,7 @@
             this.mySQLToolStripMenuItem.Name = "mySQLToolStripMenuItem";
             this.mySQLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mySQLToolStripMenuItem.Text = "MySQL";
-            this.mySQLToolStripMenuItem.Click += new System.EventHandler(this.mySQLToolStripMenuItem_Click);
+           
             // 
             // Form2
             // 

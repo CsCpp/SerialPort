@@ -39,12 +39,12 @@ namespace SerialPortC.Class
                         string databaseLH = "database01",
                         string tableLH = "table1") 
         {
-          /*  this.serverLH = serverLH;
-            this.usernameLH = usernameLH;
-            this.passwordLH = passwordLH;
-            this.portLH = portLH;
-            this.databaseLH = databaseLH;
-            this.tableLH = tableLH;*/
+            BDmySQL.serverLH = serverLH;
+            BDmySQL.usernameLH = usernameLH;
+            BDmySQL.passwordLH = passwordLH;
+            BDmySQL.portLH = portLH;
+            BDmySQL.databaseLH = databaseLH;
+            BDmySQL.tableLH = tableLH;
         }
 
 
@@ -105,12 +105,12 @@ namespace SerialPortC.Class
                         string _databaseLH = "database01",
                         string _tableLH = "table1")
         {
-            serverLH = _serverLH;
-            usernameLH = _usernameLH;
-            passwordLH = _passwordLH;
-            portLH = _portLH;
-            databaseLH = _databaseLH;
-            tableLH = _tableLH;
+            BDmySQL.serverLH = _serverLH;
+            BDmySQL.usernameLH = _usernameLH;
+            BDmySQL.passwordLH = _passwordLH;
+            BDmySQL.portLH = _portLH;
+            BDmySQL.databaseLH = _databaseLH;
+            BDmySQL.tableLH = _tableLH;
         }
 
         

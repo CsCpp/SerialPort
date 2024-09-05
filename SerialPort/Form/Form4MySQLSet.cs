@@ -7,49 +7,34 @@ namespace SerialPortC
 {
     public partial class Form4MySQLSet : Form
     {
-       
-     //   private BDmySQL bdmySQLtemp;
-      
-        public Form4MySQLSet(
-            //BDmySQL bdmySQL
-                            )
+        public Form4MySQLSet()
         {
             InitializeComponent();
-                  
-//            bdmySQLtemp = bdmySQL;
-
         }
-
-       
 
         private void MySQLSet_Load(object sender, EventArgs e)
         {
 
-            //textBox1.Text = bdmySQLtemp.ServerLH;
-            //textBox2.Text = bdmySQLtemp.UsernameLH;
-            //textBox3.Text = bdmySQLtemp.PasswordLH;
-            //textBox4.Text = Convert.ToString(bdmySQLtemp.PortLH);
-            //textBox5.Text = bdmySQLtemp.DatabaseLH;
-            //textBox6.Text = bdmySQLtemp.TableLH;
+            textBox1.Text = BDmySQL.ServerLH;
+            textBox2.Text = BDmySQL.UsernameLH;
+            textBox3.Text = BDmySQL.PasswordLH;
+            textBox4.Text = Convert.ToString(BDmySQL.PortLH);
+            textBox5.Text = BDmySQL.DatabaseLH;
+            textBox6.Text = BDmySQL.TableLH;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Form4MySQLSet.ServerLH = textBox1.Text;
-            //bdmySQLtemp.UsernameLH = textBox2.Text;
-            //bdmySQLtemp.PasswordLH = textBox3.Text;
-            //bdmySQLtemp.PortLH = Convert.ToInt16(textBox4.Text);
-            //bdmySQLtemp.DatabaseLH = textBox5.Text;
-            //bdmySQLtemp.TableLH = textBox6.Text;
-            
+            BDmySQL.ServerLH = textBox1.Text;
+            BDmySQL.UsernameLH = textBox2.Text;
+            BDmySQL.PasswordLH = textBox3.Text;
+            BDmySQL.PortLH = Convert.ToInt16(textBox4.Text);
+            BDmySQL.DatabaseLH = textBox5.Text;
+            BDmySQL.TableLH = textBox6.Text;
 
-         //  Form1ComSet.SetDataMySQLForm4(bdmySQLtemp);
-
-          
             this.Visible = false;
         }
 
     }
       
-    
 }

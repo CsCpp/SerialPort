@@ -209,5 +209,6 @@ namespace SerialPortC
           //  bdmySQL = _bdmySQL;
 
         }
+
     }
 }

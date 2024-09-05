@@ -19,7 +19,7 @@ namespace SerialPortC
        
         string dataIN;
 
-        public static BDmySQL bdmySQL = new BDmySQL();
+        public  BDmySQL bdmySQL = new BDmySQL();
 
         public Form2ComSendIn newForm;
 
@@ -206,7 +206,7 @@ namespace SerialPortC
         }
         static public void SetDataMySQLForm4(BDmySQL _bdmySQL)
         {
-            bdmySQL = _bdmySQL;
+          //  bdmySQL = _bdmySQL;
 
         }
     }

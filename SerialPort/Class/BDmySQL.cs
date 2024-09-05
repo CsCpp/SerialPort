@@ -7,22 +7,28 @@ namespace SerialPortC.Class
 {
     public  class BDmySQL
     {
-        static string serverLH;
-        public static string ServerLH { get { return serverLH; } set { serverLH = value; } }
 
-        static  string usernameLH;
+        static string serverLH = "localhost";
+        static public  string ServerLH { 
+                                       
+                                            get { return serverLH; } 
+                                            set { serverLH = value; }
+                                        }
+                                        
+
+        static  string usernameLH = "root";
         static public string UsernameLH { get { return usernameLH; } set { usernameLH = value; } }
 
-        static  string passwordLH;
-        static public string PasswordLH { get { return usernameLH; } set { usernameLH = value; } }
+        static  string passwordLH = "";
+        static public string PasswordLH { get { return passwordLH; } set { passwordLH = value; } }
 
-        static  int portLH;
+        static  int portLH = 3306;
         static public int PortLH { get { return portLH; } set { portLH = value; } }
 
-        static  string databaseLH;
+        static  string databaseLH = "database01";
         static public string DatabaseLH { get { return databaseLH; } set { databaseLH = value; } }
 
-        static  string tableLH;
+        static  string tableLH = "table1";
         static public string TableLH { get { return tableLH; } set { tableLH = value; } }
 
         private MySqlConnection myConnection;
@@ -31,20 +37,9 @@ namespace SerialPortC.Class
         private MySqlDataAdapter myDataAdapter;
         private DataSet myDataSet;
 
-        public BDmySQL(
-                        string serverLH = "localhost", 
-                        string usernameLH = "root",
-                        string passwordLH = "",
-                        int portLH = 3306, 
-                        string databaseLH = "database01",
-                        string tableLH = "table1") 
+        public BDmySQL() 
         {
-            BDmySQL.serverLH = serverLH;
-            BDmySQL.usernameLH = usernameLH;
-            BDmySQL.passwordLH = passwordLH;
-            BDmySQL.portLH = portLH;
-            BDmySQL.databaseLH = databaseLH;
-            BDmySQL.tableLH = tableLH;
+       
         }
 
 
@@ -53,7 +48,7 @@ namespace SerialPortC.Class
            
                 try
                 {
-                    myConnection = new MySqlConnection($"server={serverLH}; username={usernameLH}; password={passwordLH}; port={Convert.ToString(portLH)}; database={databaseLH}");
+                    myConnection = new MySqlConnection($"server={ServerLH}; username={UsernameLH}; password={passwordLH}; port={Convert.ToString(portLH)}; database={databaseLH}");
                     myConnection.Open();
 
                     myCommand = new MySqlCommand(string.Format($"INSERT INTO {tableLH}" + " VALUES('{0}')", DateTime.Now + " : " + str), myConnection);
@@ -75,7 +70,7 @@ namespace SerialPortC.Class
 
             try
             {
-                myConnection = new MySqlConnection($"server={serverLH}; username={usernameLH}; password={passwordLH}; port={Convert.ToString(portLH)}; database={databaseLH}");
+                myConnection = new MySqlConnection($"server={ServerLH}; username={UsernameLH}; password={passwordLH}; port={Convert.ToString(portLH)}; database={databaseLH}");
                 myConnection.Open();
 
                 myCommand = new MySqlCommand($"SELECT * FROM {tableLH}", myConnection);

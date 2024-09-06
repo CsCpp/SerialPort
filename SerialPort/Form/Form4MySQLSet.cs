@@ -31,6 +31,7 @@ namespace SerialPortC
             BDmySQL.PortLH = Convert.ToInt16(textBox4.Text);
             BDmySQL.DatabaseLH = textBox5.Text;
             BDmySQL.TableLH = textBox6.Text;
+
             BDmySQL bDmySQL = new BDmySQL();
             bDmySQL.TestDataToMySqlDataBase();
 

@@ -205,7 +205,12 @@ namespace SerialPortC
         mySqlSetting = new Form4MySQLSet();
         mySqlSetting.Show();
         }
- 
 
+
+        //_________________________________ № Com PORTA ______________________________
+        public string ComPortName()
+        {
+            return cBoxCOMPORT.Text;
+        }
     }
 }

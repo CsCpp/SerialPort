@@ -37,6 +37,7 @@ namespace SerialPortC
         {
             form1.Visible = false;
             saveMySQLToolStripMenuItem.Checked = false;
+            this.Text = "Терминал "+ form1.ComPortName();
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)

@@ -76,10 +76,7 @@ namespace SerialPortC
             this.Close();
         }
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+    
 
 
         //----------------------ТЕКСТ БОКС------------------------
@@ -94,6 +91,8 @@ namespace SerialPortC
         {
             form1.sendDataEnter(tBoxDataOut.Text);
             ShowReloadForm3();
+
+            tBoxDataOut.Text = "";
 
         }
 

@@ -86,8 +86,9 @@ namespace SerialPortC
 
                 try
                 {
-                    if (chBoxWriteLine.Checked) { serialPort.WriteLine(DateTime.Now + " : " + str); }
-                    else { serialPort.Write(DateTime.Now + " : " + str); }
+                    if (chBoxWriteLine.Checked) 
+                            { serialPort.WriteLine(DateTime.Now + " : " + cBoxCOMPORT.Text + " -> " + str); }
+                    else    { serialPort.Write(DateTime.Now + " : " + cBoxCOMPORT.Text + " -> " + str); }
                 }
                 catch (Exception ex)
                 {
@@ -204,11 +205,7 @@ namespace SerialPortC
         mySqlSetting = new Form4MySQLSet();
         mySqlSetting.Show();
         }
-        static public void SetDataMySQLForm4(BDmySQL _bdmySQL)
-        {
-          //  bdmySQL = _bdmySQL;
-
-        }
+ 
 
     }
 }

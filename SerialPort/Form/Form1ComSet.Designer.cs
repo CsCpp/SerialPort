@@ -49,11 +49,11 @@
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mySQLSETToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMОткрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOMЗакрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.очиститьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.инфаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mySQLSETToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -255,6 +255,7 @@
             this.cBoxCOMPORT.Name = "cBoxCOMPORT";
             this.cBoxCOMPORT.Size = new System.Drawing.Size(60, 21);
             this.cBoxCOMPORT.TabIndex = 0;
+            
             // 
             // serialPort
             // 
@@ -300,24 +301,31 @@
             this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.настройкиToolStripMenuItem.Text = "Настройки";
             // 
+            // mySQLSETToolStripMenuItem
+            // 
+            this.mySQLSETToolStripMenuItem.Name = "mySQLSETToolStripMenuItem";
+            this.mySQLSETToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.mySQLSETToolStripMenuItem.Text = "MySQL SET";
+            this.mySQLSETToolStripMenuItem.Click += new System.EventHandler(this.mySQLSETToolStripMenuItem_Click);
+            // 
             // cOMОткрытьToolStripMenuItem
             // 
             this.cOMОткрытьToolStripMenuItem.Name = "cOMОткрытьToolStripMenuItem";
-            this.cOMОткрытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cOMОткрытьToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.cOMОткрытьToolStripMenuItem.Text = "COM открыть";
             this.cOMОткрытьToolStripMenuItem.Click += new System.EventHandler(this.cOMОткрытьToolStripMenuItem_Click);
             // 
             // cOMЗакрытьToolStripMenuItem
             // 
             this.cOMЗакрытьToolStripMenuItem.Name = "cOMЗакрытьToolStripMenuItem";
-            this.cOMЗакрытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cOMЗакрытьToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.cOMЗакрытьToolStripMenuItem.Text = "COM Закрыть";
             this.cOMЗакрытьToolStripMenuItem.Click += new System.EventHandler(this.cOMЗакрытьToolStripMenuItem_Click);
             // 
             // очиститьToolStripMenuItem
             // 
             this.очиститьToolStripMenuItem.Name = "очиститьToolStripMenuItem";
-            this.очиститьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.очиститьToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.очиститьToolStripMenuItem.Text = "Очистить";
             // 
             // инфаToolStripMenuItem
@@ -326,14 +334,7 @@
             this.инфаToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.инфаToolStripMenuItem.Text = "Инфа";
             // 
-            // mySQLSETToolStripMenuItem
-            // 
-            this.mySQLSETToolStripMenuItem.Name = "mySQLSETToolStripMenuItem";
-            this.mySQLSETToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.mySQLSETToolStripMenuItem.Text = "MySQL SET";
-            this.mySQLSETToolStripMenuItem.Click += new System.EventHandler(this.mySQLSETToolStripMenuItem_Click);
-            // 
-            // Form1
+            // Form1ComSet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -344,7 +345,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Form1ComSet";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "COM Port терминал";

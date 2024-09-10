@@ -8,7 +8,7 @@ namespace SerialPortC.Class
     public class BDmySQL
     {
 
-        static string serverLH = "localhost";
+        static string serverLH;
         static public string ServerLH
         {
 
@@ -17,19 +17,19 @@ namespace SerialPortC.Class
         }
 
 
-        static string usernameLH = "root";
+        static string usernameLH;
         static public string UsernameLH { get { return usernameLH; } set { usernameLH = value; } }
 
-        static string passwordLH = "";
+        static string passwordLH;
         static public string PasswordLH { get { return passwordLH; } set { passwordLH = value; } }
 
-        static int portLH = 3306;
+        static int portLH;
         static public int PortLH { get { return portLH; } set { portLH = value; } }
 
-        static string databaseLH = "database01";
+        static string databaseLH;
         static public string DatabaseLH { get { return databaseLH; } set { databaseLH = value; } }
 
-        static string tableLH = "table1";
+        static string tableLH;
         static public string TableLH { get { return tableLH; } set { tableLH = value; } }
 
         private MySqlConnection myConnection;
@@ -39,6 +39,16 @@ namespace SerialPortC.Class
         private DataSet myDataSet;
 
         public BDmySQL(){}
+        static BDmySQL()
+        {
+            serverLH = "localhost";
+            usernameLH = "root";
+            passwordLH = "";
+            portLH = 3306;
+            databaseLH = "database01";
+            tableLH = "table1";
+
+        }
 
 
         public void SaveDataToMySqlDataBase(string str)

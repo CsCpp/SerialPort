@@ -29,8 +29,6 @@ namespace SerialPortC
             dataGridView1.DataMember = "Serial Data";
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Refresh();
-
-
         }
 
         public Form3MySqlDATA()

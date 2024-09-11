@@ -2,6 +2,8 @@
 using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
+using MySqlX.XDevAPI.Relational;
 
 namespace SerialPortC.Class
 {
@@ -15,7 +17,6 @@ namespace SerialPortC.Class
             get { return serverLH; }
             set { serverLH = value; }
         }
-
 
         static string usernameLH;
         static public string UsernameLH { get { return usernameLH; } set { usernameLH = value; } }
@@ -103,7 +104,6 @@ namespace SerialPortC.Class
 
         public void TestDataToMySqlDataBase()
         {
-
             try
             {
                 myConnection = new MySqlConnection($"server={ServerLH}; username={UsernameLH}; password={passwordLH}; port={Convert.ToString(portLH)}; database={databaseLH}");
@@ -116,11 +116,36 @@ namespace SerialPortC.Class
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void CreateTableMysql()
+        {
+            try
+            {
+                myConnection = new MySqlConnection($"server={ServerLH}; username={UsernameLH}; password={passwordLH}; port={Convert.ToString(portLH)}; database={databaseLH}");
+                myConnection.Open();
+
+                myCommand = new MySqlCommand(
+                    "CREATE TABLE `database01`.`com9` (`DataIN` VARCHAR(100) NOT NULL, `DataOut` VARCHAR(100) NOT NULL) ENGINE = InnoDB;"
+                    , myConnection);
+
+                myCommand.ExecuteNonQuery();
+
+                myCommand = new MySqlCommand(
+                    " INSERT INTO `com9` (`DataIN`, `DataOut`) VALUES('Base is', 'create')"
+                    , myConnection);
+
+                myCommand.ExecuteNonQuery();
+
+                myConnection.Close();
+            }
+            catch (Exception ex)
+            {
 
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
 
         }
     }

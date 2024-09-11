@@ -38,6 +38,11 @@ namespace SerialPortC
             this.Visible = false;
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BDmySQL bDmySQL = new BDmySQL();
+            bDmySQL.CreateTableMysql();
+        }
     }
       
 }

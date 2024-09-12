@@ -51,7 +51,6 @@ namespace SerialPortC
         private void btnOpen_Click(object sender, EventArgs e)
         {
             ComPortOpen();
-            
         }
         public void ComPortClose()
         {
@@ -202,8 +201,15 @@ namespace SerialPortC
 
         private void mySQLSETToolStripMenuItem_Click(object sender, EventArgs e)
         {
-        mySqlSetting = new Form4MySQLSet();
-        mySqlSetting.Show();
+            if(cBoxCOMPORT.Text!="")
+            {
+                mySqlSetting = new Form4MySQLSet();
+                mySqlSetting.Show();
+            }
+            else
+            {
+                MessageBox.Show("Comport не выбран", "Ex", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -211,6 +217,11 @@ namespace SerialPortC
         public string ComPortName()
         {
             return cBoxCOMPORT.Text;
+        }
+
+        private void cBoxCOMPORT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BDmySQL.TableLH = cBoxCOMPORT.Text;
         }
     }
 }

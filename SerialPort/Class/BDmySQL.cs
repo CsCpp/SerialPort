@@ -114,38 +114,66 @@ namespace SerialPortC.Class
                 myConnection.Close();
                 MessageBox.Show("MySQL data base is OK", "Good", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            catch (Exception ex){MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);}
         }
 
         public void CreateTableMysql()
         {
+            bool i=false;
+
+            //-------------------------------- есть ли базза данных -----------------------------
             try
             {
                 myConnection = new MySqlConnection($"server={ServerLH}; username={UsernameLH}; password={passwordLH}; port={Convert.ToString(portLH)}; database={databaseLH}");
                 myConnection.Open();
-
-                myCommand = new MySqlCommand(
-                    "CREATE TABLE `database01`.`com9` (`DataIN` VARCHAR(100) NOT NULL, `DataOut` VARCHAR(100) NOT NULL) ENGINE = InnoDB;"
-                    , myConnection);
-
-                myCommand.ExecuteNonQuery();
-
-                myCommand = new MySqlCommand(
-                    " INSERT INTO `com9` (`DataIN`, `DataOut`) VALUES('Base is', 'create')"
-                    , myConnection);
-
-                myCommand.ExecuteNonQuery();
-
-                myConnection.Close();
             }
-            catch (Exception ex)
+            catch (Exception ex) { MessageBox.Show(ex.Message + " Ошибка на стадии открытия базы данных", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            
+            //--------------------------проверяем есть ли такая таблица-----------------------------
+            try
             {
+                myCommand = new MySqlCommand($"SELECT * FROM {tableLH}", myConnection);
+                myDataAdapter = new MySqlDataAdapter(myCommand);
+                myDataSet = new DataSet();
 
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                myDataAdapter.Fill(myDataSet, "Serial Data");
+
+                MessageBox.Show("Такая таблица уже существует", "Ex", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
             }
+            catch (Exception)
+            {
+                i= true;
+                
+            }
+            if (i)
+            {
+                try
+                {
+                    //----------------------------- создание таблицы --------------------------------------
+                    myCommand = new MySqlCommand(
+                            string.Format($"CREATE TABLE {databaseLH}" + "." + $"{tableLH} (`Id` INT NOT NULL ,`DataIN` VARCHAR(100) NOT NULL, `DataOut` VARCHAR(100) NOT NULL) ENGINE = InnoDB;")
+                            , myConnection);
+
+                    myCommand.ExecuteNonQuery();
+
+                    myCommand = new MySqlCommand(
+                        $" INSERT INTO {tableLH} (`DataIN`, `DataOut`) VALUES('Base is', 'create')"
+                        , myConnection);
+
+                    myCommand.ExecuteNonQuery();
+
+                    myConnection.Close();
+
+                    MessageBox.Show("MySQL data base CREATE", "Good", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message + " Ошибка на стадии создании таблицы", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
+            }
+
+
+
 
         }
     }

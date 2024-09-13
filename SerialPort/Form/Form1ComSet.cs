@@ -24,7 +24,6 @@ namespace SerialPortC
         public Form2ComSendIn newForm;
         public Form4MySQLSet mySqlSetting;
 
-
         public Form1ComSet()
         {
             InitializeComponent();
@@ -52,6 +51,7 @@ namespace SerialPortC
         {
             ComPortOpen();
         }
+        
         public void ComPortClose()
         {
             if (serialPort.IsOpen)
@@ -80,7 +80,7 @@ namespace SerialPortC
             {
                 if (newForm.saveMySQLToolStripMenuItem.Checked == true)
                 {
-                    bdmySQL.SaveDataToMySqlDataBase(str);
+                    bdmySQL.SaveDataToMySqlDataBase(str, true);
                 }
 
                 try
@@ -97,13 +97,17 @@ namespace SerialPortC
            
         }
 
-
         //  ----------------------   Получение данных -----------------------------
 
         private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             dataIN =serialPort.ReadExisting();
             this.Invoke(new EventHandler(ShowData));
+           
+            if (newForm.saveMySQLToolStripMenuItem.Checked == true)
+            {
+                bdmySQL.SaveDataToMySqlDataBase(dataIN, false);
+            }
         }
 
         //  ---------------------------------------------------
@@ -113,7 +117,7 @@ namespace SerialPortC
             int dataINLength = dataIN.Length;
        //     lbDataINLength.Text = string.Format("{0:00}", dataINLength);
        //     tBoxDataIN.Text += dataIN.ToString();
-           
+         
             newForm.FormUpdate(dataIN.ToString());
         }
 
@@ -121,6 +125,7 @@ namespace SerialPortC
         {
             ComPortOpen();
         }
+        
         private void ComPortOpen()
         {
             try
@@ -170,8 +175,6 @@ namespace SerialPortC
         {
             Close();
         }
-
-
 
         private void chBoxDtrEnable_CheckedChanged(object sender, EventArgs e)
         {

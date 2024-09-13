@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -52,26 +53,30 @@ namespace SerialPortC.Class
         }
 
 
-        public void SaveDataToMySqlDataBase(string str)
+        public void SaveDataToMySqlDataBase(string str,bool valueSendOrRead)
         {
 
             try
             {
                 myConnection = new MySqlConnection($"server={ServerLH}; username={UsernameLH}; password={passwordLH}; port={Convert.ToString(portLH)}; database={databaseLH}");
                 myConnection.Open();
-
-                myCommand = new MySqlCommand(string.Format($"INSERT INTO {tableLH}" + " VALUES('{0}')", DateTime.Now + " : " + str), myConnection);
+                if (valueSendOrRead)
+                { 
+                myCommand = new MySqlCommand(string.Format($"INSERT INTO {tableLH}" +
+                                                    $" (`Id`, `DataIN`, `DataOut`)  VALUES('', '', '" +
+                                                    $"{DateTime.Now}" + " : " + $"{str}" + "')"), myConnection);
+                }
+                else
+                {
+                myCommand = new MySqlCommand(string.Format($"INSERT INTO {tableLH}" +
+                                                   $" (`Id`, `DataIN`, `DataOut`)  VALUES('', '" +
+                                                   $"{DateTime.Now}" + " : " + $"{str}" + "', '')"), myConnection);
+                }
                 myCommand.ExecuteNonQuery();
-
                 myConnection.Close();
             }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+          
         }
 
         public DataSet ReadDataToMySqlDataBase()

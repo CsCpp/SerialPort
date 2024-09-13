@@ -77,9 +77,6 @@ namespace SerialPortC
             this.Close();
         }
 
-    
-
-
         //----------------------ТЕКСТ БОКС------------------------
 
         private void btnClearData_Click(object sender, EventArgs e)
@@ -94,7 +91,6 @@ namespace SerialPortC
             ShowReloadForm3();
 
             tBoxDataOut.Text = "";
-
         }
 
         private void tBoxDataOut_KeyUp(object sender, KeyEventArgs e)

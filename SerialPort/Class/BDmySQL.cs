@@ -53,24 +53,25 @@ namespace SerialPortC.Class
         }
 
 
-        public void SaveDataToMySqlDataBase(string str,bool valueSendOrRead)
+        public void SaveDataToMySqlDataBase(string str,bool valueInOrOut)
         {
 
             try
             {
                 myConnection = new MySqlConnection($"server={ServerLH}; username={UsernameLH}; password={passwordLH}; port={Convert.ToString(portLH)}; database={databaseLH}");
                 myConnection.Open();
-                if (valueSendOrRead)
+                if (valueInOrOut)
                 { 
                 myCommand = new MySqlCommand(string.Format($"INSERT INTO {tableLH}" +
-                                                    $" (`Id`, `DataIN`, `DataOut`)  VALUES('', '', '" +
-                                                    $"{DateTime.Now}" + " : " + $"{str}" + "')"), myConnection);
+                                                    $" (`DataIN`, `DataOut`)  VALUES('', '" +
+                                                     $"{str}" + "')"), myConnection);
+                 
                 }
                 else
                 {
                 myCommand = new MySqlCommand(string.Format($"INSERT INTO {tableLH}" +
-                                                   $" (`Id`, `DataIN`, `DataOut`)  VALUES('', '" +
-                                                   $"{DateTime.Now}" + " : " + $"{str}" + "', '')"), myConnection);
+                                                   $" (`DataIN`, `DataOut`)  VALUES('" +
+                                                   $"{str}" + "', '')"), myConnection);
                 }
                 myCommand.ExecuteNonQuery();
                 myConnection.Close();
@@ -158,7 +159,10 @@ namespace SerialPortC.Class
                 {
                     //----------------------------- создание таблицы --------------------------------------
                     myCommand = new MySqlCommand(
-                            string.Format($"CREATE TABLE {databaseLH}" + "." + $"{tableLH} (`Id` INT NOT NULL ,`DataIN` VARCHAR(100) NOT NULL, `DataOut` VARCHAR(100) NOT NULL) ENGINE = InnoDB;")
+                            string.Format($"CREATE TABLE {databaseLH}" + "." + $"{tableLH} (`Id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT , `Date` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP , `Time` TIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP , `DataIN` VARCHAR(250) NOT NULL , `DataOut` VARCHAR(250) NOT NULL , PRIMARY KEY (`Id`)) ENGINE = MyISAM CHARSET=armscii8 COLLATE armscii8_general_ci;")
+                            // - old- - (`Id` INT NOT NULL ,`DataIN` VARCHAR(100) NOT NULL, `DataOut` VARCHAR(100) NOT NULL) ENGINE = InnoDB;")
+                            //CREATE TABLE `database01`.`com8` (`Id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT , `Date` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP , `Time` TIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP , `DataIN` VARCHAR(250) NOT NULL , `DataOut` VARCHAR(250) NOT NULL , PRIMARY KEY (`Id`)) ENGINE = MyISAM CHARSET=armscii8 COLLATE armscii8_general_ci;
+
                             , myConnection);
 
                     myCommand.ExecuteNonQuery();

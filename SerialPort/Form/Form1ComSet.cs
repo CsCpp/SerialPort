@@ -101,13 +101,18 @@ namespace SerialPortC
 
         private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            dataIN =serialPort.ReadExisting();
-            this.Invoke(new EventHandler(ShowData));
-           
+            dataIN = serialPort.ReadExisting();
+
             if (newForm.saveMySQLToolStripMenuItem.Checked == true)
             {
                 bdmySQL.SaveDataToMySqlDataBase(dataIN, false);
             }
+
+          
+            this.Invoke(new EventHandler(ShowData));
+           
+      
+            
         }
 
         //  ---------------------------------------------------
@@ -119,6 +124,8 @@ namespace SerialPortC
        //     tBoxDataIN.Text += dataIN.ToString();
          
             newForm.FormUpdate(dataIN.ToString());
+          
+
         }
 
         private void cOMОткрытьToolStripMenuItem_Click(object sender, EventArgs e)

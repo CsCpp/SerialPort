@@ -51,7 +51,9 @@ namespace SerialPortC
         
         public void FormUpdate(string str)
         {
+            
             tBoxDataIN.Text += str;
+            ShowReloadForm3();
             try
             {
                 streamWriter = new StreamWriter(pathFile, true);
@@ -63,7 +65,7 @@ namespace SerialPortC
 
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            ShowReloadForm3();
+            
         }
 
         private void comPortToolStripMenuItem_Click(object sender, EventArgs e)
@@ -118,7 +120,7 @@ namespace SerialPortC
         }
         //----------------------Обновить БАЗУ ДАННЫХ------------------------
 
-        private void ShowReloadForm3()
+        public void ShowReloadForm3()
         {
             if (objForm3.showForm3)
             {

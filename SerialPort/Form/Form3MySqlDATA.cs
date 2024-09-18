@@ -18,8 +18,6 @@ namespace SerialPortC
         BDmySQL bdmySQL = new BDmySQL();
         public bool showForm3 = false;
 
-        
-
         public void RefreshAndShowDataOnDataGidView()
         {
             myDataSet = new DataSet();
@@ -27,7 +25,7 @@ namespace SerialPortC
 
             dataGridView1.DataSource = myDataSet;
             dataGridView1.DataMember = "Serial Data";
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.Refresh();
         }
 
@@ -45,16 +43,11 @@ namespace SerialPortC
            
         }
             
-
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
             showForm3 = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            showForm3 = false;
-            this.Visible=false;
-        }
+        
     }
 }

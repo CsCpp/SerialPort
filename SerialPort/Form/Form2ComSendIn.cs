@@ -18,7 +18,7 @@ namespace SerialPortC
         string pathFile = @"C:\1.txt";
 
         public Form1ComSet form1;
-        public Form3MySqlDATA objForm3 = new Form3MySqlDATA();
+        public Form3MySqlDATA objForm3;
        
 
         public Form2ComSendIn()
@@ -111,10 +111,9 @@ namespace SerialPortC
         private void showDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            objForm3.showForm3 = true;
-            
-          
+            objForm3 = new Form3MySqlDATA(form1.ComPortName());
 
+            objForm3.showForm3 = true;
             objForm3.Show();
 
         }

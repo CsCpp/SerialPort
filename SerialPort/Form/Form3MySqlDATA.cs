@@ -31,9 +31,10 @@ namespace SerialPortC
             dataGridView1.Refresh();
         }
 
-        public Form3MySqlDATA()
+        public Form3MySqlDATA(string  str)
         {
             InitializeComponent();
+            this.Text += " " + str;
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -41,6 +42,7 @@ namespace SerialPortC
             this.Location = new Point(this.Location.X + 362, this.Location.Y);
 
             RefreshAndShowDataOnDataGidView();
+           
         }
             
 

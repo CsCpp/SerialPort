@@ -88,7 +88,7 @@ namespace SerialPortC.Class
                 myConnection = new MySqlConnection($"server={ServerLH}; username={UsernameLH}; password={passwordLH}; port={Convert.ToString(portLH)}; database={databaseLH}");
                 myConnection.Open();
 
-                myCommand = new MySqlCommand($"SELECT * FROM {tableLH}", myConnection);
+                myCommand = new MySqlCommand($"SELECT * FROM {tableLH} ORDER BY Id DESC", myConnection);
                 myDataAdapter = new MySqlDataAdapter(myCommand);
                 myDataSet = new DataSet();
 

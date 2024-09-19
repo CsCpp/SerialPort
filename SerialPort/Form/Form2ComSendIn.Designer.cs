@@ -51,6 +51,7 @@
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comPortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.splitContainer1);
             this.groupBox1.Controls.Add(this.menuStrip1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -85,7 +87,6 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.tBoxDataIN);
-          
             // 
             // splitContainer1.Panel2
             // 
@@ -120,7 +121,7 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.btnSend);
             this.groupBox3.Controls.Add(this.btnClearData);
-            this.groupBox3.Location = new System.Drawing.Point(6, 77);
+            this.groupBox3.Location = new System.Drawing.Point(6, 78);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -251,7 +252,7 @@
             this.tStComBox_appendOrOverwriteText,
             this.tStComboBox_writeLineOweriteText});
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
             // tStComBox_appendOrOverwriteText
@@ -282,7 +283,7 @@
             this.saveMySQLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showDataToolStripMenuItem});
             this.saveMySQLToolStripMenuItem.Name = "saveMySQLToolStripMenuItem";
-            this.saveMySQLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveMySQLToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.saveMySQLToolStripMenuItem.Text = "Save MySQL";
             // 
             // showDataToolStripMenuItem
@@ -295,12 +296,12 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(136, 6);
             // 
             // закрытьToolStripMenuItem
             // 
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
-            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.закрытьToolStripMenuItem.Text = "Закрыть";
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
             // 
@@ -315,9 +316,20 @@
             // comPortToolStripMenuItem
             // 
             this.comPortToolStripMenuItem.Name = "comPortToolStripMenuItem";
-            this.comPortToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.comPortToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.comPortToolStripMenuItem.Text = "ComPort";
             this.comPortToolStripMenuItem.Click += new System.EventHandler(this.comPortToolStripMenuItem_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(332, 19);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(98, 17);
+            this.checkBox1.TabIndex = 11;
+            this.checkBox1.Text = "симулятор ЗУ";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Form2ComSendIn
             // 
@@ -375,5 +387,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem showDataToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem saveMySQLToolStripMenuItem;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

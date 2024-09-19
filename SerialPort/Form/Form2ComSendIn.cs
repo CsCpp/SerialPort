@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 
 
 namespace SerialPortC
@@ -17,9 +18,10 @@ namespace SerialPortC
         StreamWriter streamWriter;
         string pathFile = @"C:\1.txt";
 
+        bool checTr = false;
+
         public Form1ComSet form1;
         public Form3MySqlDATA objForm3;
-       
 
         public Form2ComSendIn()
         {
@@ -127,6 +129,39 @@ namespace SerialPortC
             }
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                checTr = true;
+                //  myThread = new Thread(randomZUmanka);
+                // myThread.Start();
+                new Thread(() => randomZUmanka()).Start();
+            }
+            else checTr = false;
+
+        }
+
+        private void randomZUmanka()
+        {
+            Random random = new Random();
+            while (true)
+            {
+                if (checTr)
+                {
+                      form1.sendDataEnter(Convert.ToString($"I={random.Next(0, 255)}A U={random.Next(0, 255)}V \n\r"));
+                       ShowReloadForm3();
+                   // tBoxDataOut.Text = (Convert.ToString($"I={random.Next(0, 255)}A U={random.Next(0, 255)}V \n"));
+                    //   btnSend.
+                    Thread.Sleep(1000);
+
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
 
 
     }

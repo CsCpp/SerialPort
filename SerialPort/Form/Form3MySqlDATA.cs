@@ -16,7 +16,7 @@ namespace SerialPortC
     {
         DataSet myDataSet;
         BDmySQL bdmySQL = new BDmySQL();
-       public static bool activForm3Status;
+        public static bool activForm3Status;
       
 
         public void RefreshAndShowDataOnDataGidView()

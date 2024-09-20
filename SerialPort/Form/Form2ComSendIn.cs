@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Threading;
+using static Mysqlx.Expect.Open.Types.Condition.Types;
 
 
 namespace SerialPortC
@@ -149,10 +150,17 @@ namespace SerialPortC
             {
                 if (checkBox1.Checked)
                 {
-                     // form1.sendDataEnter(Convert.ToString($"I={random.Next(0, 255)}A U={random.Next(0, 255)}V \n\r"));
-                 tBoxDataOut.Text = (Convert.ToString($"I={random.Next(1,19)}A U={random.Next(9, 16)}V \n"));
-                 Thread.Sleep(1000);
-                 sendData();
+                    try
+                    {
+                        form1.sendDataEnter(Convert.ToString($"I={random.Next(1, 19)}A U={random.Next(9, 16)}V \n"));
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                         Thread.Sleep(1000);
                 }
                 else
                 {

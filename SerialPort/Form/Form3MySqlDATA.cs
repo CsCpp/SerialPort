@@ -16,7 +16,8 @@ namespace SerialPortC
     {
         DataSet myDataSet;
         BDmySQL bdmySQL = new BDmySQL();
-        public bool showForm3 = false;
+       public static bool activForm3Status;
+      
 
         public void RefreshAndShowDataOnDataGidView()
         {
@@ -33,6 +34,7 @@ namespace SerialPortC
         {
             InitializeComponent();
             this.Text += " " + str;
+            activForm3Status = true;
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -45,7 +47,7 @@ namespace SerialPortC
             
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
-            showForm3 = false;
+            activForm3Status = false;
         }
 
         

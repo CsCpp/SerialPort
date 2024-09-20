@@ -18,7 +18,7 @@ namespace SerialPortC
         StreamWriter streamWriter;
         string pathFile = @"C:\1.txt";
 
-        bool checTr = false;
+        
 
         public Form1ComSet form1;
         public Form3MySqlDATA objForm3;
@@ -40,6 +40,7 @@ namespace SerialPortC
             form1.Visible = false;
             saveMySQLToolStripMenuItem.Checked = false;
             this.Text = "Терминал "+ form1.ComPortName();
+            addForm3Objct();
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
@@ -48,8 +49,6 @@ namespace SerialPortC
             form1.Visible = true;
             form1.ComPortClose();
         }
-
-     
         
         public void FormUpdate(string str)
         {
@@ -91,55 +90,56 @@ namespace SerialPortC
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            form1.sendDataEnter(tBoxDataOut.Text);
-            ShowReloadForm3();
-
-            tBoxDataOut.Text = "";
+            sendData();
         }
 
         private void tBoxDataOut_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                form1.sendDataEnter(tBoxDataOut.Text);
-                ShowReloadForm3();
-
-                tBoxDataOut.Text = "";
+                sendData();
             }
+        }
+
+        private void sendData()
+        {
+            form1.sendDataEnter(tBoxDataOut.Text);
+            addForm3Objct();
+            ShowReloadForm3();
+            tBoxDataOut.Text = "";
         }
 
         //----------------------Показать БАЗУ ДАННЫХ------------------------
 
         private void showDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            objForm3 = new Form3MySqlDATA(form1.ComPortName());
-
-            objForm3.showForm3 = true;
+            addForm3Objct();
             objForm3.Show();
+        }
 
+        public void addForm3Objct()
+        {
+            if (Form3MySqlDATA.activForm3Status == false)
+            {
+                objForm3 = new Form3MySqlDATA(form1.ComPortName());
+            }
+           
         }
         //----------------------Обновить БАЗУ ДАННЫХ------------------------
 
         public void ShowReloadForm3()
         {
-            if (objForm3.showForm3)
-            {
-                objForm3.RefreshAndShowDataOnDataGidView();
-            }
+            addForm3Objct();
+            objForm3.RefreshAndShowDataOnDataGidView();
+            
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
             {
-                checTr = true;
-                //  myThread = new Thread(randomZUmanka);
-                // myThread.Start();
-                new Thread(() => randomZUmanka()).Start();
+             new Thread(() => randomZUmanka()).Start();
             }
-            else checTr = false;
-
         }
 
         private void randomZUmanka()
@@ -147,14 +147,12 @@ namespace SerialPortC
             Random random = new Random();
             while (true)
             {
-                if (checTr)
+                if (checkBox1.Checked)
                 {
-                      form1.sendDataEnter(Convert.ToString($"I={random.Next(0, 255)}A U={random.Next(0, 255)}V \n\r"));
-                       ShowReloadForm3();
-                   // tBoxDataOut.Text = (Convert.ToString($"I={random.Next(0, 255)}A U={random.Next(0, 255)}V \n"));
-                    //   btnSend.
-                    Thread.Sleep(1000);
-
+                     // form1.sendDataEnter(Convert.ToString($"I={random.Next(0, 255)}A U={random.Next(0, 255)}V \n\r"));
+                 tBoxDataOut.Text = (Convert.ToString($"I={random.Next(1,19)}A U={random.Next(9, 16)}V \n"));
+                 Thread.Sleep(1000);
+                 sendData();
                 }
                 else
                 {

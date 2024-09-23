@@ -172,8 +172,8 @@ namespace SerialPortC
         //-----------------------Сортировка----------------------------------
         private void sortData(string str)
         {
-            int indexOfI = str.LastIndexOf("I=");
-            int indexOfU = str.LastIndexOf("U=");
+            int indexOfI = str.LastIndexOf("I=")+2;
+            int indexOfU = str.LastIndexOf("U=")+2;
             string tempI="";
             string tempU="";
             int varI = 0;

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Threading;
 using static Mysqlx.Expect.Open.Types.Condition.Types;
+using System.Runtime.InteropServices;
 
 
 namespace SerialPortC
@@ -53,8 +54,8 @@ namespace SerialPortC
         
         public void FormUpdate(string str)
         {
-            
-            tBoxDataIN.Text += str;
+            sortData(str);
+           tBoxDataIN.Text += str;
             ShowReloadForm3();
             try
             {
@@ -134,7 +135,7 @@ namespace SerialPortC
             objForm3.RefreshAndShowDataOnDataGidView();
             
         }
-
+        //----------------------Вкл. обманку данных -------------------------
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
@@ -168,7 +169,38 @@ namespace SerialPortC
                 }
             }
         }
+        //-----------------------Сортировка----------------------------------
+        private void sortData(string str)
+        {
+            int indexOfI = str.LastIndexOf("I=");
+            int indexOfU = str.LastIndexOf("U=");
+            string tempI="";
+            string tempU="";
+            int varI = 0;
+            int varU = 0;
 
+         for (int i = indexOfI; i< str.Length; i++)
+            {
+                if(str[i] =='A') break;
+                tempI += str[i];
+            }
+         for (int i = indexOfU; i < str.Length; i++)
+            {
+                if (str[i] == 'V') break;
+                tempU += str[i];
+            }
+            try
+            {
+                 varI = Convert.ToInt32(tempI);
+                 varU = Convert.ToInt32(tempU);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Console.WriteLine("Ток = " + varI + "А ----- Напряжение U = " + varU + "В");
+
+        }
 
     }
 }

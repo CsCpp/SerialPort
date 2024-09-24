@@ -13,6 +13,7 @@ using static Mysqlx.Expect.Open.Types.Condition.Types;
 using System.Runtime.InteropServices;
 
 
+
 namespace SerialPortC
 {
     public partial class Form2ComSendIn : Form
@@ -20,7 +21,7 @@ namespace SerialPortC
         StreamWriter streamWriter;
         string pathFile = @"C:\1.txt";
 
-        
+        public Form5Grafika form5Grafika;
 
         public Form1ComSet form1;
         public Form3MySqlDATA objForm3;
@@ -43,6 +44,7 @@ namespace SerialPortC
             saveMySQLToolStripMenuItem.Checked = false;
             this.Text = "Терминал "+ form1.ComPortName();
             addForm3Objct();
+            form5Grafika = new Form5Grafika();
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
@@ -198,8 +200,9 @@ namespace SerialPortC
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            Console.WriteLine("Ток = " + varI + "А ----- Напряжение U = " + varU + "В");
-
+            // Console.WriteLine("Ток = " + varI + "А ----- Напряжение U = " + varU + "В");
+            form5Grafika.dataIU(varI, varU);
+            form5Grafika.Show();
         }
 
     }

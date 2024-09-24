@@ -119,43 +119,52 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\BDmySQL.cs" />
-    <Compile Include="Form\Form1ComSet.cs">
+    <Compile Include="FormMy\Form1ComSet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Form1ComSet.Designer.cs">
+    <Compile Include="FormMy\Form1ComSet.Designer.cs">
       <DependentUpon>Form1ComSet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Form2ComSendIn.cs">
+    <Compile Include="FormMy\Form2ComSendIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Form2ComSendIn.Designer.cs">
+    <Compile Include="FormMy\Form2ComSendIn.Designer.cs">
       <DependentUpon>Form2ComSendIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Form3MySqlDATA.cs">
+    <Compile Include="FormMy\Form3MySqlDATA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Form3MySqlDATA.Designer.cs">
+    <Compile Include="FormMy\Form3MySqlDATA.Designer.cs">
       <DependentUpon>Form3MySqlDATA.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Form4MySQLSet.cs">
+    <Compile Include="FormMy\Form4MySQLSet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Form4MySQLSet.Designer.cs">
+    <Compile Include="FormMy\Form4MySQLSet.Designer.cs">
       <DependentUpon>Form4MySQLSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMy\Form5Grafika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMy\Form5Grafika.Designer.cs">
+      <DependentUpon>Form5Grafika.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form\Form1ComSet.resx">
+    <EmbeddedResource Include="FormMy\Form1ComSet.resx">
       <DependentUpon>Form1ComSet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Form2ComSendIn.resx">
+    <EmbeddedResource Include="FormMy\Form2ComSendIn.resx">
       <DependentUpon>Form2ComSendIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Form3MySqlDATA.resx">
+    <EmbeddedResource Include="FormMy\Form3MySqlDATA.resx">
       <DependentUpon>Form3MySqlDATA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Form4MySQLSet.resx">
+    <EmbeddedResource Include="FormMy\Form4MySQLSet.resx">
       <DependentUpon>Form4MySQLSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMy\Form5Grafika.resx">
+      <DependentUpon>Form5Grafika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

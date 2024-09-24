@@ -6,7 +6,7 @@ using MySql.Data.MySqlClient;
 using Mysqlx.Crud;
 using MySqlX.XDevAPI.Relational;
 
-namespace SerialPortC.Class
+namespace SerialPortC
 {
     public class BDmySQL
     {

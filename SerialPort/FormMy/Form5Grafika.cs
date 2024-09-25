@@ -12,14 +12,20 @@ namespace SerialPortC
 {
     public partial class Form5Grafika : Form
     {
-        public Form5Grafika()
+        public Form5Grafika(string str)
         {
             InitializeComponent();
+            this.Text = "VoltAmpetr is " + str;
         }
         public void dataIU(int varI, int varU)
         {
-            label2I.Text = varI.ToString();
-            label4U.Text = varU.ToString();
+            label2I.Text ="I="+ varI.ToString()+" A";
+            label4U.Text ="U="+ varU.ToString()+" V";
+        }
+
+        private void Form5Grafika_Load(object sender, EventArgs e)
+        {
+            
         }
     }
    

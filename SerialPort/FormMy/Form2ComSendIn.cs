@@ -44,7 +44,7 @@ namespace SerialPortC
             saveMySQLToolStripMenuItem.Checked = false;
             this.Text = "Терминал "+ form1.ComPortName();
             addForm3Objct();
-            form5Grafika = new Form5Grafika();
+            form5Grafika = new Form5Grafika(form1.ComPortName());
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)

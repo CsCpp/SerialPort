@@ -15,6 +15,7 @@ namespace SerialPortC
     {
         private DateTime valMaxTime;
         private DateTime valMinTime;
+        private DateTime startTime;
         public Form5Grafika(string str)
         {
             InitializeComponent();
@@ -46,7 +47,7 @@ namespace SerialPortC
 
             chart1.ChartAreas[0].AxisX.LabelStyle.Format = "H:mm:ss";
             chart1.Series[0].XValueType = ChartValueType.DateTime;
-            valMinTime = DateTime.Now;
+            startTime = valMinTime = DateTime.Now;
             chart1.ChartAreas[0].AxisX.Minimum = valMinTime.ToOADate();
             valMaxTime= DateTime.Now.AddMinutes(1);
             chart1.ChartAreas[0].AxisX.Maximum = valMaxTime.ToOADate();
@@ -60,6 +61,13 @@ namespace SerialPortC
         private void chart1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            valMinTime = startTime;
+            chart1.ChartAreas[0].AxisX.Minimum = valMinTime.ToOADate();
+          
         }
     }
    

@@ -38,6 +38,7 @@
             this.label4U = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -53,7 +54,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.DarkRed;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(166, 104);
+            this.groupBox1.Size = new System.Drawing.Size(223, 104);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -76,7 +77,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.SteelBlue;
             this.groupBox2.Location = new System.Drawing.Point(167, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(166, 104);
+            this.groupBox2.Size = new System.Drawing.Size(157, 104);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             // 
@@ -98,7 +99,7 @@
             this.groupBox3.Controls.Add(this.chart1);
             this.groupBox3.Location = new System.Drawing.Point(12, 90);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(323, 159);
+            this.groupBox3.Size = new System.Drawing.Size(380, 159);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "I/U";
@@ -137,15 +138,26 @@
             series2.Name = "U";
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(317, 140);
+            this.chart1.Size = new System.Drawing.Size(374, 140);
             this.chart1.TabIndex = 0;
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(340, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(52, 78);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Go Start";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form5Grafika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 261);
+            this.ClientSize = new System.Drawing.Size(401, 261);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -170,5 +182,6 @@
         private System.Windows.Forms.Label label4U;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Button button1;
     }
 }

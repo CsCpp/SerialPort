@@ -16,11 +16,13 @@ namespace SerialPortC
         private DateTime valMaxTime;
         private DateTime valMinTime;
         private DateTime startTime;
+        private int valInterval;
         public Form5Grafika(string str)
         {
             InitializeComponent();
+            label1.Text = "Данные получены "+DateTime.Now.ToShortDateString()+ " источник "  +str;
             this.Text = "VoltAmpetr is " + str;
-           
+          
         }
         public void dataIU(int varI, int varU)
         {
@@ -41,15 +43,18 @@ namespace SerialPortC
         {
             this.chart1.Series[0].Points.Clear();
             this.chart1.Series[1].Points.Clear();
+            valInterval = 1;
+            
+            
            
             chart1.ChartAreas[0].AxisY.Maximum = 20;
             chart1.ChartAreas[0].AxisY.Minimum = 0;
 
-            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "H:mm:ss";
+            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "HH:mm:ss";
             chart1.Series[0].XValueType = ChartValueType.DateTime;
             startTime = valMinTime = DateTime.Now;
             chart1.ChartAreas[0].AxisX.Minimum = valMinTime.ToOADate();
-            valMaxTime= DateTime.Now.AddMinutes(1);
+            valMaxTime= DateTime.Now.AddMinutes(valInterval);
             chart1.ChartAreas[0].AxisX.Maximum = valMaxTime.ToOADate();
 
             chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
@@ -68,6 +73,68 @@ namespace SerialPortC
             valMinTime = startTime;
             chart1.ChartAreas[0].AxisX.Minimum = valMinTime.ToOADate();
           
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                valInterval = 10;
+                valMinTime = DateTime.Now.AddSeconds(-10);
+
+                chart1.ChartAreas[0].AxisX.Interval = 1;
+
+            }
+            else
+            if (comboBox1.SelectedIndex == 1)
+            {
+                valInterval = 1;
+                valMinTime = DateTime.Now.AddMinutes(-1);
+
+                chart1.ChartAreas[0].AxisX.Interval = 10;
+
+            }
+            else
+            if (comboBox1.SelectedIndex == 2)
+            {
+                valInterval = 10;
+                valMinTime = DateTime.Now.AddMinutes(-10);
+
+                chart1.ChartAreas[0].AxisX.Interval = 30;
+
+            }
+            else
+            if (comboBox1.SelectedIndex == 3)
+            {
+                valInterval = 30;
+                valMinTime = DateTime.Now.AddMinutes(-30);
+
+                chart1.ChartAreas[0].AxisX.Interval = 10 * valInterval;
+
+            }
+            else
+            if (comboBox1.SelectedIndex == 4)
+            {
+                valInterval = 60;
+                valMinTime = DateTime.Now.AddMinutes(-60);
+
+                chart1.ChartAreas[0].AxisX.Interval = 10 * valInterval;
+
+            }
+            else
+            if (comboBox1.SelectedIndex == 5)
+            {
+                valInterval = 1440;
+                valMinTime = DateTime.Now.AddMinutes(-1440);
+
+                chart1.ChartAreas[0].AxisX.Interval = 10 * valInterval;
+
+            }
+            else { return; }
+
+            chart1.ChartAreas[0].AxisX.Minimum = valMinTime.ToOADate();
+            valMaxTime = DateTime.Now;
+            chart1.ChartAreas[0].AxisX.Maximum = valMaxTime.ToOADate();
         }
     }
    

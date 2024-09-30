@@ -44,7 +44,7 @@ namespace SerialPortC
             saveMySQLToolStripMenuItem.Checked = false;
             this.Text = "Терминал "+ form1.ComPortName();
             addForm3Objct();
-            form5Grafika = new Form5Grafika(form1.ComPortName());
+           // form5Grafika = new Form5Grafika(form1.ComPortName());
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
@@ -105,9 +105,9 @@ namespace SerialPortC
             }
         }
 
-        private void sendData()
+        private async Task sendData()
         {
-            form1.sendDataEnter(tBoxDataOut.Text);
+           await form1.sendDataEnter(tBoxDataOut.Text);
             addForm3Objct();
             ShowReloadForm3();
             tBoxDataOut.Text = "";
@@ -172,38 +172,55 @@ namespace SerialPortC
             }
         }
         //-----------------------Сортировка----------------------------------
-        private void sortData(string str)
+        private  void sortData(string str)
         {
-            int indexOfI = str.LastIndexOf("I=")+2;
-            int indexOfU = str.LastIndexOf("U=")+2;
-            string tempI="";
-            string tempU="";
+            int indexOfI = str.LastIndexOf("I=") + 2;
+            int indexOfU = str.LastIndexOf("U=") + 2;
+            string tempI = "";
+            string tempU = "";
             int varI = 0;
             int varU = 0;
 
-         for (int i = indexOfI; i< str.Length; i++)
+            for (int i = indexOfI; i < str.Length; i++)
             {
-                if(str[i] =='A') break;
+                if (str[i] == 'A') break;
                 tempI += str[i];
             }
-         for (int i = indexOfU; i < str.Length; i++)
+            for (int i = indexOfU; i < str.Length; i++)
             {
                 if (str[i] == 'V') break;
                 tempU += str[i];
             }
             try
             {
-                 varI = Convert.ToInt32(tempI);
-                 varU = Convert.ToInt32(tempU);
+                varI = Convert.ToInt32(tempI);
+                varU = Convert.ToInt32(tempU);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             // Console.WriteLine("Ток = " + varI + "А ----- Напряжение U = " + varU + "В");
+
+
+            //form5Grafika ??= new Form5Grafika(form1.ComPortName()); для 8 С#
+
+            if (form5Grafika == null)
+            {
+                form5Grafika=  new Form5Grafika(form1.ComPortName());
+                form5Grafika.FormClosing += onForm5Closed; 
+            }
+            
+            
             form5Grafika.dataIU(varI, varU);
             form5Grafika.Show();
         }
+        
+        private void onForm5Closed(object sender, FormClosingEventArgs e)
+            {
+                form5Grafika.FormClosing -= onForm5Closed;
+                form5Grafika = null;
+            }
 
     }
 }

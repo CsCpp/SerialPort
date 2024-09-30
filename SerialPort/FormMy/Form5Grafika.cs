@@ -136,6 +136,11 @@ namespace SerialPortC
             valMaxTime = DateTime.Now;
             chart1.ChartAreas[0].AxisX.Maximum = valMaxTime.ToOADate();
         }
+
+        private void Form5Grafika_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
    
 }

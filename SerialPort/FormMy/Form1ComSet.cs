@@ -73,7 +73,7 @@ namespace SerialPortC
         }
 
         //  ----------------------   Отправка данных -----------------------------
-        public void sendDataEnter(string str)
+        public async Task sendDataEnter(string str)
         {
             if (serialPort.IsOpen)
             {
@@ -82,16 +82,25 @@ namespace SerialPortC
                     bdmySQL.SaveDataToMySqlDataBase(str, true);
                 }
 
-                try
+                //try
+                //{
+                //    if (chBoxWriteLine.Checked) 
+                //            {serialPort.WriteLine(DateTime.Now + " : " + cBoxCOMPORT.Text + " -> " + str); }
+                //    else    {serialPort.Write(DateTime.Now + " : " + cBoxCOMPORT.Text + " -> " + str); }
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
+
+                string str2 = "";
+                if (chBoxWriteLine.Checked)
                 {
-                    if (chBoxWriteLine.Checked) 
-                            { serialPort.WriteLine(DateTime.Now + " : " + cBoxCOMPORT.Text + " -> " + str); }
-                    else    { serialPort.Write(DateTime.Now + " : " + cBoxCOMPORT.Text + " -> " + str); }
+                    str2 = serialPort.NewLine;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                var buf = serialPort.Encoding.GetBytes(DateTime.Now + " : " + cBoxCOMPORT.Text + " -> " + str + str2);
+                await serialPort.BaseStream.WriteAsync(buf, 0, buf.Length);
+                await serialPort.BaseStream.FlushAsync();
             }
            
         }
@@ -107,16 +116,16 @@ namespace SerialPortC
                 bdmySQL.SaveDataToMySqlDataBase(dataIN, false);
             }
 
+
+              this.Invoke(new EventHandler(ShowData));
           
-            this.Invoke(new EventHandler(ShowData));
-           
-      
-            
+
+
         }
 
         //  ---------------------------------------------------
-
-        private void ShowData(object sender, EventArgs e)
+       private  void ShowData(object sender, EventArgs e)
+      //  private void ShowData()
         {
             int dataINLength = dataIN.Length;
        //     lbDataINLength.Text = string.Format("{0:00}", dataINLength);
@@ -164,9 +173,6 @@ namespace SerialPortC
            
             chBoxWriteLine.Checked = true;
 
-       
-           
-       
              newForm = new Form2ComSendIn(this);
              newForm.Show();
             

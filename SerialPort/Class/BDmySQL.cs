@@ -143,6 +143,7 @@ namespace SerialPortC
                 myDataSet = new DataSet();
 
                 myDataAdapter.Fill(myDataSet, "Serial Data");
+            
 
                 MessageBox.Show("Такая таблица уже существует", "Ex", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

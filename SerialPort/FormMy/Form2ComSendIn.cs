@@ -43,22 +43,20 @@ namespace SerialPortC
             form1.Visible = false;
             saveMySQLToolStripMenuItem.Checked = false;
             this.Text = "Терминал "+ form1.ComPortName();
-            addForm3Objct();
-           // form5Grafika = new Form5Grafika(form1.ComPortName());
+          
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
-          //form1.Close();
             form1.Visible = true;
             form1.ComPortClose();
         }
         
         public void FormUpdate(string str)
         {
-            sortData(str);
+           sortData(str);
            tBoxDataIN.Text += str;
-            ShowReloadForm3();
+            onForm3();
             try
             {
                 streamWriter = new StreamWriter(pathFile, true);
@@ -108,8 +106,7 @@ namespace SerialPortC
         private async Task sendData()
         {
            await form1.sendDataEnter(tBoxDataOut.Text);
-            addForm3Objct();
-            ShowReloadForm3();
+           await onForm3();
             tBoxDataOut.Text = "";
         }
 
@@ -117,26 +114,12 @@ namespace SerialPortC
 
         private void showDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            addForm3Objct();
+            onForm3();
             objForm3.Show();
         }
 
-        public void addForm3Objct()
-        {
-            if (Form3MySqlDATA.activForm3Status == false)
-            {
-                objForm3 = new Form3MySqlDATA(form1.ComPortName());
-            }
-           
-        }
-        //----------------------Обновить БАЗУ ДАННЫХ------------------------
+       
 
-        public void ShowReloadForm3()
-        {
-            addForm3Objct();
-            objForm3.RefreshAndShowDataOnDataGidView();
-            
-        }
         //----------------------Вкл. обманку данных -------------------------
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -200,27 +183,42 @@ namespace SerialPortC
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            // Console.WriteLine("Ток = " + varI + "А ----- Напряжение U = " + varU + "В");
-
-
+           
             //form5Grafika ??= new Form5Grafika(form1.ComPortName()); для 8 С#
 
             if (form5Grafika == null)
             {
                 form5Grafika=  new Form5Grafika(form1.ComPortName());
-                form5Grafika.FormClosing += onForm5Closed; 
+                form5Grafika.FormClosing += onForm5Closed;
+                form5Grafika.Show();
             }
             
             
             form5Grafika.dataIU(varI, varU);
-            form5Grafika.Show();
+            
         }
         
         private void onForm5Closed(object sender, FormClosingEventArgs e)
-            {
+        {
                 form5Grafika.FormClosing -= onForm5Closed;
                 form5Grafika = null;
+        }
+
+        private async Task onForm3()
+        {
+            if (objForm3 == null)
+            {
+                objForm3 = new Form3MySqlDATA(form1.ComPortName());
+                objForm3.FormClosing += onForm3Closed;
             }
+           await objForm3.RefreshAndShowDataOnDataGidView();
+        }
+        private void onForm3Closed(object sender, FormClosingEventArgs e)
+        {
+            objForm3.FormClosing -= onForm3Closed;
+            objForm3 = null;
+        }
+
 
     }
 }

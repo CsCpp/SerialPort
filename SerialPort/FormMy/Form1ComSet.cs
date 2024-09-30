@@ -79,7 +79,7 @@ namespace SerialPortC
             {
                 if (newForm.saveMySQLToolStripMenuItem.Checked == true)
                 {
-                    bdmySQL.SaveDataToMySqlDataBase(str, true);
+                 await  bdmySQL.SaveDataToMySqlDataBase(str, true);
                 }
 
                 //try
@@ -107,13 +107,13 @@ namespace SerialPortC
 
         //  ----------------------   Получение данных -----------------------------
 
-        private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        private async void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             dataIN = serialPort.ReadExisting();
 
             if (newForm.saveMySQLToolStripMenuItem.Checked == true)
             {
-                bdmySQL.SaveDataToMySqlDataBase(dataIN, false);
+             await   bdmySQL.SaveDataToMySqlDataBase(dataIN, false);
             }
 
 
@@ -124,17 +124,12 @@ namespace SerialPortC
         }
 
         //  ---------------------------------------------------
-       private  void ShowData(object sender, EventArgs e)
-      //  private void ShowData()
-        {
+        private  void ShowData(object sender, EventArgs e)
+    
+       {
             int dataINLength = dataIN.Length;
-       //     lbDataINLength.Text = string.Format("{0:00}", dataINLength);
-       //     tBoxDataIN.Text += dataIN.ToString();
-         
             newForm.FormUpdate(dataIN.ToString());
-          
-
-        }
+       }
 
         private void cOMОткрытьToolStripMenuItem_Click(object sender, EventArgs e)
         {

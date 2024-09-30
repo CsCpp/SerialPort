@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Mysqlx.Crud;
@@ -53,7 +54,7 @@ namespace SerialPortC
         }
 
 
-        public void SaveDataToMySqlDataBase(string str,bool valueInOrOut)
+        public async Task SaveDataToMySqlDataBase(string str,bool valueInOrOut)
         {
 
             try

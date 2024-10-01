@@ -54,7 +54,7 @@ namespace SerialPortC
         }
 
 
-        public async Task SaveDataToMySqlDataBase(string str,bool valueInOrOut)
+        public void SaveDataToMySqlDataBase(string str,bool valueInOrOut)
         {
 
             try

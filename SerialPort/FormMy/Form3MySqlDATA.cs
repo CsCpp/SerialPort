@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,13 +17,14 @@ namespace SerialPortC
     {
         DataSet myDataSet;
         BDmySQL bdmySQL = new BDmySQL();
-       
-      
 
-        public async Task RefreshAndShowDataOnDataGidView()
+
+
+        public void RefreshAndShowDataOnDataGidView()
         {
             myDataSet = new DataSet();
-            myDataSet = bdmySQL.ReadDataToMySqlDataBase();
+           
+          myDataSet = bdmySQL.ReadDataToMySqlDataBase();
             
             dataGridView1.DataSource = myDataSet;
             dataGridView1.DataMember = "Serial Data";

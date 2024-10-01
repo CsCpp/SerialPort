@@ -106,7 +106,7 @@ namespace SerialPortC
         private async Task sendData()
         {
            await form1.sendDataEnter(tBoxDataOut.Text);
-           await onForm3();
+            onForm3();
             tBoxDataOut.Text = "";
         }
 
@@ -190,12 +190,8 @@ namespace SerialPortC
             {
                 form5Grafika=  new Form5Grafika(form1.ComPortName());
                 form5Grafika.FormClosing += onForm5Closed;
-                form5Grafika.Show();
             }
-            
-            
             form5Grafika.dataIU(varI, varU);
-            
         }
         
         private void onForm5Closed(object sender, FormClosingEventArgs e)
@@ -204,14 +200,15 @@ namespace SerialPortC
                 form5Grafika = null;
         }
 
-        private async Task onForm3()
+        private void onForm3()
         {
             if (objForm3 == null)
             {
                 objForm3 = new Form3MySqlDATA(form1.ComPortName());
                 objForm3.FormClosing += onForm3Closed;
             }
-           await objForm3.RefreshAndShowDataOnDataGidView();
+           objForm3.RefreshAndShowDataOnDataGidView();
+             
         }
         private void onForm3Closed(object sender, FormClosingEventArgs e)
         {
@@ -219,6 +216,14 @@ namespace SerialPortC
             objForm3 = null;
         }
 
-
+        private void voltAmpetrToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (form5Grafika == null)
+            {
+                form5Grafika = new Form5Grafika(form1.ComPortName());
+                form5Grafika.FormClosing += onForm5Closed;
+            }
+            form5Grafika.Show();
+        }
     }
 }

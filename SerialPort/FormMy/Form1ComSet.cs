@@ -26,7 +26,6 @@ namespace SerialPortC
         public Form1ComSet()
         {
             InitializeComponent();
-          
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -71,7 +70,9 @@ namespace SerialPortC
             }
 
         }
-
+        //  ---------------------------------------------------
+        //  ---------------------------------------------------
+        //  ---------------------------------------------------
         //  ----------------------   Отправка данных -----------------------------
         public async Task sendDataEnter(string str)
         {
@@ -79,19 +80,8 @@ namespace SerialPortC
             {
                 if (newForm.saveMySQLToolStripMenuItem.Checked == true)
                 {
-                 await  bdmySQL.SaveDataToMySqlDataBase(str, true);
+                   bdmySQL.SaveDataToMySqlDataBase(str, true);
                 }
-
-                //try
-                //{
-                //    if (chBoxWriteLine.Checked) 
-                //            {serialPort.WriteLine(DateTime.Now + " : " + cBoxCOMPORT.Text + " -> " + str); }
-                //    else    {serialPort.Write(DateTime.Now + " : " + cBoxCOMPORT.Text + " -> " + str); }
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
 
                 string str2 = "";
                 if (chBoxWriteLine.Checked)
@@ -104,16 +94,18 @@ namespace SerialPortC
             }
            
         }
-
+        //  ---------------------------------------------------
+        //  ---------------------------------------------------
+        //  ---------------------------------------------------
         //  ----------------------   Получение данных -----------------------------
 
-        private async void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             dataIN = serialPort.ReadExisting();
 
             if (newForm.saveMySQLToolStripMenuItem.Checked == true)
             {
-             await   bdmySQL.SaveDataToMySqlDataBase(dataIN, false);
+                bdmySQL.SaveDataToMySqlDataBase(dataIN, false);
             }
 
 
@@ -125,11 +117,10 @@ namespace SerialPortC
 
         //  ---------------------------------------------------
         private  void ShowData(object sender, EventArgs e)
-    
-       {
+         {
             int dataINLength = dataIN.Length;
             newForm.FormUpdate(dataIN.ToString());
-       }
+         }
 
         private void cOMОткрытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -213,13 +204,22 @@ namespace SerialPortC
         {
             if(cBoxCOMPORT.Text!="")
             {
-                mySqlSetting = new Form4MySQLSet();
+                if (mySqlSetting == null)
+                {
+                    mySqlSetting = new Form4MySQLSet();
+                    mySqlSetting.FormClosing += onMySqlSettingClosed;
+                }
                 mySqlSetting.Show();
             }
             else
             {
                 MessageBox.Show("Comport не выбран", "Ex", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void onMySqlSettingClosed(object sender, FormClosingEventArgs e)
+        {
+            mySqlSetting.FormClosing -= onMySqlSettingClosed;
+            mySqlSetting = null;
         }
 
 

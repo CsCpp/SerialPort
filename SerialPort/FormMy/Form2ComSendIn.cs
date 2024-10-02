@@ -139,7 +139,7 @@ namespace SerialPortC
                 {
                     try
                     {
-                       await form1.sendDataEnter(Convert.ToString($"I={random.Next(1, 19)}A U={random.Next(9, 16)}V \n"));
+                       await form1.sendDataEnter(Convert.ToString($"I={(random.NextDouble())*20}A U={(random.NextDouble())*20}V \n"));
                     }
                     catch (Exception ex)
                     {
@@ -158,8 +158,8 @@ namespace SerialPortC
        
         private void inDataForm5(string str)
         {
-            int varI = sortData(str, "I=", 'A');
-            int varU = sortData(str, "U=", 'V');
+            double varI = sortData(str, "I=", 'A');
+            double varU = sortData(str, "U=", 'V');
 
 
             //form5Grafika ??= new Form5Grafika(form1.ComPortName()); для 8 С#
@@ -171,29 +171,32 @@ namespace SerialPortC
             form5Grafika.dataIU(varI, varU);
         }
         //-----------------------Сортировка----------------------------------
-        private  int sortData(string str, string inStr, char outStr)
+        private  double sortData(string str, string inStr, char outStr)
         {
             int indexOfData = str.LastIndexOf(inStr) + 2;
             string strData = "";
-            int intData = 0;
+            double doubleData = 0;
             
 
             for (int i = indexOfData; i < str.Length; i++)
             {
-                if (str[i] == outStr) break;
+                if (str[i] == outStr || str[i] < '0' || str[i] > '9')
+                {
+                    if (str[i] != ',' ) break;
+                }
                 strData += str[i];
             }
            
             try
             {
-                intData = Convert.ToInt32(strData);
+                doubleData = Convert.ToDouble(strData);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return intData;
+            return doubleData;
          
         }
         

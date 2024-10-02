@@ -24,10 +24,10 @@ namespace SerialPortC
             this.Text = "VoltAmpetr is " + str;
           
         }
-        public void dataIU(int varI, int varU)
+        public void dataIU(double varI, double varU)
         {
-            label2I.Text ="I="+ varI.ToString()+" A";
-            label4U.Text ="U="+ varU.ToString()+" V";
+            label2I.Text ="I=" + varI.ToString("0.##") +"A";
+            label4U.Text ="U=" + varU.ToString("0.##") +"V";
             this.chart1.Series[0].Points.AddXY(DateTime.Now, varI);
             this.chart1.Series[1].Points.AddXY(DateTime.Now, varU);
             if (DateTime.Now >= valMaxTime)

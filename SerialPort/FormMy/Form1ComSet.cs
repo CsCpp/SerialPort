@@ -108,11 +108,8 @@ namespace SerialPortC
                 bdmySQL.SaveDataToMySqlDataBase(dataIN, false);
             }
 
-
               this.Invoke(new EventHandler(ShowData));
-          
-
-
+        
         }
 
         //  ---------------------------------------------------
@@ -146,22 +143,18 @@ namespace SerialPortC
 
                 return;
             }
-
-         
-            cBoxCOMPORT.Enabled = false;
-            cBoxBAUDRATE.Enabled = false;
-            cBoxDATABITS.Enabled = false;
-            cBoxPARITYBITS.Enabled = false;
-            cBoxSTOPBITS.Enabled = false;
-
-         
-            btnOpen.Enabled = false;
-           
-            chBoxWriteLine.Checked = true;
-
+            {
+                cBoxCOMPORT.Enabled = false;
+                cBoxBAUDRATE.Enabled = false;
+                cBoxDATABITS.Enabled = false;
+                cBoxPARITYBITS.Enabled = false;
+                cBoxSTOPBITS.Enabled = false;
+                btnOpen.Enabled = false;
+                chBoxWriteLine.Checked = true;
+            }
              newForm = new Form2ComSendIn(this);
              newForm.Show();
-            
+           
         }
 
         private void cOMЗакрытьToolStripMenuItem_Click(object sender, EventArgs e)

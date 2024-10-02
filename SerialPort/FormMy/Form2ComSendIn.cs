@@ -54,8 +54,9 @@ namespace SerialPortC
         
         public void FormUpdate(string str)
         {
-           sortData(str);
-           tBoxDataIN.Text += str;
+            inDataForm5(str);
+           
+            tBoxDataIN.Text += str;
             onForm3();
             try
             {
@@ -125,11 +126,11 @@ namespace SerialPortC
         {
             if (checkBox1.Checked)
             {
-             new Thread(() => randomZUmanka()).Start();
+              new Thread(() =>  randomZUmanka()).Start();
             }
         }
 
-        private void randomZUmanka()
+        private async Task randomZUmanka()
         {
             Random random = new Random();
             while (true)
@@ -138,7 +139,7 @@ namespace SerialPortC
                 {
                     try
                     {
-                        form1.sendDataEnter(Convert.ToString($"I={random.Next(1, 19)}A U={random.Next(9, 16)}V \n"));
+                       await form1.sendDataEnter(Convert.ToString($"I={random.Next(1, 19)}A U={random.Next(9, 16)}V \n"));
                     }
                     catch (Exception ex)
                     {
@@ -154,44 +155,46 @@ namespace SerialPortC
                 }
             }
         }
-        //-----------------------Сортировка----------------------------------
-        private  void sortData(string str)
+       
+        private void inDataForm5(string str)
         {
-            int indexOfI = str.LastIndexOf("I=") + 2;
-            int indexOfU = str.LastIndexOf("U=") + 2;
-            string tempI = "";
-            string tempU = "";
-            int varI = 0;
-            int varU = 0;
+            int varI = sortData(str, "I=", 'A');
+            int varU = sortData(str, "U=", 'V');
 
-            for (int i = indexOfI; i < str.Length; i++)
+
+            //form5Grafika ??= new Form5Grafika(form1.ComPortName()); для 8 С#
+            if (form5Grafika == null)
             {
-                if (str[i] == 'A') break;
-                tempI += str[i];
+                form5Grafika = new Form5Grafika(form1.ComPortName());
+                form5Grafika.FormClosing += onForm5Closed;
             }
-            for (int i = indexOfU; i < str.Length; i++)
+            form5Grafika.dataIU(varI, varU);
+        }
+        //-----------------------Сортировка----------------------------------
+        private  int sortData(string str, string inStr, char outStr)
+        {
+            int indexOfData = str.LastIndexOf(inStr) + 2;
+            string strData = "";
+            int intData = 0;
+            
+
+            for (int i = indexOfData; i < str.Length; i++)
             {
-                if (str[i] == 'V') break;
-                tempU += str[i];
+                if (str[i] == outStr) break;
+                strData += str[i];
             }
+           
             try
             {
-                varI = Convert.ToInt32(tempI);
-                varU = Convert.ToInt32(tempU);
+                intData = Convert.ToInt32(strData);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
-            //form5Grafika ??= new Form5Grafika(form1.ComPortName()); для 8 С#
 
-            if (form5Grafika == null)
-            {
-                form5Grafika=  new Form5Grafika(form1.ComPortName());
-                form5Grafika.FormClosing += onForm5Closed;
-            }
-            form5Grafika.dataIU(varI, varU);
+            return intData;
+         
         }
         
         private void onForm5Closed(object sender, FormClosingEventArgs e)

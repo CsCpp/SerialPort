@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mysqlx.Expr;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,14 +18,32 @@ namespace SerialPortC
         private DateTime valMinTime;
         private DateTime startTime;
         private int valInterval;
+        
         public Form5Grafika(string str)
         {
             InitializeComponent();
             label1.Text = "Данные получены "+DateTime.Now.ToShortDateString()+ " источник "  +str;
             this.Text = "VoltAmpetr is " + str;
-          
+
+            this.chart1.Series[0].Points.Clear();
+            this.chart1.Series[1].Points.Clear();
+            valInterval = 1;
+
+            chart1.ChartAreas[0].AxisY.Maximum = 20;
+            chart1.ChartAreas[0].AxisY.Minimum = 0;
+
+            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "HH:mm:ss";
+            chart1.Series[0].XValueType = ChartValueType.DateTime;
+            startTime = valMinTime = DateTime.Now;
+            chart1.ChartAreas[0].AxisX.Minimum = valMinTime.ToOADate();
+            valMaxTime = DateTime.Now.AddMinutes(valInterval);
+            chart1.ChartAreas[0].AxisX.Maximum = valMaxTime.ToOADate();
+
+            chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
+            chart1.ChartAreas[0].AxisX.Interval = 5;
+
         }
-        public void dataIU(double varI, double varU)
+        public void dataIU(float varI, float varU)
         {
             label2I.Text ="I=" + varI.ToString("0.##") +"A";
             label4U.Text ="U=" + varU.ToString("0.##") +"V";
@@ -41,24 +60,7 @@ namespace SerialPortC
 
         private void Form5Grafika_Load(object sender, EventArgs e)
         {
-            this.chart1.Series[0].Points.Clear();
-            this.chart1.Series[1].Points.Clear();
-            valInterval = 1;
-            
-            
-           
-            chart1.ChartAreas[0].AxisY.Maximum = 20;
-            chart1.ChartAreas[0].AxisY.Minimum = 0;
 
-            chart1.ChartAreas[0].AxisX.LabelStyle.Format = "HH:mm:ss";
-            chart1.Series[0].XValueType = ChartValueType.DateTime;
-            startTime = valMinTime = DateTime.Now;
-            chart1.ChartAreas[0].AxisX.Minimum = valMinTime.ToOADate();
-            valMaxTime= DateTime.Now.AddMinutes(valInterval);
-            chart1.ChartAreas[0].AxisX.Maximum = valMaxTime.ToOADate();
-
-            chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
-            chart1.ChartAreas[0].AxisX.Interval = 5;
 
           
         }

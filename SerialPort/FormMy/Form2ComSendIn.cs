@@ -22,6 +22,7 @@ namespace SerialPortC
         string pathFile = @"C:\1.txt";
 
         public Form5Grafika form5Grafika;
+        public Form5Grafika bufForm5;
 
         public Form1ComSet form1;
         public Form3MySqlDATA objForm3;
@@ -43,7 +44,8 @@ namespace SerialPortC
             form1.Visible = false;
             saveMySQLToolStripMenuItem.Checked = false;
             this.Text = "Терминал "+ form1.ComPortName();
-          
+            bufForm5 = new Form5Grafika(form1.ComPortName());
+
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
@@ -158,24 +160,29 @@ namespace SerialPortC
        
         private void inDataForm5(string str)
         {
-            double varI = sortData(str, "I=", 'A');
-            double varU = sortData(str, "U=", 'V');
+            float varI = sortData(str, "I=", 'A');
+            float varU = sortData(str, "U=", 'V');
 
 
             //form5Grafika ??= new Form5Grafika(form1.ComPortName()); для 8 С#
             if (form5Grafika == null)
             {
                 form5Grafika = new Form5Grafika(form1.ComPortName());
+                form5Grafika = bufForm5;
                 form5Grafika.FormClosing += onForm5Closed;
+                
             }
             form5Grafika.dataIU(varI, varU);
+            bufForm5=form5Grafika;
+            bufForm5.FormClosing -= onForm5Closed;
+
         }
         //-----------------------Сортировка----------------------------------
-        private  double sortData(string str, string inStr, char outStr)
+        private float sortData(string str, string inStr, char outStr)
         {
             int indexOfData = str.LastIndexOf(inStr) + 2;
             string strData = "";
-            double doubleData = 0;
+            float floatData = 0;
             
 
             for (int i = indexOfData; i < str.Length; i++)
@@ -189,14 +196,14 @@ namespace SerialPortC
            
             try
             {
-                doubleData = Convert.ToDouble(strData);
+                floatData = Convert.ToSingle(strData);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return doubleData;
+            return floatData;
          
         }
         
@@ -227,7 +234,9 @@ namespace SerialPortC
             if (form5Grafika == null)
             {
                 form5Grafika = new Form5Grafika(form1.ComPortName());
+                form5Grafika = bufForm5;
                 form5Grafika.FormClosing += onForm5Closed;
+               
             }
             form5Grafika.Show();
         }

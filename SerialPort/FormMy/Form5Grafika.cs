@@ -43,12 +43,37 @@ namespace SerialPortC
             chart1.ChartAreas[0].AxisX.Interval = 5;
 
         }
+
+        public Form5Grafika(string str, Form5Grafika form1) 
+        {
+            InitializeComponent();
+            label1.Text = "Данные получены " + DateTime.Now.ToShortDateString() + " источник " + str;
+            this.Text = "VoltAmpetr is " + str;
+            this.valInterval = form1.valInterval;
+
+            this.chart1.ChartAreas[0].AxisY.Maximum = 20;
+            this.chart1.ChartAreas[0].AxisY.Minimum = 0;
+
+            this.chart1.ChartAreas[0].AxisX.LabelStyle.Format = "HH:mm:ss";
+            this.chart1.Series[0].XValueType = ChartValueType.DateTime;
+            startTime = valMinTime = form1.startTime;
+            this.chart1.ChartAreas[0].AxisX.Minimum = valMinTime.ToOADate();
+            valMaxTime = form1.valMaxTime;
+            this.chart1.ChartAreas[0].AxisX.Maximum = valMaxTime.ToOADate();
+
+            this.chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Seconds;
+            this.chart1.ChartAreas[0].AxisX.Interval = 5;
+
+            this.chart1.Series[0] = form1.chart1.Series[0];
+            this.chart1.Series[1] = form1.chart1.Series[1];
+        }
+
         public void dataIU(float varI, float varU)
         {
             label2I.Text ="I=" + varI.ToString("0.##") +"A";
             label4U.Text ="U=" + varU.ToString("0.##") +"V";
-            this.chart1.Series[0].Points.AddXY(DateTime.Now, varI);
-            this.chart1.Series[1].Points.AddXY(DateTime.Now, varU);
+            chart1.Series[0].Points.AddXY(DateTime.Now, varI);
+            chart1.Series[1].Points.AddXY(DateTime.Now, varU);
             if (DateTime.Now >= valMaxTime)
             {
                 valMaxTime=valMaxTime.AddSeconds(1);

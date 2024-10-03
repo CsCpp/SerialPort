@@ -167,14 +167,13 @@ namespace SerialPortC
             //form5Grafika ??= new Form5Grafika(form1.ComPortName()); для 8 С#
             if (form5Grafika == null)
             {
-                form5Grafika = new Form5Grafika(form1.ComPortName());
-                form5Grafika = bufForm5;
+                form5Grafika = new Form5Grafika(form1.ComPortName(), bufForm5);
                 form5Grafika.FormClosing += onForm5Closed;
                 
             }
             form5Grafika.dataIU(varI, varU);
-            bufForm5=form5Grafika;
-            bufForm5.FormClosing -= onForm5Closed;
+            bufForm5.dataIU(varI, varU);
+
 
         }
         //-----------------------Сортировка----------------------------------
@@ -233,10 +232,8 @@ namespace SerialPortC
         {
             if (form5Grafika == null)
             {
-                form5Grafika = new Form5Grafika(form1.ComPortName());
-                form5Grafika = bufForm5;
+                form5Grafika = new Form5Grafika(form1.ComPortName(), bufForm5);
                 form5Grafika.FormClosing += onForm5Closed;
-               
             }
             form5Grafika.Show();
         }
